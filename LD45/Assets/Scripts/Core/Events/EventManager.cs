@@ -3,7 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class EventManager {
-	public static event EventController.MethodContainer OnExampleEvent;
-	public void CallOnExampleEvent(EventData ob = null) => OnExampleEvent?.Invoke(ob);
 
+	//Scene Loader
+	public static event EventController.MethodContainer OnSceneNeedLoad;
+	public void CallOnSceneNeedLoad(EventData ob = null) => OnSceneNeedLoad?.Invoke(ob);
+
+	public static event EventController.MethodContainer OnSceneLoadStart;
+	public void CallOnSceneLoadStart(EventData ob = null) => OnSceneLoadStart?.Invoke(ob);
+
+	public static event EventController.MethodContainer OnSceneLoadEnd;
+	public void CallOnSceneLoadEnd(EventData ob = null) => OnSceneLoadEnd?.Invoke(ob);
 }
