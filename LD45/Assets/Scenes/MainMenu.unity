@@ -571,7 +571,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 377604954}
-        m_MethodName: CallSceneLoad
+        m_MethodName: CallSceneLoadWithUI
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

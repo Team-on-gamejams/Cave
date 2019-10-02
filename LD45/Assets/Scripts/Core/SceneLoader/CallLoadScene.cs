@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CallLoadScene : MonoBehaviour {
-	public void CallSceneLoad(string name) {
-		//EventData eventData = new EventData("OnSceneNeedLoad");
-		//eventData.Data.Add("id", name);
-		//GameManager.Instance.EventManager.CallOnSceneNeedLoad(eventData);
-		SceneLoader.Instance.LoadScene(name);
+	public void CallSceneLoadWithUI(string name) {
+		SceneLoader.Instance.LoadScene(name, true, true);
 	}
 
-	public void CallSceneLoad(int buildId) {
-		//EventData eventData = new EventData("OnSceneNeedLoad");
-		//eventData.Data.Add("id", buildId);
-		//GameManager.Instance.EventManager.CallOnSceneNeedLoad(eventData);
-		SceneLoader.Instance.LoadScene(buildId);
+	public void CallSceneLoad(string name) {
+		SceneLoader.Instance.LoadScene(name, false, false);
 	}
 }

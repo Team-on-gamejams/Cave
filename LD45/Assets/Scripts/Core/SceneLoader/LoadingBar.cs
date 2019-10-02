@@ -29,6 +29,10 @@ public class LoadingBar : MonoBehaviour {
 			return;
 		}
 
+		bool needUI = (bool)data?["needUI"];
+		if (!needUI)
+			return;
+
 		sceneId = (int)(data.Data?["id"] ?? -1);
 		loader = data.Data?["loader"] as AsyncOperation;
 
@@ -37,12 +41,15 @@ public class LoadingBar : MonoBehaviour {
 			return;
 		}
 
-		loadingBarRoutine = StartCoroutine(LoadingBarUpdate());
+		bool needDelay = (bool)data?["uiNeedDelay"];
+
+		loadingBarRoutine = StartCoroutine(needDelay ? LoadingBarUpdateWithDelay() : LoadingBarUpdate());
 		EnableCanvasGroup();
 	}
 
 	void OnSceneLoadEnd(EventData data) {
-		StopCoroutine(loadingBarRoutine);
+		if(loadingBarRoutine != null)
+			StopCoroutine(loadingBarRoutine);
 		DisableCanvasGroup();
 
 		sceneId = -1;
@@ -56,6 +63,22 @@ public class LoadingBar : MonoBehaviour {
 
 			yield return null;
 		}
+	}
+
+	IEnumerator LoadingBarUpdateWithDelay() {
+		float delayMax = Random.Range(0.5f, 1.5f);
+		float delayCurr = 0;
+		loader.allowSceneActivation = false;
+
+		while (loader.progress < 0.9f || delayCurr <= delayMax) {
+			delayCurr += Time.deltaTime;
+
+			loadingBar.fillAmount = Mathf.Min(loader.progress / 0.9f, delayCurr / delayMax);
+
+			yield return null;
+		}
+
+		loader.allowSceneActivation = true;
 	}
 
 	void DisableCanvasGroup() {
