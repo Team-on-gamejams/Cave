@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LoadingBar : MonoBehaviour {
+	[SerializeField] List<string> tips;
+
+	[SerializeField] TextMeshProUGUI tipText;
 	[SerializeField] CanvasGroup canvasGroup;
 	[SerializeField] Image loadingBar;
 
@@ -44,6 +48,9 @@ public class LoadingBar : MonoBehaviour {
 		bool needDelay = (bool)data?["uiNeedDelay"];
 
 		loadingBarRoutine = StartCoroutine(needDelay ? LoadingBarUpdateWithDelay() : LoadingBarUpdate());
+
+		tipText.text = "TIP: " + tips.Random();
+
 		EnableCanvasGroup();
 	}
 

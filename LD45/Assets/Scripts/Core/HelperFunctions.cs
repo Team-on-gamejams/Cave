@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 
-public class HelperFunctions : MonoBehaviour {
+public static class HelperFunctions {
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public static string GetCurrentMethod() {
 		StackTrace st = new StackTrace();
@@ -14,18 +15,22 @@ public class HelperFunctions : MonoBehaviour {
 	}
 
 	public static bool GetEventWithChance(int percent) {
-		int number = Random.Range(1, 101);
+		int number = UnityEngine.Random.Range(1, 101);
 		return number <= percent;
 	}
 
-	public static void Shuffle<T>(IList<T> list) {
+	public static void Shuffle<T>(this IList<T> list) {
 		int n = list.Count;
 		while (n > 1) {
 			n--;
-			int rand = Random.Range(0, n + 1);
+			int rand = UnityEngine.Random.Range(0, n + 1);
 			T value = list[rand];
 			list[rand] = list[n];
 			list[n] = value;
 		}
+	}
+
+	public static T Random<T>(this IList<T> list) {
+		return list[UnityEngine.Random.Range(0, list.Count + 1)];
 	}
 }
