@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 782328658542457907}
   - component: {fileID: 782328658542457904}
   - component: {fileID: 782328658542457906}
+  - component: {fileID: 3455778624465985099}
   m_Layer: 0
   m_Name: HowToPlayWindow
   m_TagString: Untagged
@@ -248,6 +249,19 @@ MonoBehaviour:
   - {fileID: 3144565952774051543}
   - {fileID: 203877050939855231}
   - {fileID: 5294741812088524918}
+--- !u!114 &3455778624465985099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782328658542457918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547cb9608ca8d7940853cd3ca45c3e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 106c55e8853f9f24fbc2182ac4ce9b2f, type: 3}
 --- !u!1 &782328659886752501
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +383,17 @@ MonoBehaviour:
       - m_Target: {fileID: 782328658542457906}
         m_MethodName: Hide
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3455778624465985099}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1588,6 +1613,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3455778624465985099}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5889867283801321678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2311,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 782328658542457906}
         m_MethodName: TabRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3455778624465985099}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
