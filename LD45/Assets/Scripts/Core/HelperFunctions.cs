@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,5 +33,17 @@ public static class HelperFunctions {
 
 	public static T Random<T>(this IList<T> list) {
 		return list[UnityEngine.Random.Range(0, list.Count)];
+	}
+
+	public static void Hide(this Graphic img) {
+		Color c = img.color;
+		c.a = 0;
+		img.color = c;
+	}
+
+	public static void Show(this Graphic img) {
+		Color c = img.color;
+		c.a = 1;
+		img.color = c;
 	}
 }

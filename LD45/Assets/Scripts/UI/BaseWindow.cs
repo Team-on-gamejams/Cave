@@ -12,11 +12,11 @@ public abstract class BaseWindow : MonoBehaviour {
 		transform.localPosition = HidePos;
 	}
 
-	public void Show(bool isForce) {
+	public virtual void Show(bool isForce) {
 		Move(isForce, ShowPos);
 	}
 
-	public void Hide(bool isForce) {
+	public virtual void Hide(bool isForce) {
 		Move(isForce, HidePos);
 	}
 
