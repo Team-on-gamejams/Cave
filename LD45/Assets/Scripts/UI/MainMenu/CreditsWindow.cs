@@ -24,6 +24,8 @@ public class CreditsWindow : BaseWindow {
 	public override void Show(bool isForce) {
 		Tabs[currTab].alpha = 0;
 		Tabs[currTab = 0].alpha = 1;
+		ArrowLeft.gameObject.SetActive(false);
+		ArrowRight.gameObject.SetActive(true);
 
 		base.Show(isForce);
 	}
