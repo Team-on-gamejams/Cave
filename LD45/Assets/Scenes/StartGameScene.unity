@@ -924,6 +924,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90b498baa2475945a13cb4573298fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tips:
+  - Fun things is fun
+  - "If you\u2019re having trouble winning in combat, try getting better at the game"
+  - People die if they are killed
+  - Left arm is not a right arm
+  - They'll continue to live until they die
+  - Floating Islands!!!!
+  - "You can\u2019t make RTS in 3 days"
+  - "You can\u2019t make MMORPG in 3 days"
+  tipText: {fileID: 157502546}
   canvasGroup: {fileID: 1507460445}
   loadingBar: {fileID: 1280283017}
 --- !u!225 &1507460445
