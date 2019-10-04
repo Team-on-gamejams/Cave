@@ -5,9 +5,37 @@ using UnityEngine;
 public class SoundManager : Singleton<SoundManager> {
 	const float musicChangeTime = 1.0f;
 
-	public float MasterVolume { get; set; }
-	public float MusicVolume { get; set; }
-	public float SoundVolume { get; set; }
+	public float MasterVolume {
+		get {
+			return _masterVolume;
+		}
+		set {
+			_masterVolume = value;
+			musicSource.volume = _musicVolume * MasterVolume;
+			soundSource.volume = _soundVolume * MasterVolume;
+		}
+	}
+	public float MusicVolume {
+		get {
+			return _musicVolume;
+		}
+		set {
+			_musicVolume = value;
+			musicSource.volume = _musicVolume * MasterVolume;
+		}
+	}
+	public float SoundVolume {
+		get {
+			return _soundVolume;
+		}
+		set {
+			_soundVolume = value;
+			soundSource.volume = _soundVolume * MasterVolume;
+		}
+	}
+	public float _masterVolume;
+	public float _musicVolume;
+	public float _soundVolume;
 
 	AudioSource musicSource;
 	AudioSource soundSource;
@@ -17,7 +45,7 @@ public class SoundManager : Singleton<SoundManager> {
 
 	void Awake() {
 		//TODO: save/load this values
-		MasterVolume = MusicVolume = SoundVolume = 100;
+		_masterVolume = _musicVolume = _soundVolume = 1.0f;
 
 		soundSource = CreateAS("soundSource");
 		soundSource.volume = SoundVolume * MasterVolume;
