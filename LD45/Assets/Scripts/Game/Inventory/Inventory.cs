@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: Make not MonoBehaviour
 public class Inventory : MonoBehaviour {
 	public List<ItemSO> items;
 
