@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -267,6 +267,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &5401174 stripped
@@ -428,6 +433,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &30831107 stripped
@@ -1274,6 +1284,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &108388391 stripped
@@ -1349,6 +1364,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &109144919 stripped
@@ -1424,6 +1444,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &109707491 stripped
@@ -1499,6 +1524,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &114836661 stripped
@@ -1974,6 +2004,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &201460389 stripped
@@ -2129,6 +2164,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &214928534 stripped
@@ -2410,6 +2450,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &265327993 stripped
@@ -2886,6 +2931,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &318093908 stripped
@@ -3190,6 +3240,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &343004728 stripped
@@ -3265,6 +3320,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &356095356 stripped
@@ -3586,6 +3646,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &394325761 stripped
@@ -3820,7 +3885,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.6, y: 0.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4090,6 +4155,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &457794081 stripped
@@ -4397,6 +4467,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420032}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4559,7 +4630,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -4592,6 +4663,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!124 &519420034
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
 --- !u!1 &523344535
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,6 +4936,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &553828216 stripped
@@ -5092,6 +5176,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &579837666 stripped
@@ -7942,6 +8031,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &978246071 stripped
@@ -8883,6 +8977,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1131304904 stripped
@@ -9225,6 +9324,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1165340277 stripped
@@ -9506,6 +9610,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1222839311 stripped
@@ -9581,6 +9690,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1236377364 stripped
@@ -10024,6 +10138,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1297799503 stripped
@@ -10099,6 +10218,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1326067237 stripped
@@ -10300,6 +10424,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1336144413 stripped
@@ -10535,6 +10664,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1350822477 stripped
@@ -10850,6 +10984,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1362088026 stripped
@@ -10925,6 +11064,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1365926081 stripped
@@ -11080,6 +11224,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1389416598 stripped
@@ -11315,6 +11464,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1400617790 stripped
@@ -12511,6 +12665,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1530264145 stripped
@@ -12975,6 +13134,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1562084043 stripped
@@ -13237,6 +13401,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1589233787 stripped
@@ -14094,6 +14263,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1669023643 stripped
@@ -14208,6 +14382,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1682538423 stripped
@@ -14463,6 +14642,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1724859982 stripped
@@ -15205,6 +15389,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1803850062 stripped
@@ -16086,6 +16275,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1854158653 stripped
@@ -16161,6 +16355,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1858679533 stripped
@@ -16236,6 +16435,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1873717700 stripped
@@ -16311,6 +16515,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &1873904175 stripped
@@ -16861,6 +17070,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
 --- !u!4 &1954842672 stripped
@@ -17176,6 +17390,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &2002814385 stripped
@@ -17845,6 +18064,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &2103024132 stripped
@@ -18080,6 +18304,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878022209268221458, guid: 5af1b21dee11dc44386ffc471b4c4e61,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af1b21dee11dc44386ffc471b4c4e61, type: 3}
 --- !u!4 &2117491454 stripped
@@ -18498,17 +18727,17 @@ PrefabInstance:
     - target: {fileID: 3878022209268221459, guid: 5af1b21dee11dc44386ffc471b4c4e61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.22
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 3878022209268221459, guid: 5af1b21dee11dc44386ffc471b4c4e61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.69
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 3878022209268221459, guid: 5af1b21dee11dc44386ffc471b4c4e61,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3900514
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3878022209268221459, guid: 5af1b21dee11dc44386ffc471b4c4e61,
         type: 3}
@@ -18688,5 +18917,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527324313547961999, guid: dfe0d49457a2acd4b960dcbc78f67b62,
+        type: 3}
+      propertyPath: Shader
+      value: 
+      objectReference: {fileID: 4800000, guid: cababaad111cb85498ae0e74961d87db, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfe0d49457a2acd4b960dcbc78f67b62, type: 3}
