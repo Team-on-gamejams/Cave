@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager> {
 	// guarantee this will be always a singleton only - can't use the constructor!
 	protected GameManager() { }
 
+	public Player Player;
 	public EventManager EventManager;
 
 	public void Awake() {
