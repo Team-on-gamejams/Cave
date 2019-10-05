@@ -101,6 +101,7 @@ MonoBehaviour:
   DropTime: 0.2
   DropDistance: 0.3
   NeededClick: 3
+  Shader: {fileID: 0}
 --- !u!61 &3878022209268221457
 BoxCollider2D:
   m_ObjectHideFlags: 0
