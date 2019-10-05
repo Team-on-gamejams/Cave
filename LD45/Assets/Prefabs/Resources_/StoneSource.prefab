@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4847483186995451876
+--- !u!1 &5527324313547961994
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 53883704575879714}
-  - component: {fileID: 8107735113839716898}
-  - component: {fileID: 6544715531299769627}
-  - component: {fileID: 9006235701794641824}
+  - component: {fileID: 5527324313547961996}
+  - component: {fileID: 5527324313547961997}
+  - component: {fileID: 5527324313547961999}
+  - component: {fileID: 5527324313547961998}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: StoneSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &53883704575879714
+--- !u!4 &5527324313547961996
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847483186995451876}
+  m_GameObject: {fileID: 5527324313547961994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18799996, y: -4.3970003, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: -1.11, y: -2.25, z: -2.3900514}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8107735113839716898
+--- !u!212 &5527324313547961997
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847483186995451876}
+  m_GameObject: {fileID: 5527324313547961994}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 649a707bfd09bab49b88cee90bb0bdb0, type: 3}
-  m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -82,30 +82,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6544715531299769627
+--- !u!114 &5527324313547961999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847483186995451876}
+  m_GameObject: {fileID: 5527324313547961994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a8aa26a458d4bd4b9bd24a9ea7ff46a, type: 3}
+  m_Script: {fileID: 11500000, guid: e450be1e30db91d4dbe8fadd3c0b0697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: c05ae737758ce004b80875b065ebc009, type: 2}
---- !u!61 &9006235701794641824
+  NeededHands: 2
+  ResourcePrefab: {fileID: 4847483186995451876, guid: d411e1216d4ed6747980c0f08569abc6,
+    type: 3}
+  ResourceCount: 4
+  DropTime: 0.2
+  DropDistance: 0.3
+  NeededClick: 4
+--- !u!61 &5527324313547961998
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847483186995451876}
+  m_GameObject: {fileID: 5527324313547961994}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
