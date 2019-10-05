@@ -6,5 +6,7 @@ using UnityEngine;
 public class Equipment : MonoBehaviour {
 	public ItemSO hands;
 
+	public void EquipItem(ItemSO item) {
 
+	}
 }

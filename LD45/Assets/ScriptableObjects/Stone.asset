@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f47852ec4b89c84eb8e265c63593971, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
+  Slot: 0
+  Type: 1001
   Name: Stone
   Description: 
   Count: 1
