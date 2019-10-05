@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e450be1e30db91d4dbe8fadd3c0b0697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineGO: {fileID: 1121506399445120070}
   InteractDist: 2.1
   outlineSize: 1
   NeededHands: 1

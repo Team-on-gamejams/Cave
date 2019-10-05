@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour {
+	public GameObject OutlineGO;
 	public float InteractDist;
 	public System.Action OnMouseClick;
 
@@ -13,11 +14,14 @@ public class Interactable : MonoBehaviour {
 
 	protected virtual void Awake() {
 		InteractDistSqr = InteractDist * InteractDist;
+		//TODO: fix outline for forest
+		//if (OutlineGO == null)
+			OutlineGO = gameObject;
 	}
 
 	void OnMouseEnter() {
 		if (outline == null) {
-			outline = gameObject.AddComponent<SpriteOutline>();
+			outline = OutlineGO.AddComponent<SpriteOutline>();
 			outline._outlineSize = outlineSize;
 			outline.color = Color.yellow;
 			outline.UpdateOutline(outline._outlineSize);

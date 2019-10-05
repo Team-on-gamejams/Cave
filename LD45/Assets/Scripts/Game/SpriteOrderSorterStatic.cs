@@ -7,7 +7,7 @@ public class SpriteOrderSorterStatic : MonoBehaviour {
 	[SerializeField] int Correction = 0;
 
 	void Awake() {
-		GetComponent<SpriteRenderer>().sortingOrder = Mathf.FloorToInt(-transform.position.y) + Correction;
+		GetComponent<SpriteRenderer>().sortingOrder =  Mathf.FloorToInt(-transform.position.y) + Correction;
 		Destroy(this);
 	}
 }
