@@ -11,19 +11,8 @@ public class ResourcesSource : MonoBehaviour {
 	public int NeededClick;
 	int CurrentClick;
 
-	SpriteOutline outline;
-
 	private void Awake() {
 		CurrentClick = 0;
-	}
-
-	private void OnMouseEnter() {
-		outline = gameObject.AddComponent<SpriteOutline>();
-		outline._outlineSize = 5.0f;
-	}
-
-	private void OnMouseExit() {
-		Destroy(outline);
 	}
 
 	void OnMouseDown() {

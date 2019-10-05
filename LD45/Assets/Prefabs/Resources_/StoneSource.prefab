@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5527324313547961997}
   - component: {fileID: 5527324313547961999}
   - component: {fileID: 5527324313547961998}
+  - component: {fileID: 5980712513978815210}
   m_Layer: 0
   m_Name: StoneSource
   m_TagString: Untagged
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 649a707bfd09bab49b88cee90bb0bdb0, type: 3}
-  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 739f97540c0752e43af8ec1ad4d459c5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +102,6 @@ MonoBehaviour:
   DropTime: 0.2
   DropDistance: 0.3
   NeededClick: 4
-  Shader: {fileID: 0}
 --- !u!61 &5527324313547961998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.6, y: 0.6}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -128,3 +128,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &5980712513978815210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527324313547961994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fd0ca8fc346754f93fb6f329081efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineSize: 1
