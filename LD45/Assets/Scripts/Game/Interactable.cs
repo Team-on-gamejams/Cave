@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour {
-	public GameObject OutlineGO;
+	public GameObject AdditionalOutlineGO;
 	public float InteractDist;
 	public System.Action OnMouseClick;
 
 	[SerializeField] float outlineSize;
 
+	SpriteOutline outlineAdditional;
 	SpriteOutline outline;
 	float InteractDistSqr;
 
 	protected virtual void Awake() {
 		InteractDistSqr = InteractDist * InteractDist;
-		//TODO: fix outline for forest
-		//if (OutlineGO == null)
-			OutlineGO = gameObject;
 	}
 
 	void OnMouseEnter() {
 		if (outline == null) {
-			outline = OutlineGO.AddComponent<SpriteOutline>();
-			outline._outlineSize = outlineSize;
-			outline.color = Color.yellow;
-			outline.UpdateOutline(outline._outlineSize);
+			outline = CreateOutline(gameObject);
+			if (AdditionalOutlineGO) {
+				outlineAdditional = CreateOutline(AdditionalOutlineGO);
+			}
 		}
 		outline.enabled = true;
+		if (AdditionalOutlineGO)
+			outlineAdditional.enabled = true;
 	}
 
 	void OnMouseDown() {
@@ -41,6 +41,8 @@ public class Interactable : MonoBehaviour {
 
 	void OnMouseExit() {
 		outline.enabled = false;
+		if (AdditionalOutlineGO)
+			outlineAdditional.enabled = false;
 	}
 
 	public void SimulateMouseClick() {
@@ -49,5 +51,13 @@ public class Interactable : MonoBehaviour {
 
 	public bool CanInteract() {
 		return GameManager.Instance.Player.CanInteract(transform.position, InteractDistSqr);
+	}
+
+	SpriteOutline CreateOutline(GameObject gameObject) {
+		var outline = gameObject.AddComponent<SpriteOutline>();
+		outline._outlineSize = outlineSize;
+		outline.color = Color.yellow;
+		outline.UpdateOutline(outline._outlineSize);
+		return outline;
 	}
 }
