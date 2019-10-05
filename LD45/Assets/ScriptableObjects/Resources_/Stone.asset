@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f47852ec4b89c84eb8e265c63593971, type: 3}
-  m_Name: Pickaxe
+  m_Name: Stone
   m_EditorClassIdentifier: 
-  Name: Pickaxe
+  Name: Stone
   Description: 
   Texture: {fileID: 2800000, guid: 649a707bfd09bab49b88cee90bb0bdb0, type: 3}
