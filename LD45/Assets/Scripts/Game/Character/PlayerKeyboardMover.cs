@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerKeyboardMover : MonoBehaviour {
+	public System.Action OnMouseMoveEnd;
+
 	[SerializeField] Rigidbody2D rigidbody;
 	[SerializeField] Player player;
+
 	Vector3 moveToDirection;
 	Vector3 moveToPoint;
 
@@ -13,12 +16,15 @@ public class PlayerKeyboardMover : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		//TODO: початок руху з прискоренням вплоть до макс. швидкості. Зупинка моментальна
 		float v = Input.GetAxisRaw("Vertical");
 		float h = Input.GetAxisRaw("Horizontal");
 
 		if(v != 0 || h != 0) {
-			if (moveToPoint != Vector3.zero)
+			if (moveToPoint != Vector3.zero) {
 				moveToPoint = Vector3.zero;
+				OnMouseMoveEnd = null;
+			}
 			rigidbody.MovePosition(transform.localPosition + new Vector3(h, v).normalized * player.speed * Time.deltaTime);
 		}
 
@@ -29,11 +35,17 @@ public class PlayerKeyboardMover : MonoBehaviour {
 		}
 
 
-		if(moveToPoint != Vector3.zero) {
-			if ((transform.position - moveToPoint).sqrMagnitude > GameManager.Instance.Player.InteractDistSqr)
+		if (moveToPoint != Vector3.zero) {
+			if ((transform.position - moveToPoint).sqrMagnitude > GameManager.Instance.Player.InteractDistSqr) {
 				rigidbody.MovePosition(transform.localPosition + moveToDirection.normalized * player.speed * Time.deltaTime);
-			else
+			}
+			else {
 				moveToPoint = Vector3.zero;
+				if(OnMouseMoveEnd != null) {
+					OnMouseMoveEnd.Invoke();
+					OnMouseMoveEnd = null;
+				}
+			}
 		}
 	}
 }

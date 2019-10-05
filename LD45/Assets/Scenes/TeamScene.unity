@@ -5212,6 +5212,7 @@ MonoBehaviour:
   speed: 5
   Inventory: {fileID: 431190325}
   Equipment: {fileID: 431190326}
+  PlayerKeyboardMover: {fileID: 431190322}
   InteractDist: 0.5
 --- !u!114 &431190322
 MonoBehaviour:

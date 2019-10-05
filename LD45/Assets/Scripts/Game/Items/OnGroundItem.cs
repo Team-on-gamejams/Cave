@@ -11,9 +11,6 @@ public class OnGroundItem : Interactable {
 	}
 
 	void CollectItem() {
-		if (!CanInteract())
-			return;
-
 		//TODO: add fly animation
 		GameManager.Instance.Player.Inventory.AddItem(Item);
 

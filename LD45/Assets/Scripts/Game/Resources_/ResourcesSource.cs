@@ -21,7 +21,7 @@ public class ResourcesSource : Interactable {
 	}
 
 	void HitSource() {
-		if (!CanHit() || !CanInteract())
+		if (!IsSuitableHand())
 			return;
 
 		if (++CurrentClick == NeededClick){
@@ -35,7 +35,7 @@ public class ResourcesSource : Interactable {
 		}
 	}
 
-	bool CanHit() {
+	bool IsSuitableHand() {
 		//TODO: remove when hotbar will be ready
 		return true;
 		return GameManager.Instance.Player.Equipment.hands.Type == NeededHands;
