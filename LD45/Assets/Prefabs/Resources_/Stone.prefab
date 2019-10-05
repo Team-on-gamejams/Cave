@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 53883704575879714}
   - component: {fileID: 8107735113839716898}
   - component: {fileID: 6544715531299769627}
-  - component: {fileID: -4798413038159650191}
   - component: {fileID: 6875373921423303759}
   m_Layer: 0
   m_Name: Stone
@@ -96,20 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractDist: 0.5
-  Item: {fileID: 11400000, guid: c05ae737758ce004b80875b065ebc009, type: 2}
---- !u!114 &-4798413038159650191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847483186995451876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0fd0ca8fc346754f93fb6f329081efb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   outlineSize: 1
+  Item: {fileID: 11400000, guid: c05ae737758ce004b80875b065ebc009, type: 2}
 --- !u!60 &6875373921423303759
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -5,7 +5,12 @@ using UnityEngine;
 public class OnGroundItem : Interactable {
 	public ItemSO Item;
 
-	void OnMouseDown() {
+	protected override void Awake() {
+		base.Awake();
+		OnMouseClick += CollectItem;
+	}
+
+	void CollectItem() {
 		if (!CanInteract())
 			return;
 

@@ -9,15 +9,18 @@ public class ResourcesSource : Interactable {
 	public float DropTime;
 	public float DropDistance;
 	public int NeededClick;
+
 	int CurrentClick;
 
 	protected override void Awake() {
 		base.Awake();
 		CurrentClick = 0;
+
+		OnMouseClick += HitSource;
 	}
 
-	void OnMouseDown() {
-		if (!CanClick() || !CanInteract())
+	void HitSource() {
+		if (!CanHit() || !CanInteract())
 			return;
 
 		if (++CurrentClick == NeededClick){
@@ -31,7 +34,7 @@ public class ResourcesSource : Interactable {
 		}
 	}
 
-	bool CanClick() {
+	bool CanHit() {
 		//TODO: remove when hotbar will be ready
 		return true;
 		return GameManager.Instance.Player.Equipment.hands.Type == NeededHands;

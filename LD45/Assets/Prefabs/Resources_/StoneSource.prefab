@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5527324313547961996}
   - component: {fileID: 5527324313547961997}
   - component: {fileID: 5527324313547961999}
-  - component: {fileID: 5980712513978815210}
   - component: {fileID: 647670389}
   m_Layer: 0
   m_Name: StoneSource
@@ -96,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractDist: 2.8
+  outlineSize: 1
   NeededHands: 2
   ResourcePrefab: {fileID: 4847483186995451876, guid: d411e1216d4ed6747980c0f08569abc6,
     type: 3}
@@ -103,19 +103,6 @@ MonoBehaviour:
   DropTime: 0.2
   DropDistance: 0.3
   NeededClick: 4
---- !u!114 &5980712513978815210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527324313547961994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0fd0ca8fc346754f93fb6f329081efb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineSize: 1
 --- !u!60 &647670389
 PolygonCollider2D:
   m_ObjectHideFlags: 0
