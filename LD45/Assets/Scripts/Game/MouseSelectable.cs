@@ -11,6 +11,8 @@ public class MouseSelectable : MonoBehaviour {
 		if(outline == null) {
 			outline = gameObject.AddComponent<SpriteOutline>();
 			outline._outlineSize = outlineSize;
+			outline.color = Color.yellow;
+			outline.UpdateOutline(outline._outlineSize);
 		}
 		outline.enabled = true;
 	}

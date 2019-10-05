@@ -30,7 +30,7 @@ public class SpriteOutline : MonoBehaviour {
 		spriteRenderer.sharedMaterial = _preMat;
 	}
 
-	void UpdateOutline(float outline) {
+	public void UpdateOutline(float outline) {
 		MaterialPropertyBlock mpb = new MaterialPropertyBlock();
 		spriteRenderer.GetPropertyBlock(mpb);
 		mpb.SetFloat("_OutlineSize", outline);
