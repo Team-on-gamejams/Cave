@@ -8,6 +8,7 @@ public class ResourcesSource : Interactable {
 	public int ResourceCount;
 	public float DropTime;
 	public float DropDistance;
+	public Vector3 ResourceDropPointСorrection;
 	public int NeededClick;
 
 	int CurrentClick;
@@ -26,7 +27,7 @@ public class ResourcesSource : Interactable {
 		if (++CurrentClick == NeededClick){
 
 			while(ResourceCount-- != 0) {
-				GameObject res = Instantiate(ResourcePrefab, transform.position, Quaternion.identity);
+				GameObject res = Instantiate(ResourcePrefab, transform.position + ResourceDropPointСorrection, Quaternion.identity);
 				LeanTween.moveLocal(res, res.transform.position + new Vector3(Random.Range(-DropDistance, DropDistance), Random.Range(-DropDistance, DropDistance), 0), DropTime);
 			}
 
