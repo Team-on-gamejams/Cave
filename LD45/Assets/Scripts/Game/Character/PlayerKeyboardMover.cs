@@ -5,12 +5,10 @@ using UnityEngine;
 public class PlayerKeyboardMover : MonoBehaviour {
 	[SerializeField] Rigidbody2D rigidbody;
 	[SerializeField] Player player;
-	Camera mainCamera;
 	Vector3 moveToDirection;
 	Vector3 moveToPoint;
 
 	void Awake() {
-		mainCamera = Camera.main;
 		moveToPoint = Vector3.zero;
 	}
 
@@ -25,7 +23,7 @@ public class PlayerKeyboardMover : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButton(0)) {
-			moveToPoint = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+			moveToPoint = GameManager.Instance.MainCamera.ScreenToWorldPoint(Input.mousePosition);
 			moveToPoint.z = 0;
 			moveToDirection = moveToPoint - transform.position;
 		}

@@ -13,4 +13,13 @@ public class Player : Character {
 		GameManager.Instance.Player = this;
 		InteractDistSqr = InteractDist * InteractDist;
 	}
+
+	public bool CanInteract(Vector3 pos) {
+		return (transform.position - pos).sqrMagnitude < InteractDistSqr;
+	}
+
+	public bool CanInteract(Vector3 pos, float InteractDistSqr) {
+		Debug.Log((transform.position - pos).magnitude);
+		return (transform.position - pos).sqrMagnitude < InteractDistSqr;
+	}
 }

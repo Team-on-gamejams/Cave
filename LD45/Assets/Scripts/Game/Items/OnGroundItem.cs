@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnGroundItem : MonoBehaviour {
+public class OnGroundItem : Interactable {
 	public ItemSO Item;
 
 	void OnMouseDown() {
+		if (!CanInteract())
+			return;
+
 		//TODO: add fly animation
 		GameManager.Instance.Player.Inventory.AddItem(Item);
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourcesSource : MonoBehaviour {
+public class ResourcesSource : Interactable {
 	public ItemSO.ItemType NeededHands;
 	public GameObject ResourcePrefab;
 	public int ResourceCount;
@@ -11,12 +11,13 @@ public class ResourcesSource : MonoBehaviour {
 	public int NeededClick;
 	int CurrentClick;
 
-	private void Awake() {
+	protected override void Awake() {
+		base.Awake();
 		CurrentClick = 0;
 	}
 
 	void OnMouseDown() {
-		if (!CanClick())
+		if (!CanClick() || !CanInteract())
 			return;
 
 		if (++CurrentClick == NeededClick){
