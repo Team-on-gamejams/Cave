@@ -1,349 +1,349 @@
 fileFormatVersion: 2
-guid: 52d92020cac741248a2ba5193765dff5
+guid: 3a2d4d2bf661b564c8985c963cfa3787
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1364551247044949325
-    second: Dwarf2Sheet_0
+      213: -762160738365406912
+    second: dwarf_nahooi_0
   - first:
-      213: 6279530241415029725
-    second: Dwarf2Sheet_1
+      213: 1321249040258592555
+    second: dwarf_nahooi_1
   - first:
-      213: 1468227290688471825
-    second: Dwarf2Sheet_2
+      213: 2134305499258942767
+    second: dwarf_nahooi_2
   - first:
-      213: -2612311186345109293
-    second: Dwarf2Sheet_3
+      213: 217340834098142461
+    second: dwarf_nahooi_3
   - first:
-      213: -3002443587450992550
-    second: Dwarf2Sheet_4
+      213: -6345207024103338002
+    second: dwarf_nahooi_4
   - first:
-      213: 4565684653499532908
-    second: Dwarf2Sheet_5
+      213: -1417455520127920901
+    second: dwarf_nahooi_5
   - first:
-      213: -8393390244015011444
-    second: Dwarf2Sheet_6
+      213: 1769881831625589442
+    second: dwarf_nahooi_6
   - first:
-      213: -2990960374952307535
-    second: Dwarf2Sheet_7
+      213: 2377799595476615338
+    second: dwarf_nahooi_7
   - first:
-      213: 5052934153471947924
-    second: Dwarf2Sheet_8
+      213: -7634166479849971240
+    second: dwarf_nahooi_8
   - first:
-      213: 4098324150299966564
-    second: Dwarf2Sheet_9
+      213: -5901299831115145658
+    second: dwarf_nahooi_9
   - first:
-      213: -6458380823165116195
-    second: Dwarf2Sheet_10
+      213: -2359261258087234834
+    second: dwarf_nahooi_10
   - first:
-      213: -6967032364776016
-    second: Dwarf2Sheet_11
+      213: 5400710823206309140
+    second: dwarf_nahooi_11
   - first:
-      213: -5995789203079174510
-    second: Dwarf2Sheet_12
+      213: 8534499020615039596
+    second: dwarf_nahooi_12
   - first:
-      213: 7979303503451507274
-    second: Dwarf2Sheet_13
+      213: 1248049206022780501
+    second: dwarf_nahooi_13
   - first:
-      213: -5786145878024290284
-    second: Dwarf2Sheet_14
+      213: -1834666538073795937
+    second: dwarf_nahooi_14
   - first:
-      213: 3082288623658447423
-    second: Dwarf2Sheet_15
+      213: -8005120084936744543
+    second: dwarf_nahooi_15
   - first:
-      213: 6943687878136328181
-    second: Dwarf2Sheet_16
+      213: 6705641870968922573
+    second: dwarf_nahooi_16
   - first:
-      213: 7642263815853139940
-    second: Dwarf2Sheet_17
+      213: -2216442335813254328
+    second: dwarf_nahooi_17
   - first:
-      213: -8254734554936673781
-    second: Dwarf2Sheet_18
+      213: -7359740379420384733
+    second: dwarf_nahooi_18
   - first:
-      213: 5219372605598395816
-    second: Dwarf2Sheet_19
+      213: -3852138959391124061
+    second: dwarf_nahooi_19
   - first:
-      213: 4973996890296509717
-    second: Dwarf2Sheet_20
+      213: 8594739720497530567
+    second: dwarf_nahooi_20
   - first:
-      213: -8476644176051339750
-    second: Dwarf2Sheet_21
+      213: -2497358849105514000
+    second: dwarf_nahooi_21
   - first:
-      213: 8995853244080890776
-    second: Dwarf2Sheet_22
+      213: -7129479059373619141
+    second: dwarf_nahooi_22
   - first:
-      213: -4033572031736847354
-    second: Dwarf2Sheet_23
+      213: -7509131119042188987
+    second: dwarf_nahooi_23
   - first:
-      213: 122015209591055001
-    second: Dwarf2Sheet_24
+      213: 615026844448329088
+    second: dwarf_nahooi_24
   - first:
-      213: -3809748880399437229
-    second: Dwarf2Sheet_25
+      213: 624192165400481837
+    second: dwarf_nahooi_25
   - first:
-      213: 5327030642872517133
-    second: Dwarf2Sheet_26
+      213: 7228828391760041093
+    second: dwarf_nahooi_26
   - first:
-      213: -8672989770243213294
-    second: Dwarf2Sheet_27
+      213: -456525615851993057
+    second: dwarf_nahooi_27
   - first:
-      213: -8683708423561937050
-    second: Dwarf2Sheet_28
+      213: 1142732241051865322
+    second: dwarf_nahooi_28
   - first:
-      213: -7223513096294694386
-    second: Dwarf2Sheet_29
+      213: -4601651729234709864
+    second: dwarf_nahooi_29
   - first:
-      213: 2032453433687938249
-    second: Dwarf2Sheet_30
+      213: -7154625199485455764
+    second: dwarf_nahooi_30
   - first:
-      213: 3905008956718949240
-    second: Dwarf2Sheet_31
+      213: 5410771354416465770
+    second: dwarf_nahooi_31
   - first:
-      213: 1604777660976576485
-    second: Dwarf2Sheet_32
+      213: 3941482336236307127
+    second: dwarf_nahooi_32
   - first:
-      213: 1130638317705949398
-    second: Dwarf2Sheet_33
+      213: 5751889069071322087
+    second: dwarf_nahooi_33
   - first:
-      213: 2094308139163609693
-    second: Dwarf2Sheet_34
+      213: 6981175664645585771
+    second: dwarf_nahooi_34
   - first:
-      213: -4344707746575255257
-    second: Dwarf2Sheet_35
+      213: 4627022217215509996
+    second: dwarf_nahooi_35
   - first:
-      213: -8329708747669753222
-    second: Dwarf2Sheet_36
+      213: 1019524184276028341
+    second: dwarf_nahooi_36
   - first:
-      213: -5318418666440051393
-    second: Dwarf2Sheet_37
+      213: -3545492966979501981
+    second: dwarf_nahooi_37
   - first:
-      213: 3327346406291432306
-    second: Dwarf2Sheet_38
+      213: 479475306265593992
+    second: dwarf_nahooi_38
   - first:
-      213: 580714351805653441
-    second: Dwarf2Sheet_39
+      213: 1890458435487525706
+    second: dwarf_nahooi_39
   - first:
-      213: 355234999453443177
-    second: Dwarf2Sheet_40
+      213: 7526162997413585628
+    second: dwarf_nahooi_40
   - first:
-      213: 7087450496785133212
-    second: Dwarf2Sheet_41
+      213: 7829852384996597421
+    second: dwarf_nahooi_41
   - first:
-      213: 1030226499858574235
-    second: Dwarf2Sheet_42
+      213: 5110185381082598984
+    second: dwarf_nahooi_42
   - first:
-      213: 2864185478205392603
-    second: Dwarf2Sheet_43
+      213: 758778972302641070
+    second: dwarf_nahooi_43
   - first:
-      213: -1322926175631185611
-    second: Dwarf2Sheet_44
+      213: 8855115448567905351
+    second: dwarf_nahooi_44
   - first:
-      213: 1923135927955169527
-    second: Dwarf2Sheet_45
+      213: 5530862041588154984
+    second: dwarf_nahooi_45
   - first:
-      213: 5531045639861142840
-    second: Dwarf2Sheet_46
+      213: 5509151011898797735
+    second: dwarf_nahooi_46
   - first:
-      213: 4110216666504134166
-    second: Dwarf2Sheet_47
+      213: -4309123313263518458
+    second: dwarf_nahooi_47
   - first:
-      213: 6238930750549554261
-    second: Dwarf2Sheet_48
+      213: 2922621196793584722
+    second: dwarf_nahooi_48
   - first:
-      213: -5646104226776491665
-    second: Dwarf2Sheet_49
+      213: -1510870614855622843
+    second: dwarf_nahooi_49
   - first:
-      213: 4229035655961392945
-    second: Dwarf2Sheet_50
+      213: -2127481782756544830
+    second: dwarf_nahooi_50
   - first:
-      213: 9202209552962346700
-    second: Dwarf2Sheet_51
+      213: -8969382586632468037
+    second: dwarf_nahooi_51
   - first:
-      213: -5734301202834904766
-    second: Dwarf2Sheet_52
+      213: 280940288038064336
+    second: dwarf_nahooi_52
   - first:
-      213: 6506684622424348223
-    second: Dwarf2Sheet_53
+      213: 7436683847678976074
+    second: dwarf_nahooi_53
   - first:
-      213: 6497914171314243328
-    second: Dwarf2Sheet_54
+      213: -4635574154897589495
+    second: dwarf_nahooi_54
   - first:
-      213: -2769686495906140264
-    second: Dwarf2Sheet_55
+      213: 5364525728201054749
+    second: dwarf_nahooi_55
   - first:
-      213: -5734288813985099816
-    second: Dwarf2Sheet_56
+      213: -3884532516007179341
+    second: dwarf_nahooi_56
   - first:
-      213: -847612858118463387
-    second: Dwarf2Sheet_57
+      213: 21607530777940116
+    second: dwarf_nahooi_57
   - first:
-      213: 6118040726576489863
-    second: Dwarf2Sheet_58
+      213: 3683359452566364076
+    second: dwarf_nahooi_58
   - first:
-      213: -8567762369439736277
-    second: Dwarf2Sheet_59
+      213: 7606334493609279310
+    second: dwarf_nahooi_59
   - first:
-      213: -4513943156854963883
-    second: Dwarf2Sheet_60
+      213: -5834590873282756991
+    second: dwarf_nahooi_60
   - first:
-      213: 2390715138720568519
-    second: Dwarf2Sheet_61
+      213: 633697681895057660
+    second: dwarf_nahooi_61
   - first:
-      213: 2210295727983249415
-    second: Dwarf2Sheet_62
+      213: -282899064666159504
+    second: dwarf_nahooi_62
   - first:
-      213: 7172077206316906690
-    second: Dwarf2Sheet_63
+      213: -6897115269843444496
+    second: dwarf_nahooi_63
   - first:
-      213: -7585341475048713315
-    second: Dwarf2Sheet_64
+      213: -1761795434917532984
+    second: dwarf_nahooi_64
   - first:
-      213: -1726897123285429270
-    second: Dwarf2Sheet_65
+      213: 8415798308159539223
+    second: dwarf_nahooi_65
   - first:
-      213: 2225495864771939838
-    second: Dwarf2Sheet_66
+      213: -8320729889063575830
+    second: dwarf_nahooi_66
   - first:
-      213: -2203157759232103948
-    second: Dwarf2Sheet_67
+      213: 7954360571069693803
+    second: dwarf_nahooi_67
   - first:
-      213: 2000019693461302366
-    second: Dwarf2Sheet_68
+      213: -8609939993537210855
+    second: dwarf_nahooi_68
   - first:
-      213: -197647633918650393
-    second: Dwarf2Sheet_69
+      213: 7715133006260691282
+    second: dwarf_nahooi_69
   - first:
-      213: -6787142449338275735
-    second: Dwarf2Sheet_70
+      213: 8083399123086665166
+    second: dwarf_nahooi_70
   - first:
-      213: -163023591019111525
-    second: Dwarf2Sheet_71
+      213: -7758087267164244685
+    second: dwarf_nahooi_71
   - first:
-      213: -3476431889558393945
-    second: Dwarf2Sheet_72
+      213: -3696100890500424143
+    second: dwarf_nahooi_72
   - first:
-      213: 8540054825705286598
-    second: Dwarf2Sheet_73
+      213: -8559566230713767476
+    second: dwarf_nahooi_73
   - first:
-      213: -2327721655165338156
-    second: Dwarf2Sheet_74
+      213: 5264836326131139523
+    second: dwarf_nahooi_74
   - first:
-      213: 8915979949621102878
-    second: Dwarf2Sheet_75
+      213: 7184652382897573188
+    second: dwarf_nahooi_75
   - first:
-      213: -1854917657688643447
-    second: Dwarf2Sheet_76
+      213: -7227395751111903177
+    second: dwarf_nahooi_76
   - first:
-      213: 6996697656192507061
-    second: Dwarf2Sheet_77
+      213: -1954922658259745730
+    second: dwarf_nahooi_77
   - first:
-      213: -9106815937608704126
-    second: Dwarf2Sheet_78
+      213: -4711831521737732120
+    second: dwarf_nahooi_78
   - first:
-      213: 6232868455358965802
-    second: Dwarf2Sheet_79
+      213: -5728330468999173047
+    second: dwarf_nahooi_79
   - first:
-      213: 6946553796744336161
-    second: Dwarf2Sheet_80
+      213: -277784681555660144
+    second: dwarf_nahooi_80
   - first:
-      213: 6237195816072155805
-    second: Dwarf2Sheet_81
+      213: 2552065319943367183
+    second: dwarf_nahooi_81
   - first:
-      213: 6996315273441020112
-    second: Dwarf2Sheet_82
+      213: 6520523057534017644
+    second: dwarf_nahooi_82
   - first:
-      213: 8385559178580932035
-    second: Dwarf2Sheet_83
+      213: -3715126697223741481
+    second: dwarf_nahooi_83
   - first:
-      213: -95541481159661759
-    second: Dwarf2Sheet_84
+      213: 4572419689160482518
+    second: dwarf_nahooi_84
   - first:
-      213: -7127415768411444893
-    second: Dwarf2Sheet_85
+      213: 8739871734786190801
+    second: dwarf_nahooi_85
   - first:
-      213: 4286829876307254582
-    second: Dwarf2Sheet_86
+      213: -6161506773869305185
+    second: dwarf_nahooi_86
   - first:
-      213: -1997369994662530695
-    second: Dwarf2Sheet_87
+      213: 5637934143786136768
+    second: dwarf_nahooi_87
   - first:
-      213: 6372221789513023604
-    second: Dwarf2Sheet_88
+      213: -5102133683077670229
+    second: dwarf_nahooi_88
   - first:
-      213: 71020984375045065
-    second: Dwarf2Sheet_89
+      213: -7373190649371669058
+    second: dwarf_nahooi_89
   - first:
-      213: -7035399411687449883
-    second: Dwarf2Sheet_90
+      213: -4232370082291517454
+    second: dwarf_nahooi_90
   - first:
-      213: -6178535744795168346
-    second: Dwarf2Sheet_91
+      213: -8866435367201920516
+    second: dwarf_nahooi_91
   - first:
-      213: 8848242003253123822
-    second: Dwarf2Sheet_92
+      213: 2848012974800160449
+    second: dwarf_nahooi_92
   - first:
-      213: -5643216670622189314
-    second: Dwarf2Sheet_93
+      213: 3287720787946895575
+    second: dwarf_nahooi_93
   - first:
-      213: 2669236181329200583
-    second: Dwarf2Sheet_94
+      213: -4023101489844718389
+    second: dwarf_nahooi_94
   - first:
-      213: 5068380607490833456
-    second: Dwarf2Sheet_95
+      213: 468231085164251363
+    second: dwarf_nahooi_95
   - first:
-      213: 6771481327175657764
-    second: Dwarf2Sheet_96
+      213: -3750380145857752480
+    second: dwarf_nahooi_96
   - first:
-      213: -3131328394345597824
-    second: Dwarf2Sheet_97
+      213: -1397826066724797025
+    second: dwarf_nahooi_97
   - first:
-      213: -8344171407307111115
-    second: Dwarf2Sheet_98
+      213: 5319642606022180585
+    second: dwarf_nahooi_98
   - first:
-      213: 3467917887141307086
-    second: Dwarf2Sheet_99
+      213: -3599498183814632128
+    second: dwarf_nahooi_99
   - first:
-      213: 1668725485259996465
-    second: Dwarf2Sheet_100
+      213: -3430855959026307350
+    second: dwarf_nahooi_100
   - first:
-      213: 8432409037796583398
-    second: Dwarf2Sheet_101
+      213: 3847382791563512306
+    second: dwarf_nahooi_101
   - first:
-      213: 816361322407239789
-    second: Dwarf2Sheet_102
+      213: -5047638692972568850
+    second: dwarf_nahooi_102
   - first:
-      213: 8320697955334804426
-    second: Dwarf2Sheet_103
+      213: 4162066581923195811
+    second: dwarf_nahooi_103
   - first:
-      213: -1778965536959601293
-    second: Dwarf2Sheet_104
+      213: -2092510414305865629
+    second: dwarf_nahooi_104
   - first:
-      213: -3866748256218456639
-    second: Dwarf2Sheet_105
+      213: 138885553241888531
+    second: dwarf_nahooi_105
   - first:
-      213: 6245469158816780728
-    second: Dwarf2Sheet_106
+      213: 5685108564885189875
+    second: dwarf_nahooi_106
   - first:
-      213: -7441982434166770115
-    second: Dwarf2Sheet_107
+      213: -8935549071745372726
+    second: dwarf_nahooi_107
   - first:
-      213: -2540446250638762954
-    second: Dwarf2Sheet_108
+      213: 396207288943698058
+    second: dwarf_nahooi_108
   - first:
-      213: 8730634577210920495
-    second: Dwarf2Sheet_109
+      213: 4217164940254649171
+    second: dwarf_nahooi_109
   - first:
-      213: -4243045264615643386
-    second: Dwarf2Sheet_110
+      213: -3479999327958604213
+    second: dwarf_nahooi_110
   - first:
-      213: 668974206794826665
-    second: Dwarf2Sheet_111
+      213: 2679046944472477734
+    second: dwarf_nahooi_111
   - first:
-      213: -1627928471989805799
-    second: Dwarf2Sheet_112
+      213: 3404229775666341942
+    second: dwarf_nahooi_112
   - first:
-      213: -4013281879947988272
-    second: Dwarf2Sheet_113
+      213: 6621050644406479803
+    second: dwarf_nahooi_113
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -373,7 +373,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -452,7 +452,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dwarf2Sheet_0
+      name: dwarf_nahooi_0
       rect:
         serializedVersion: 2
         x: 0
@@ -466,14 +466,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dc0352b3e1d1b14a9191557af1bc80e
-      internalID: 1364551247044949325
+      spriteID: a4032dacd489e7946a8c86aab19eb2b0
+      internalID: -762160738365406912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_1
+      name: dwarf_nahooi_1
       rect:
         serializedVersion: 2
         x: 38
@@ -487,14 +487,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acc99d20f6f15db4e98ebffb743fbba0
-      internalID: 6279530241415029725
+      spriteID: 474d28c075a11ec4aba6bed8eac2246d
+      internalID: 1321249040258592555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_2
+      name: dwarf_nahooi_2
       rect:
         serializedVersion: 2
         x: 76
@@ -508,14 +508,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e896f958e5f0ed64d985df68648c6750
-      internalID: 1468227290688471825
+      spriteID: 3af6f4d79c8cf1e4a8877e04394f467c
+      internalID: 2134305499258942767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_3
+      name: dwarf_nahooi_3
       rect:
         serializedVersion: 2
         x: 114
@@ -529,14 +529,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75a4a45d57e0f884288b95845f2929ef
-      internalID: -2612311186345109293
+      spriteID: 5ea0fde4f032a4049a0800ef2d552405
+      internalID: 217340834098142461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_4
+      name: dwarf_nahooi_4
       rect:
         serializedVersion: 2
         x: 152
@@ -550,14 +550,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6af68631afd8b934f9c164b862c81e54
-      internalID: -3002443587450992550
+      spriteID: 8dc1e435095246f41955628a324d1b57
+      internalID: -6345207024103338002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_5
+      name: dwarf_nahooi_5
       rect:
         serializedVersion: 2
         x: 0
@@ -571,14 +571,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a5dd9be813f72945bf173b6eedd2766
-      internalID: 4565684653499532908
+      spriteID: 8676a3680cab15f4d8de44dece83e3a0
+      internalID: -1417455520127920901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_6
+      name: dwarf_nahooi_6
       rect:
         serializedVersion: 2
         x: 38
@@ -592,14 +592,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5972964c2db20c64d8bbbddfe0429fd9
-      internalID: -8393390244015011444
+      spriteID: 9b7f244799a79e941bdd2d808582aeb4
+      internalID: 1769881831625589442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_7
+      name: dwarf_nahooi_7
       rect:
         serializedVersion: 2
         x: 76
@@ -613,14 +613,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74637700a1dc70346a41d081f79966ac
-      internalID: -2990960374952307535
+      spriteID: 4223d3913462ecd4bb1993f4176da1fe
+      internalID: 2377799595476615338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_8
+      name: dwarf_nahooi_8
       rect:
         serializedVersion: 2
         x: 114
@@ -634,14 +634,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951979f2b8ea732488b9206e55bee215
-      internalID: 5052934153471947924
+      spriteID: 03601755c247b1c45adee55e34f0b9d8
+      internalID: -7634166479849971240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_9
+      name: dwarf_nahooi_9
       rect:
         serializedVersion: 2
         x: 152
@@ -655,14 +655,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 933e08a027bf8d04e915bf51370d3a0c
-      internalID: 4098324150299966564
+      spriteID: 44ac9f97dc982114e995eea5451a6e0d
+      internalID: -5901299831115145658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_10
+      name: dwarf_nahooi_10
       rect:
         serializedVersion: 2
         x: 190
@@ -676,14 +676,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73b1a68f10b602c46981e762a4c705c3
-      internalID: -6458380823165116195
+      spriteID: a45700013f0a9774086cd7ceaa9290c2
+      internalID: -2359261258087234834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_11
+      name: dwarf_nahooi_11
       rect:
         serializedVersion: 2
         x: 228
@@ -697,14 +697,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10d8e9c6c3f35ae468315df798c7cd26
-      internalID: -6967032364776016
+      spriteID: a2d912b84c3f1a742bd0e3a9743cd5d4
+      internalID: 5400710823206309140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_12
+      name: dwarf_nahooi_12
       rect:
         serializedVersion: 2
         x: 266
@@ -718,14 +718,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b665efe39b8f5744986e6a2a138ad36
-      internalID: -5995789203079174510
+      spriteID: abc7fd01876296640b1fc4e21f383454
+      internalID: 8534499020615039596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_13
+      name: dwarf_nahooi_13
       rect:
         serializedVersion: 2
         x: 304
@@ -739,14 +739,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbb9232ae75010c41b58fdd399c444a3
-      internalID: 7979303503451507274
+      spriteID: fc4e8dd44ad81ba43ae91969802028b6
+      internalID: 1248049206022780501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_14
+      name: dwarf_nahooi_14
       rect:
         serializedVersion: 2
         x: 342
@@ -760,14 +760,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 491286b921f9655438d6546023b7724d
-      internalID: -5786145878024290284
+      spriteID: 7020087d4e49a2148ba5e85f9c429d40
+      internalID: -1834666538073795937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_15
+      name: dwarf_nahooi_15
       rect:
         serializedVersion: 2
         x: 0
@@ -781,14 +781,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdc8ff2d86c7b9046ab318a811c3c9f7
-      internalID: 3082288623658447423
+      spriteID: 16b369aef39b47744ab966d706893244
+      internalID: -8005120084936744543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_16
+      name: dwarf_nahooi_16
       rect:
         serializedVersion: 2
         x: 38
@@ -802,14 +802,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 471aedfa606771e44a6653cbef78c7d4
-      internalID: 6943687878136328181
+      spriteID: 5df65f2d4c7a30943be629b0b69a6dba
+      internalID: 6705641870968922573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_17
+      name: dwarf_nahooi_17
       rect:
         serializedVersion: 2
         x: 76
@@ -823,14 +823,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6278cf76c1c045a469e1359ad7e44c06
-      internalID: 7642263815853139940
+      spriteID: edb7ad7b9ebd0a142a3d787867e88c2e
+      internalID: -2216442335813254328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_18
+      name: dwarf_nahooi_18
       rect:
         serializedVersion: 2
         x: 114
@@ -844,14 +844,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48857fcbab1bfe44da27988ab7721404
-      internalID: -8254734554936673781
+      spriteID: 34b83afb1abc3f140b9d9f1ec8836d11
+      internalID: -7359740379420384733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_19
+      name: dwarf_nahooi_19
       rect:
         serializedVersion: 2
         x: 152
@@ -865,14 +865,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72f6414bbe67a96469d8b09d5c0fbd5b
-      internalID: 5219372605598395816
+      spriteID: 4af27017e6b06ac4a8060ee9900ff13a
+      internalID: -3852138959391124061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_20
+      name: dwarf_nahooi_20
       rect:
         serializedVersion: 2
         x: 190
@@ -886,14 +886,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e8b9594fe713ca48b551124688e551a
-      internalID: 4973996890296509717
+      spriteID: 939d84dfcc9d270468be88e29b130c81
+      internalID: 8594739720497530567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_21
+      name: dwarf_nahooi_21
       rect:
         serializedVersion: 2
         x: 228
@@ -907,14 +907,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17e84c7e974e67d47911d62ce011f009
-      internalID: -8476644176051339750
+      spriteID: 2197825bfd171bd4296829b3f6c99eb6
+      internalID: -2497358849105514000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_22
+      name: dwarf_nahooi_22
       rect:
         serializedVersion: 2
         x: 266
@@ -928,14 +928,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6078ab4aab60a2945b8f3226b10e4b83
-      internalID: 8995853244080890776
+      spriteID: c07d299fa325bf146bd8ed3279e00e91
+      internalID: -7129479059373619141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_23
+      name: dwarf_nahooi_23
       rect:
         serializedVersion: 2
         x: 304
@@ -949,14 +949,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc5653c1663898f4b93f1b761cc9e77c
-      internalID: -4033572031736847354
+      spriteID: 56c7cb75c543d024f8d102c6e44294a6
+      internalID: -7509131119042188987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_24
+      name: dwarf_nahooi_24
       rect:
         serializedVersion: 2
         x: 342
@@ -970,14 +970,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cc9605eb5b835443bfec96cdc2c0148
-      internalID: 122015209591055001
+      spriteID: 7709695203bf62444a41e255587fa30e
+      internalID: 615026844448329088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_25
+      name: dwarf_nahooi_25
       rect:
         serializedVersion: 2
         x: 380
@@ -991,14 +991,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb487259cd347c94a9417eb464ec97d6
-      internalID: -3809748880399437229
+      spriteID: f7521c06783520b41ae9077bd19efd6c
+      internalID: 624192165400481837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_26
+      name: dwarf_nahooi_26
       rect:
         serializedVersion: 2
         x: 418
@@ -1012,14 +1012,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cbbdc9d1cf42de4c91ba81a756879b7
-      internalID: 5327030642872517133
+      spriteID: b801d79fe94ea06439c990f7710f9646
+      internalID: 7228828391760041093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_27
+      name: dwarf_nahooi_27
       rect:
         serializedVersion: 2
         x: 456
@@ -1033,14 +1033,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa164de794845264c974982351539677
-      internalID: -8672989770243213294
+      spriteID: 5c8c5683117552647a5902837b8c675d
+      internalID: -456525615851993057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_28
+      name: dwarf_nahooi_28
       rect:
         serializedVersion: 2
         x: 494
@@ -1054,14 +1054,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de8d732929a233b47970f87430d83bdb
-      internalID: -8683708423561937050
+      spriteID: 6df40642ad7884247b8e1bf36cba7ee5
+      internalID: 1142732241051865322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_29
+      name: dwarf_nahooi_29
       rect:
         serializedVersion: 2
         x: 0
@@ -1075,14 +1075,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fdc25c80bbfdea449bac1228acedeb2
-      internalID: -7223513096294694386
+      spriteID: 4f0140892f7f64d41a1f04a5ba6e869d
+      internalID: -4601651729234709864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_30
+      name: dwarf_nahooi_30
       rect:
         serializedVersion: 2
         x: 38
@@ -1096,14 +1096,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88d28fe7bdf0e504180d69542d4ab8c9
-      internalID: 2032453433687938249
+      spriteID: 8a27c3ea3bff75e4984fe29e20d21314
+      internalID: -7154625199485455764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_31
+      name: dwarf_nahooi_31
       rect:
         serializedVersion: 2
         x: 76
@@ -1117,14 +1117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d6a394ef9d34b44b8b6bb2bded4c2f6
-      internalID: 3905008956718949240
+      spriteID: 354663d03c3425f47968ffc73f556f81
+      internalID: 5410771354416465770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_32
+      name: dwarf_nahooi_32
       rect:
         serializedVersion: 2
         x: 114
@@ -1138,14 +1138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b9fea2b0b04b1345b53c572014e4361
-      internalID: 1604777660976576485
+      spriteID: 61a22a48ccc7c174e9c04e38d6312c79
+      internalID: 3941482336236307127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_33
+      name: dwarf_nahooi_33
       rect:
         serializedVersion: 2
         x: 152
@@ -1159,14 +1159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf8f65adf220c1445ba6fbd149b2777a
-      internalID: 1130638317705949398
+      spriteID: b4f09fe5ac8254f46b02419d8807cfd6
+      internalID: 5751889069071322087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_34
+      name: dwarf_nahooi_34
       rect:
         serializedVersion: 2
         x: 190
@@ -1180,14 +1180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80a18701f6782eb45830c279602712bb
-      internalID: 2094308139163609693
+      spriteID: 96ee9e97e3133314baa1327a34eb64eb
+      internalID: 6981175664645585771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_35
+      name: dwarf_nahooi_35
       rect:
         serializedVersion: 2
         x: 0
@@ -1201,14 +1201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 056aff65d14c7da44bc2285ff9023dfc
-      internalID: -4344707746575255257
+      spriteID: a39f7b045d25e5d4881be44da05635a8
+      internalID: 4627022217215509996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_36
+      name: dwarf_nahooi_36
       rect:
         serializedVersion: 2
         x: 38
@@ -1222,14 +1222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63c4fb247e6a4994a8f6f6af80d432a7
-      internalID: -8329708747669753222
+      spriteID: 6efb43e8d04e4d7408821a7fb158fcff
+      internalID: 1019524184276028341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_37
+      name: dwarf_nahooi_37
       rect:
         serializedVersion: 2
         x: 0
@@ -1243,14 +1243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aed0b6836dd6b61428d7aa28f4674942
-      internalID: -5318418666440051393
+      spriteID: 732bd7ae92d795d4b88540cac1a84ff0
+      internalID: -3545492966979501981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_38
+      name: dwarf_nahooi_38
       rect:
         serializedVersion: 2
         x: 38
@@ -1264,14 +1264,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d65c31b5aa2b03428c4b2452b2fbdcd
-      internalID: 3327346406291432306
+      spriteID: 01d64033d1e5bec479b51f656a27df56
+      internalID: 479475306265593992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_39
+      name: dwarf_nahooi_39
       rect:
         serializedVersion: 2
         x: 76
@@ -1285,14 +1285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79a8e9de26e9e54884c33e8311fd649
-      internalID: 580714351805653441
+      spriteID: ffa78bbe645e01849867b5e72f5c7cc0
+      internalID: 1890458435487525706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_40
+      name: dwarf_nahooi_40
       rect:
         serializedVersion: 2
         x: 114
@@ -1306,14 +1306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01a5c105e4edcaf42bab6e09dcd9f085
-      internalID: 355234999453443177
+      spriteID: 12399137095f8eb4fa34c8e19560e797
+      internalID: 7526162997413585628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_41
+      name: dwarf_nahooi_41
       rect:
         serializedVersion: 2
         x: 152
@@ -1327,14 +1327,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 313052855fc3a4740a4419410afecfa2
-      internalID: 7087450496785133212
+      spriteID: bf81ab7531cdc08489ff4fd16cfee3f1
+      internalID: 7829852384996597421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_42
+      name: dwarf_nahooi_42
       rect:
         serializedVersion: 2
         x: 0
@@ -1348,14 +1348,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7eec9128ae0f9f46ac268ef34badeff
-      internalID: 1030226499858574235
+      spriteID: 10721b5e8805a36498e82896a3d0b86d
+      internalID: 5110185381082598984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_43
+      name: dwarf_nahooi_43
       rect:
         serializedVersion: 2
         x: 38
@@ -1369,14 +1369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40aa5c9ff56862d41b84dc8f068f68c3
-      internalID: 2864185478205392603
+      spriteID: 7f3931a0ac8e9ff46b27b5d7dda92e2c
+      internalID: 758778972302641070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_44
+      name: dwarf_nahooi_44
       rect:
         serializedVersion: 2
         x: 76
@@ -1390,14 +1390,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b09e58a8dea94b4bbc87d23e3ee07c1
-      internalID: -1322926175631185611
+      spriteID: 1163593369ae3c44690726c70108309c
+      internalID: 8855115448567905351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_45
+      name: dwarf_nahooi_45
       rect:
         serializedVersion: 2
         x: 114
@@ -1411,14 +1411,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24620e9e4e5371e48bdae61d2a7a1b06
-      internalID: 1923135927955169527
+      spriteID: ce9a3c76564b93047bca44447e3475cc
+      internalID: 5530862041588154984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_46
+      name: dwarf_nahooi_46
       rect:
         serializedVersion: 2
         x: 0
@@ -1432,14 +1432,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d5e0187ac2769141a573cf1d6f944e0
-      internalID: 5531045639861142840
+      spriteID: a552ec6a8bb2d1840a0012506af557d3
+      internalID: 5509151011898797735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_47
+      name: dwarf_nahooi_47
       rect:
         serializedVersion: 2
         x: 38
@@ -1453,14 +1453,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b2f907b7b7220849add83045b8f75dd
-      internalID: 4110216666504134166
+      spriteID: dac4d23b3a7ceb54283c6f0869fbf89a
+      internalID: -4309123313263518458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_48
+      name: dwarf_nahooi_48
       rect:
         serializedVersion: 2
         x: 76
@@ -1474,14 +1474,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87115d882cef38040984131594ed908e
-      internalID: 6238930750549554261
+      spriteID: 5b54aa7cd77511d45bcd5aed4e7f18e9
+      internalID: 2922621196793584722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_49
+      name: dwarf_nahooi_49
       rect:
         serializedVersion: 2
         x: 114
@@ -1495,14 +1495,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9ba30e5346e61c44ab0cc1049fc3fd5
-      internalID: -5646104226776491665
+      spriteID: 24ecd0d6678dbdc4dbbefb673d1d653c
+      internalID: -1510870614855622843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_50
+      name: dwarf_nahooi_50
       rect:
         serializedVersion: 2
         x: 152
@@ -1516,14 +1516,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56ca8a5f98db8fe40ade8eb3ac232e31
-      internalID: 4229035655961392945
+      spriteID: 3d631dc320d1ea64499f4e13a4624edb
+      internalID: -2127481782756544830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_51
+      name: dwarf_nahooi_51
       rect:
         serializedVersion: 2
         x: 190
@@ -1537,14 +1537,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f728190d93dd4514193ff5e79a66446d
-      internalID: 9202209552962346700
+      spriteID: 395e738ef16971f4caa8fbcc5f635b10
+      internalID: -8969382586632468037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_52
+      name: dwarf_nahooi_52
       rect:
         serializedVersion: 2
         x: 228
@@ -1558,14 +1558,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed86a97d3acfe3142a928bae86516c23
-      internalID: -5734301202834904766
+      spriteID: 24b6d503d93545245a75081b596bb0ff
+      internalID: 280940288038064336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_53
+      name: dwarf_nahooi_53
       rect:
         serializedVersion: 2
         x: 114
@@ -1579,14 +1579,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29f5bc449e322f14791f43cba623f97b
-      internalID: 6506684622424348223
+      spriteID: 7b3964338cb4b6a42af17143fe51af1a
+      internalID: 7436683847678976074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_54
+      name: dwarf_nahooi_54
       rect:
         serializedVersion: 2
         x: 152
@@ -1600,14 +1600,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bd6d0fa4a27ba743abd2f6f1137b725
-      internalID: 6497914171314243328
+      spriteID: 726d626ffe69d0f4ab3656ddf3721d96
+      internalID: -4635574154897589495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_55
+      name: dwarf_nahooi_55
       rect:
         serializedVersion: 2
         x: 190
@@ -1621,14 +1621,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59f449e8bb3651c40a9c7aa116d5acdb
-      internalID: -2769686495906140264
+      spriteID: 51aba8487e2d040459fcd06523de9ded
+      internalID: 5364525728201054749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_56
+      name: dwarf_nahooi_56
       rect:
         serializedVersion: 2
         x: 228
@@ -1642,14 +1642,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84fed4cc2fbbf77428bc7b83b1abca7e
-      internalID: -5734288813985099816
+      spriteID: 5cb8e1dc6e6dce74580fc19d78c525a5
+      internalID: -3884532516007179341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_57
+      name: dwarf_nahooi_57
       rect:
         serializedVersion: 2
         x: 266
@@ -1663,14 +1663,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f2ecaf31e1ecef4aafc896fb291c0af
-      internalID: -847612858118463387
+      spriteID: c071275132293ac4c9d136bad7f76e63
+      internalID: 21607530777940116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_58
+      name: dwarf_nahooi_58
       rect:
         serializedVersion: 2
         x: 304
@@ -1684,14 +1684,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf0b5594d215fdd478e680309f3a8923
-      internalID: 6118040726576489863
+      spriteID: cdaefc89b6eb0d94fa311b650eee5e60
+      internalID: 3683359452566364076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_59
+      name: dwarf_nahooi_59
       rect:
         serializedVersion: 2
         x: 0
@@ -1705,14 +1705,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd244bc042d0b634891d0b6f26a30c41
-      internalID: -8567762369439736277
+      spriteID: 352be3d7713abd5459bada709ff33067
+      internalID: 7606334493609279310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_60
+      name: dwarf_nahooi_60
       rect:
         serializedVersion: 2
         x: 38
@@ -1726,14 +1726,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5233f7327cc628e4c8f62aa5945461a1
-      internalID: -4513943156854963883
+      spriteID: 0ea7736edab00a64fbd4fbdaf9aba1cc
+      internalID: -5834590873282756991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_61
+      name: dwarf_nahooi_61
       rect:
         serializedVersion: 2
         x: 76
@@ -1747,14 +1747,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8b9cb752192ea74f992d4c544a0bb67
-      internalID: 2390715138720568519
+      spriteID: f74ec8cf26fcb5240bfd778fe813be80
+      internalID: 633697681895057660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_62
+      name: dwarf_nahooi_62
       rect:
         serializedVersion: 2
         x: 114
@@ -1768,14 +1768,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d7d88e05dae04f42b90417e4582e18e
-      internalID: 2210295727983249415
+      spriteID: 834b0b2a735011f4ba9b8738193d58d7
+      internalID: -282899064666159504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_63
+      name: dwarf_nahooi_63
       rect:
         serializedVersion: 2
         x: 152
@@ -1789,14 +1789,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 846efe7b70a6cc84885244f9d8f417d0
-      internalID: 7172077206316906690
+      spriteID: 493d5ab1cd72fac4483ac7384fc3d11d
+      internalID: -6897115269843444496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_64
+      name: dwarf_nahooi_64
       rect:
         serializedVersion: 2
         x: 190
@@ -1810,14 +1810,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da1537fa6be4ecd45ae7c088a46816f2
-      internalID: -7585341475048713315
+      spriteID: 46f52b7f28c840b4ebd3f48d07d1f319
+      internalID: -1761795434917532984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_65
+      name: dwarf_nahooi_65
       rect:
         serializedVersion: 2
         x: 228
@@ -1831,14 +1831,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c72881c4d7db0d242b7da990e5b3da58
-      internalID: -1726897123285429270
+      spriteID: 359be800fc8266e45b11d5540ce27002
+      internalID: 8415798308159539223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_66
+      name: dwarf_nahooi_66
       rect:
         serializedVersion: 2
         x: 266
@@ -1852,14 +1852,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8122657d0bf0d714ab591383d594885c
-      internalID: 2225495864771939838
+      spriteID: dd6add89ecbd07a4a89d0c83aae9b351
+      internalID: -8320729889063575830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_67
+      name: dwarf_nahooi_67
       rect:
         serializedVersion: 2
         x: 304
@@ -1873,14 +1873,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f401d261261a30642b00de0596c980e8
-      internalID: -2203157759232103948
+      spriteID: fbc2d66b45b7127429c04e39607e4ab1
+      internalID: 7954360571069693803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_68
+      name: dwarf_nahooi_68
       rect:
         serializedVersion: 2
         x: 418
@@ -1894,14 +1894,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0b9480f873345c418cfd8125f6f3ed9
-      internalID: 2000019693461302366
+      spriteID: 273ba7164149530468e3569535a6511f
+      internalID: -8609939993537210855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_69
+      name: dwarf_nahooi_69
       rect:
         serializedVersion: 2
         x: 456
@@ -1915,14 +1915,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee3a90aa179d5104f9fc2f3a91321742
-      internalID: -197647633918650393
+      spriteID: 2e87b5c13851fe442b360450f03be15d
+      internalID: 7715133006260691282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_70
+      name: dwarf_nahooi_70
       rect:
         serializedVersion: 2
         x: 0
@@ -1936,14 +1936,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe99c31435bed894182f34d6bfa7b516
-      internalID: -6787142449338275735
+      spriteID: cc4e01342b201ac42b826e7dcfbe1f19
+      internalID: 8083399123086665166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_71
+      name: dwarf_nahooi_71
       rect:
         serializedVersion: 2
         x: 38
@@ -1957,14 +1957,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dedbdc795731534469b466f59efa15d4
-      internalID: -163023591019111525
+      spriteID: e6ee54f4621938c4d9f07da247e1a7e3
+      internalID: -7758087267164244685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_72
+      name: dwarf_nahooi_72
       rect:
         serializedVersion: 2
         x: 76
@@ -1978,14 +1978,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7f880a1be95e0f4687272ae9bd52539
-      internalID: -3476431889558393945
+      spriteID: f84e964ecf2009f4299469596dd5234e
+      internalID: -3696100890500424143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_73
+      name: dwarf_nahooi_73
       rect:
         serializedVersion: 2
         x: 114
@@ -1999,14 +1999,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abceb1473fd03fd4aabdbd3ced0101bc
-      internalID: 8540054825705286598
+      spriteID: 25ef6bded39eb104e9bcc8f811be470c
+      internalID: -8559566230713767476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_74
+      name: dwarf_nahooi_74
       rect:
         serializedVersion: 2
         x: 152
@@ -2020,14 +2020,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e471c40286540784e983f3ce37682e0f
-      internalID: -2327721655165338156
+      spriteID: f5ba3b821d3f7dd4aa90ca344f5c76a8
+      internalID: 5264836326131139523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_75
+      name: dwarf_nahooi_75
       rect:
         serializedVersion: 2
         x: 190
@@ -2041,14 +2041,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ef08e526a520e84f92193672a0afdcc
-      internalID: 8915979949621102878
+      spriteID: 6ca7e15bbab28e248963b2ed4c87b5ce
+      internalID: 7184652382897573188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_76
+      name: dwarf_nahooi_76
       rect:
         serializedVersion: 2
         x: 228
@@ -2062,14 +2062,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff10b173919267346be4cea09dab732a
-      internalID: -1854917657688643447
+      spriteID: e12628f03d45b294a836b26793a0dac7
+      internalID: -7227395751111903177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_77
+      name: dwarf_nahooi_77
       rect:
         serializedVersion: 2
         x: 266
@@ -2083,14 +2083,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f962fbe2a5b6cc4fbb8e81c63754f41
-      internalID: 6996697656192507061
+      spriteID: c5e4aaa4a95f164488bff23f18de9fc6
+      internalID: -1954922658259745730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_78
+      name: dwarf_nahooi_78
       rect:
         serializedVersion: 2
         x: 304
@@ -2104,14 +2104,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b037b612b45d85d4c81782d02d688565
-      internalID: -9106815937608704126
+      spriteID: d7463e578e742c34f81d23889a7f7e89
+      internalID: -4711831521737732120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_79
+      name: dwarf_nahooi_79
       rect:
         serializedVersion: 2
         x: 342
@@ -2125,14 +2125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 337da809f3cf13944a42c39fb9c3f277
-      internalID: 6232868455358965802
+      spriteID: df5f75d1ee0ad0c4a83158ad49d11940
+      internalID: -5728330468999173047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_80
+      name: dwarf_nahooi_80
       rect:
         serializedVersion: 2
         x: 380
@@ -2146,14 +2146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32322242b5d598b428d35a52e28efcdb
-      internalID: 6946553796744336161
+      spriteID: 9bbed0c41e9a9f44db68dc15e444f6ea
+      internalID: -277784681555660144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_81
+      name: dwarf_nahooi_81
       rect:
         serializedVersion: 2
         x: 418
@@ -2167,14 +2167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1835a7bd76433ac468ff8ab0f93e028f
-      internalID: 6237195816072155805
+      spriteID: 0cebf9dd631841e4cba03c1da03045b9
+      internalID: 2552065319943367183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_82
+      name: dwarf_nahooi_82
       rect:
         serializedVersion: 2
         x: 456
@@ -2188,14 +2188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80b9b28ae8a635d418e3fb7f29c4a4ec
-      internalID: 6996315273441020112
+      spriteID: 8f70c86d2da70154185a3bb5306114a6
+      internalID: 6520523057534017644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_83
+      name: dwarf_nahooi_83
       rect:
         serializedVersion: 2
         x: 494
@@ -2209,14 +2209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c69a340dddb84841b02cfd920baa8b7
-      internalID: 8385559178580932035
+      spriteID: 81faffd6c3038044e92205aa1c5830f8
+      internalID: -3715126697223741481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_84
+      name: dwarf_nahooi_84
       rect:
         serializedVersion: 2
         x: 0
@@ -2230,14 +2230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa128ea10e5062044897338ecb378282
-      internalID: -95541481159661759
+      spriteID: c85adb4a97fd7e04c8461638ad7ef504
+      internalID: 4572419689160482518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_85
+      name: dwarf_nahooi_85
       rect:
         serializedVersion: 2
         x: 38
@@ -2251,14 +2251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 823b44c9f88c89c4294130ad27ad5011
-      internalID: -7127415768411444893
+      spriteID: bfd09f8bfb984894ba360db7a5f3b4e7
+      internalID: 8739871734786190801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_86
+      name: dwarf_nahooi_86
       rect:
         serializedVersion: 2
         x: 76
@@ -2272,14 +2272,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b3ed0decc1f96e4d93b3b4d7588ff36
-      internalID: 4286829876307254582
+      spriteID: 1e69af35caed8b24f804c9ccc05b72fd
+      internalID: -6161506773869305185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_87
+      name: dwarf_nahooi_87
       rect:
         serializedVersion: 2
         x: 114
@@ -2293,14 +2293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c88bf2e693d615c41a8b1621af6c3038
-      internalID: -1997369994662530695
+      spriteID: 14c10c3e88d9c5641a12bf98e38e0a0a
+      internalID: 5637934143786136768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_88
+      name: dwarf_nahooi_88
       rect:
         serializedVersion: 2
         x: 152
@@ -2314,14 +2314,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad05464b66202d498def6814885c35e
-      internalID: 6372221789513023604
+      spriteID: 431d60cb7d97426489d989344a468c93
+      internalID: -5102133683077670229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_89
+      name: dwarf_nahooi_89
       rect:
         serializedVersion: 2
         x: 190
@@ -2335,14 +2335,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f67415732aaf684da3a66de447d8b74
-      internalID: 71020984375045065
+      spriteID: 99f155f4a21eb7042a01779c0fe71f1e
+      internalID: -7373190649371669058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_90
+      name: dwarf_nahooi_90
       rect:
         serializedVersion: 2
         x: 0
@@ -2356,14 +2356,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e3556fbbe75c26449a96420e3960384
-      internalID: -7035399411687449883
+      spriteID: 91365eaaf025f2b49934403db60a9434
+      internalID: -4232370082291517454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_91
+      name: dwarf_nahooi_91
       rect:
         serializedVersion: 2
         x: 38
@@ -2377,14 +2377,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9ebbc06509e7c14090b123cde352d13
-      internalID: -6178535744795168346
+      spriteID: 58524316e9eb5c640930da4ab9c2e415
+      internalID: -8866435367201920516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_92
+      name: dwarf_nahooi_92
       rect:
         serializedVersion: 2
         x: 152
@@ -2398,14 +2398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0145695f1d9189e4b9d682e5ea18a815
-      internalID: 8848242003253123822
+      spriteID: 031fe61c990caa34d9576e2c32359945
+      internalID: 2848012974800160449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_93
+      name: dwarf_nahooi_93
       rect:
         serializedVersion: 2
         x: 190
@@ -2419,14 +2419,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85afa57c5b913de4694e3c4e8ed97f0e
-      internalID: -5643216670622189314
+      spriteID: 3df825595bda8f8478ff77065bbe89fc
+      internalID: 3287720787946895575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_94
+      name: dwarf_nahooi_94
       rect:
         serializedVersion: 2
         x: 228
@@ -2440,14 +2440,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5383d3358d51cf7498653826fd74e986
-      internalID: 2669236181329200583
+      spriteID: d59cb08bc7c2997448fc3077b2c39bb3
+      internalID: -4023101489844718389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_95
+      name: dwarf_nahooi_95
       rect:
         serializedVersion: 2
         x: 114
@@ -2461,14 +2461,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a929de5124ba96e4abf159663bf6a21c
-      internalID: 5068380607490833456
+      spriteID: 301e8528e652abd4e82f51f54dadc3e8
+      internalID: 468231085164251363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_96
+      name: dwarf_nahooi_96
       rect:
         serializedVersion: 2
         x: 152
@@ -2482,14 +2482,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08e71350ebf86be45b4cce382a89dbda
-      internalID: 6771481327175657764
+      spriteID: 0846a65390e715d4a999fbbc8ed8e4d5
+      internalID: -3750380145857752480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_97
+      name: dwarf_nahooi_97
       rect:
         serializedVersion: 2
         x: 190
@@ -2503,14 +2503,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55edb09109117a743a6ed994fd40dcfe
-      internalID: -3131328394345597824
+      spriteID: d1ef5deca1911f248a9941f50f241e3c
+      internalID: -1397826066724797025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_98
+      name: dwarf_nahooi_98
       rect:
         serializedVersion: 2
         x: 228
@@ -2524,14 +2524,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0ca9e30a9a0e1247a33b291aaa41ef6
-      internalID: -8344171407307111115
+      spriteID: 2f52ba531c9f17a4c8e50348cd22886e
+      internalID: 5319642606022180585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_99
+      name: dwarf_nahooi_99
       rect:
         serializedVersion: 2
         x: 266
@@ -2545,14 +2545,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 613a76a248ebea2488899758ec05f347
-      internalID: 3467917887141307086
+      spriteID: 9f7a2193177de6a42a094e1545ba0206
+      internalID: -3599498183814632128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_100
+      name: dwarf_nahooi_100
       rect:
         serializedVersion: 2
         x: 304
@@ -2566,14 +2566,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dcbda35ec544aa4ba285087850f8df2
-      internalID: 1668725485259996465
+      spriteID: 075c762c6fc300141a5cdb15e5913cfe
+      internalID: -3430855959026307350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_101
+      name: dwarf_nahooi_101
       rect:
         serializedVersion: 2
         x: 152
@@ -2587,14 +2587,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e7ea8227fd677a4987491dc3ac3f377
-      internalID: 8432409037796583398
+      spriteID: 39ec0f578534d3847b3260f1eaf9a3d8
+      internalID: 3847382791563512306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_102
+      name: dwarf_nahooi_102
       rect:
         serializedVersion: 2
         x: 190
@@ -2608,14 +2608,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70f2d59ae632063488af0397a111b464
-      internalID: 816361322407239789
+      spriteID: 04893284bcec5b2499d5cc94e2a1a670
+      internalID: -5047638692972568850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_103
+      name: dwarf_nahooi_103
       rect:
         serializedVersion: 2
         x: 228
@@ -2629,14 +2629,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4572fe9cb4ac59e49bced7b53137d0dd
-      internalID: 8320697955334804426
+      spriteID: e7c99c937e8a8b04abc2472929efc2b8
+      internalID: 4162066581923195811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_104
+      name: dwarf_nahooi_104
       rect:
         serializedVersion: 2
         x: 266
@@ -2650,14 +2650,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12c4390e9a8e1c44da13ff5bbf7a365d
-      internalID: -1778965536959601293
+      spriteID: f7fad8c1063a95b45a9a0d57b7c34411
+      internalID: -2092510414305865629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_105
+      name: dwarf_nahooi_105
       rect:
         serializedVersion: 2
         x: 304
@@ -2671,14 +2671,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af2b9f04637a0c84ebd8ad1ebb163a62
-      internalID: -3866748256218456639
+      spriteID: af7f2bcea9c8eb440b0fa95cb80c6f22
+      internalID: 138885553241888531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_106
+      name: dwarf_nahooi_106
       rect:
         serializedVersion: 2
         x: 38
@@ -2692,14 +2692,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51d48c7b7930f274ea89263c680b8497
-      internalID: 6245469158816780728
+      spriteID: 7828794ffa3e44840a67898eb0b3ea48
+      internalID: 5685108564885189875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_107
+      name: dwarf_nahooi_107
       rect:
         serializedVersion: 2
         x: 76
@@ -2713,14 +2713,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad9c77ce5b49d5248aa636143f2bf744
-      internalID: -7441982434166770115
+      spriteID: 33a10caf53b844447ba3647ab4ffbb84
+      internalID: -8935549071745372726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_108
+      name: dwarf_nahooi_108
       rect:
         serializedVersion: 2
         x: 114
@@ -2734,14 +2734,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6620da1e37c7ce94ea53db076909372a
-      internalID: -2540446250638762954
+      spriteID: 6e800a7a0e48cf04caa62d143ab09eea
+      internalID: 396207288943698058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_109
+      name: dwarf_nahooi_109
       rect:
         serializedVersion: 2
         x: 152
@@ -2755,14 +2755,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bb05b96b09539d449e723ec115a4453
-      internalID: 8730634577210920495
+      spriteID: 1ef0dd4a9b3aa84479d01258b79d9482
+      internalID: 4217164940254649171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_110
+      name: dwarf_nahooi_110
       rect:
         serializedVersion: 2
         x: 190
@@ -2776,14 +2776,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78826273fa6c37540aa4f8b9e252ae5e
-      internalID: -4243045264615643386
+      spriteID: 83e0bb4ba659d1746a349ecf2f108a12
+      internalID: -3479999327958604213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_111
+      name: dwarf_nahooi_111
       rect:
         serializedVersion: 2
         x: 228
@@ -2797,14 +2797,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f4be5a7b961b74baa67942437b728d
-      internalID: 668974206794826665
+      spriteID: fbd8d043464ed4f4ba38af5c7449ac83
+      internalID: 2679046944472477734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_112
+      name: dwarf_nahooi_112
       rect:
         serializedVersion: 2
         x: 266
@@ -2818,14 +2818,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9bf6519527763242a796633af746949
-      internalID: -1627928471989805799
+      spriteID: a943fb6fa1ffc2b48bd637b4dcbb66d1
+      internalID: 3404229775666341942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dwarf2Sheet_113
+      name: dwarf_nahooi_113
       rect:
         serializedVersion: 2
         x: 304
@@ -2839,8 +2839,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab3dba78cfe558d488f4309124abe861
-      internalID: -4013281879947988272
+      spriteID: a5712b26d4a242749bfc0302d020b1f7
+      internalID: 6621050644406479803
       vertices: []
       indices: 
       edges: []
