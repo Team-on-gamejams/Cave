@@ -10,10 +10,6 @@ public class Inventory : MonoBehaviour {
 	public byte MaxSlots;
 	public ItemSO[] Items;
 
-	void Awake() {
-
-	}
-
 	public bool AddItem(ItemSO item) {
 		bool addAllItems = item.Count == 0;
 		ushort startCount = item.Count;

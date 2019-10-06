@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour {
-	internal bool isDrag;
 	public Inventory Inventory;
 
-	[SerializeField] bool NeedShowHide = true;
+	internal bool isDrag;
+
+	[SerializeField] protected bool NeedShowHide = true;
 	[SerializeField] float ShowTime = 0.2f;
 
-	List<ItemSlot> itemSlots;
+	protected List<ItemSlot> itemSlots;
 
 	CanvasGroup canvasGroup;
 
 	bool canChange = true;
 	bool isShowed = false;
 
-	void Awake() {
+	virtual protected void Awake() {
 		if (NeedShowHide) {
 			canvasGroup = GetComponent<CanvasGroup>();
 			canvasGroup.alpha = 0;
@@ -36,7 +37,7 @@ public class InventoryUI : MonoBehaviour {
 		}
 	}
 
-	void OnDestroy() {
+	virtual protected void OnDestroy() {
 		Inventory.OnItemsChanged.RemoveListener(UpdateUI);
 	}
 
@@ -84,7 +85,7 @@ public class InventoryUI : MonoBehaviour {
 			});
 	}
 
-	public void UpdateUI() {
+	public virtual void UpdateUI() {
 		if (!isShowed)
 			return;
 

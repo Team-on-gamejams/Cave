@@ -36,8 +36,6 @@ public class ResourcesSource : Interactable {
 	}
 
 	bool IsSuitableHand() {
-		//TODO: remove when hotbar will be ready
-		return true;
-		return GameManager.Instance.Player.Equipment.hands.Type == NeededHands;
+		return (GameManager.Instance.Player.Equipment.hands?.Type ?? ItemSO.ItemType.None) == NeededHands;
 	}
 }
