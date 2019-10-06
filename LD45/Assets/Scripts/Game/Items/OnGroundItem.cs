@@ -8,12 +8,13 @@ public class OnGroundItem : Interactable {
 	protected override void Awake() {
 		base.Awake();
 		OnMouseClick += CollectItem;
+		//TODO: not sure that it shoud be there
+		Item = Instantiate(Item);
 	}
 
 	void CollectItem() {
 		//TODO: add fly animation
-		GameManager.Instance.Player.Inventory.AddItem(Item);
-
-		Destroy(gameObject);
+		if(GameManager.Instance.Player.Inventory.AddItem(Item))
+			Destroy(gameObject);
 	}
 }

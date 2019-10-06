@@ -1,9 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class PlayerKeyboardMover : MonoBehaviour {
-	public System.Action OnMouseMoveEnd;
+	public bool CanMouseMove = true;
+	public Action OnMouseMoveEnd;
+
+	public KeyCode[] Keys;
+	public UnityEvent[] OnButtonPressed;
 
 	[SerializeField] Rigidbody2D rigidbody;
 	[SerializeField] Player player;
@@ -28,12 +35,11 @@ public class PlayerKeyboardMover : MonoBehaviour {
 			rigidbody.MovePosition(transform.localPosition + new Vector3(h, v).normalized * player.speed * Time.deltaTime);
 		}
 
-		if (Input.GetMouseButton(0)) {
+		if (CanMouseMove && Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject()) {
 			moveToPoint = GameManager.Instance.MainCamera.ScreenToWorldPoint(Input.mousePosition);
 			moveToPoint.z = 0;
 			moveToDirection = moveToPoint - transform.position;
 		}
-
 
 		if (moveToPoint != Vector3.zero) {
 			if ((transform.position - moveToPoint).sqrMagnitude > GameManager.Instance.Player.InteractDistSqr) {
@@ -47,5 +53,9 @@ public class PlayerKeyboardMover : MonoBehaviour {
 				}
 			}
 		}
+
+		for (byte i = 0; i < Keys.Length; ++i)
+			if (Input.GetKeyDown(Keys[i]))
+				OnButtonPressed[i]?.Invoke();
 	}
 }
