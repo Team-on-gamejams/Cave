@@ -104,10 +104,14 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		InventoryUI.UpdateUI();
 		draggingSlot.InventoryUI.UpdateUI();
 
-		if (InventoryUI.Inventory is Hotbar)
-			GameManager.Instance.Player.Equipment.hands = InventoryUI.Inventory.Items[invId];
-		if (draggingSlot.InventoryUI.Inventory is Hotbar)
-			GameManager.Instance.Player.Equipment.hands = null;
+		if (InventoryUI.Inventory is Hotbar) {
+			if((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
+				GameManager.Instance.Player.Equipment.hands = InventoryUI.Inventory.Items[invId];
+		}
+		if (draggingSlot.InventoryUI.Inventory is Hotbar) {
+			if ((draggingSlot.InventoryUI.Inventory as Hotbar).SelectedSlotId == draggingSlot.invId)
+				GameManager.Instance.Player.Equipment.hands = null;
+		}
 	}
 
 	void ReInit() {
