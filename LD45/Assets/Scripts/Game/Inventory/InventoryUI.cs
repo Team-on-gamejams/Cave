@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour {
+	internal bool isDrag;
 	public Inventory Inventory;
 
 	[SerializeField] bool NeedShowHide = true;
@@ -40,7 +41,7 @@ public class InventoryUI : MonoBehaviour {
 	}
 
 	public void ChangeShowHide() {
-		if (!canChange)
+		if (!canChange || isDrag)
 			return;
 		if (isShowed)
 			Hide();

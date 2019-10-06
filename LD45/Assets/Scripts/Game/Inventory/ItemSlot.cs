@@ -54,6 +54,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnBeginDrag(PointerEventData eventData) {
 		draggingSlot = this;
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = false;
+		InventoryUI.isDrag = true;
 
 		if (item == null)
 			return;
@@ -101,11 +102,8 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		draggingSlot.InventoryUI.UpdateUI();
 	}
 
-	void CheckDrop() {
-
-	}
-
 	void ReInit() {
+		InventoryUI.isDrag = false;
 		ItemImage.transform.SetParent(transform, true);
 		CountText.transform.SetParent(transform, true);
 		ItemImage.transform.localPosition = Vector3.zero;
