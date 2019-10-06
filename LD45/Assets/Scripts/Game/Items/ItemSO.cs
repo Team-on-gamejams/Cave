@@ -44,7 +44,7 @@ public class ItemSO : ScriptableObject {
 
 	public string Name;
 	public string Description;
-	public byte Count;
-	public byte MaxCount;
-	public Texture2D Texture;
+	public ushort Count;
+	public ushort MaxCount;
+	public Sprite Sprite;
 }
