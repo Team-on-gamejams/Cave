@@ -53,6 +53,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 	public void OnBeginDrag(PointerEventData eventData) {
 		draggingSlot = this;
+		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = false;
 
 		if (item == null)
 			return;
@@ -75,6 +76,8 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	}
 
 	public void OnEndDrag(PointerEventData eventData) {
+		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = true;
+
 		if (item == null)
 			return;
 
@@ -82,6 +85,8 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	}
 
 	public void OnDrop(PointerEventData eventData) {
+		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = true;
+
 		if (draggingSlot == this || draggingSlot.item == null)
 			return;
 
