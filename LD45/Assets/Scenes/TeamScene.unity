@@ -5709,9 +5709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4a3c0afacc9ec479faf27d3f0eb0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: {fileID: 431190325}
   NeedShowHide: 1
   ShowTime: 0.05
-  Inventory: {fileID: 431190325}
 --- !u!225 &358206288
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -24323,9 +24323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4a3c0afacc9ec479faf27d3f0eb0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: {fileID: 431190331}
   NeedShowHide: 0
   ShowTime: 0.2
-  Inventory: {fileID: 431190331}
 --- !u!1 &1579723270
 GameObject:
   m_ObjectHideFlags: 0
