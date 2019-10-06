@@ -2,38 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourcesSource : MonoBehaviour {
+public class ResourcesSource : Interactable {
 	public ItemSO.ItemType NeededHands;
 	public GameObject ResourcePrefab;
 	public int ResourceCount;
 	public float DropTime;
 	public float DropDistance;
+	public Vector3 ResourceDropPointСorrection;
 	public int NeededClick;
+
 	int CurrentClick;
 
-	SpriteOutline outline;
-
-	private void Awake() {
+	protected override void Awake() {
+		base.Awake();
 		CurrentClick = 0;
+
+		OnMouseClick += HitSource;
 	}
 
-	private void OnMouseEnter() {
-		outline = gameObject.AddComponent<SpriteOutline>();
-		outline._outlineSize = 5.0f;
-	}
-
-	private void OnMouseExit() {
-		Destroy(outline);
-	}
-
-	void OnMouseDown() {
-		if (!CanClick())
+	void HitSource() {
+		if (!IsSuitableHand())
 			return;
 
 		if (++CurrentClick == NeededClick){
 
 			while(ResourceCount-- != 0) {
-				GameObject res = Instantiate(ResourcePrefab, transform.position, Quaternion.identity);
+				GameObject res = Instantiate(ResourcePrefab, transform.position + ResourceDropPointСorrection, Quaternion.identity);
 				LeanTween.moveLocal(res, res.transform.position + new Vector3(Random.Range(-DropDistance, DropDistance), Random.Range(-DropDistance, DropDistance), 0), DropTime);
 			}
 
@@ -41,7 +35,7 @@ public class ResourcesSource : MonoBehaviour {
 		}
 	}
 
-	bool CanClick() {
+	bool IsSuitableHand() {
 		//TODO: remove when hotbar will be ready
 		return true;
 		return GameManager.Instance.Player.Equipment.hands.Type == NeededHands;
