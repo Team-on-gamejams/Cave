@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour {
 	public GameObject AdditionalOutlineGO;
+	public float OutlineScale = 1;
 	public float InteractDist;
 	public System.Action OnMouseClick;
 
@@ -19,14 +20,14 @@ public class Interactable : MonoBehaviour {
 
 	void OnMouseEnter() {
 		if (outline == null) {
-			outline = CreateOutline(gameObject);
+			outline = CreateOutline(gameObject, true);
 			if (AdditionalOutlineGO) {
-				outlineAdditional = CreateOutline(AdditionalOutlineGO);
+				outlineAdditional = CreateOutline(AdditionalOutlineGO, false);
 			}
 		}
-		outline.enabled = true;
+		outline.gameObject.SetActive(true);
 		if (AdditionalOutlineGO)
-			outlineAdditional.enabled = true;
+			AdditionalOutlineGO.gameObject.SetActive(true);
 	}
 
 	void OnMouseDown() {
@@ -47,9 +48,9 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseExit() {
-		outline.enabled = false;
+		outline.gameObject.SetActive(false);
 		if (AdditionalOutlineGO)
-			outlineAdditional.enabled = false;
+			AdditionalOutlineGO.gameObject.SetActive(false);
 	}
 
 	public void SimulateMouseClick() {
@@ -60,8 +61,20 @@ public class Interactable : MonoBehaviour {
 		return GameManager.Instance.Player.CanInteract(transform.position, InteractDistSqr);
 	}
 
-	SpriteOutline CreateOutline(GameObject gameObject) {
-		var outline = gameObject.AddComponent<SpriteOutline>();
+	SpriteOutline CreateOutline(GameObject parentGO, bool needScale) {
+		var gameObject = new GameObject() {
+			name = $"{parentGO.name}-outline",
+		};
+		gameObject.transform.parent = parentGO.transform;
+		gameObject.transform.localPosition = Vector3.zero;
+		gameObject.transform.localScale = new Vector3(needScale ? OutlineScale : 1, needScale ? OutlineScale : 1, 1f);
+
+		SpriteRenderer parentsr = parentGO.GetComponent<SpriteRenderer>();
+		SpriteRenderer sr = gameObject.AddComponent<SpriteRenderer>();
+		sr.sprite = parentsr.sprite;
+		sr.sortingOrder = parentsr.sortingOrder - 1;
+
+		SpriteOutline outline = gameObject.AddComponent<SpriteOutline>();
 		outline._outlineSize = outlineSize;
 		outline.color = Color.yellow;
 		outline.UpdateOutline(outline._outlineSize);

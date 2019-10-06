@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AdditionalOutlineGO: {fileID: 0}
+  OutlineScale: 1.2
   InteractDist: 0.5
   outlineSize: 1
   Item: {fileID: 11400000, guid: 22bf5e17deb24c349b70cbdaab9d6f52, type: 2}

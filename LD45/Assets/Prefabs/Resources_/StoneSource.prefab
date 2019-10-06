@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AdditionalOutlineGO: {fileID: 6090349865917556726}
+  OutlineScale: 1.1
   InteractDist: 1
   outlineSize: 1
   NeededHands: 2
