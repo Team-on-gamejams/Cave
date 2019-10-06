@@ -21,7 +21,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	Vector3 mouseOffsetImage;
 	Vector3 mouseOffsetCount;
 
-	void Awake() {
+	virtual protected void Awake() {
 		CountText.gameObject.SetActive(false);
 		ItemImage.gameObject.SetActive(false);
 
@@ -93,9 +93,10 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 		//TODO: додавати до стака якщо 1 типу
 		//TODO: міняти місцями при отпуску на ітемі
-		if (item == null && item.Type != draggingSlot.item.Type) {
+		if (item == null || (item.Type != draggingSlot.item.Type)) {
+			ItemSO prevItem = InventoryUI.Inventory.Items[invId];
 			InventoryUI.Inventory.Items[invId] = draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId];
-			draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId] = null;
+			draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId] = prevItem;
 		}
 
 		ReInit();
