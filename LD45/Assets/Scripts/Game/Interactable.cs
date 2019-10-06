@@ -26,8 +26,8 @@ public class Interactable : MonoBehaviour {
 			}
 		}
 		outline.gameObject.SetActive(true);
-		if (AdditionalOutlineGO)
-			AdditionalOutlineGO.gameObject.SetActive(true);
+		if (outlineAdditional)
+			outlineAdditional.gameObject.SetActive(true);
 	}
 
 	void OnMouseDown() {
@@ -49,8 +49,8 @@ public class Interactable : MonoBehaviour {
 
 	void OnMouseExit() {
 		outline.gameObject.SetActive(false);
-		if (AdditionalOutlineGO)
-			AdditionalOutlineGO.gameObject.SetActive(false);
+		if (outlineAdditional)
+			outlineAdditional.gameObject.SetActive(false);
 	}
 
 	public void SimulateMouseClick() {
