@@ -35,7 +35,14 @@ public class Interactable : MonoBehaviour {
 		}
 		else {
 			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd = null;
-			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += ()=> OnMouseClick?.Invoke();
+			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += () => {
+				if (this != null && CanInteract()) {
+					OnMouseClick?.Invoke();
+				}
+				//else {
+				//	GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd = null;
+				//}
+			};
 		}
 	}
 
