@@ -20,7 +20,7 @@ public class Player : Character {
 	}
 
 	public bool CanInteract(Vector3 pos, float InteractDistSqr) {
-		//Debug.Log((transform.position - pos).magnitude);
+		Debug.Log($"Interact len: {(transform.position - pos).magnitude}");
 		return (transform.position - pos).sqrMagnitude < InteractDistSqr;
 	}
 }
