@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: make it abstract after cream done hotbar & inventory
 public class BaseBuilding : Interactable {
-	// Start is called before the first frame update
+	ItemSO Item;
+
 	void Start() {
 
 	}
 
-	// Update is called once per frame
 	void Update() {
 
 	}
