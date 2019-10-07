@@ -50,7 +50,7 @@ public class PlayerKeyboardMover : MonoBehaviour {
 			moveToPoint = GameManager.Instance.MainCamera.ScreenToWorldPoint(Input.mousePosition);
 			moveToPoint.z = 0;
 			moveToDirection = moveToPoint - transform.position;
-			Debug.Log(moveToDirection);
+
 			if ((moveToDirection.x > 0 && transform.localScale.x < 0) || (moveToDirection.x < 0 && transform.localScale.x > 0))
 				transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); ;
 		}

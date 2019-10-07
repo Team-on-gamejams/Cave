@@ -7,6 +7,7 @@ public class Equipment : MonoBehaviour {
 	public ItemSO hands;
 
 	public void EquipItem(ItemSO item) {
-
+		//TODO: also add equip for armor
+		hands = item;
 	}
 }

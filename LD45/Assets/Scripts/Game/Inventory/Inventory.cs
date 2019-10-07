@@ -53,7 +53,7 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void RemoveItem(ItemSO item) {
-		//Remove to Count
+		//TODO: Remove to Count
 		//Items.Remove(item);
 	}
 }
