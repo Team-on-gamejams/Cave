@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6686,6 +6686,18 @@ MonoBehaviour:
   HitPoints:
     _maxValue: 100
     _value: 100
+  StaminaPoints:
+    _maxValue: 0
+    _value: 0
+  ManaPoints:
+    _maxValue: 0
+    _value: 0
+  SleepPoints:
+    _maxValue: 0
+    _value: 0
+  HungerPoints:
+    _maxValue: 0
+    _value: 0
   speed: 5
   Inventory: {fileID: 431190325}
   Equipment: {fileID: 431190326}
@@ -7908,7 +7920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Component: {fileID: 519420030}
-  Destroy: 0
+  Destroy: 1
 --- !u!224 &519420033
 RectTransform:
   m_ObjectHideFlags: 0

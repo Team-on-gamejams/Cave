@@ -14,6 +14,9 @@ public class HotbarUI : InventoryUI {
 
 		foreach (var i in itemSlots) 
 			itemSlotsHotbar.Add(i as ItemSlotHotbar);
+	}
+
+	private void Start() {
 		itemSlotsHotbar[(lastSelection = hotbar.SelectedSlotId)].SetSelectedFrame();
 	}
 
