@@ -639,6 +639,337 @@ PrefabInstance:
       propertyPath: m_padding
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1633290614729854074, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 453.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633290614729854074, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 375.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633290614729854074, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 212.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633290614729854074, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -369.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534087373046819048, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 473
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534087373046819048, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 376.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534087373046819048, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -218
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701872078497649948, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -200.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701872078497649948, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 694.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399058762476576301, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 414
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399058762476576301, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399058762476576301, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -101
+      objectReference: {fileID: 0}
+    - target: {fileID: 771847233225929698, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -181.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 771847233225929698, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 597.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144565952774051543, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 203877050939855231, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294741812088524918, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778093027211794301, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94347bd9480e6304281c637bc2b7f91a,
+        type: 3}
+    - target: {fileID: 7778093027211794301, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_text
+      value: 'Cave it sirvival game. Also it should be RPG with battle system like
+        in DS(e.g. different movesets for weapons and rolls), but I havent time to
+        code it.
+
+
+        BTW your are that dwarf
+
+        WASD or LMB(Left Mouse Button) for moving'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 219
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_subTextObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1210190970}
+    - target: {fileID: 689546122827486288, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_text
+      value: 'Mouse over item & click on it to pick up it.
+
+        Dwarf will be automatically move to it.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 689546122827486288, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 689546122827486288, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 689546122827486288, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 689546122827486288, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 689546122827486288, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 689546122827486288, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 257
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978258216327126715, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c57a7f3de148834f93708a521040bdf,
+        type: 3}
+    - target: {fileID: 2978258216327126715, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_text
+      value: Drag & drop it onto hotbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715584589584052096, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777116372909736357, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777116372909736357, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 284f9530fc71891428cb4b1999e26383,
+        type: 3}
+    - target: {fileID: 6225802759385196423, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_text
+      value: 'Press 1-5 to choose item in hotbar
+
+
+        BTW you can drag any item onto it and dwarf will hold it in hand'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158926631807699138, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 257
+      objectReference: {fileID: 0}
+    - target: {fileID: 1427737213629061098, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1427737213629061098, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e02ba453d1aa0244189293757b111d9b,
+        type: 3}
+    - target: {fileID: 2148909172910499726, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148909172910499726, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148909172910499726, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 427
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148909172910499726, guid: 3484a3156993be6449e46d21ec814abc,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 83
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3484a3156993be6449e46d21ec814abc, type: 3}
 --- !u!224 &232970742 stripped
@@ -1801,6 +2132,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 106c55e8853f9f24fbc2182ac4ce9b2f, type: 3}
+--- !u!1 &1210190968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210190969}
+  - component: {fileID: 1210190971}
+  - component: {fileID: 1210190970}
+  m_Layer: 0
+  m_Name: TMP SubMeshUI [LiberationSans SDF Material + LiberationSans SDF Atlas]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1210190969
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210190968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997640216}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1210190970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210190968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 1.25
+  m_canvasRenderer: {fileID: 1210190971}
+  m_TextComponent: {fileID: 1997640217}
+  m_materialReferenceIndex: 1
+--- !u!222 &1210190971
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210190968}
+  m_CullTransparentMesh: 0
 --- !u!1 &1238126744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,3 +2873,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901531505}
   m_CullTransparentMesh: 0
+--- !u!224 &1997640216 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8081360292024398369, guid: 3484a3156993be6449e46d21ec814abc,
+    type: 3}
+  m_PrefabInstance: {fileID: 232970741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1997640217 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1281625531972716803, guid: 3484a3156993be6449e46d21ec814abc,
+    type: 3}
+  m_PrefabInstance: {fileID: 232970741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
