@@ -1439,7 +1439,6 @@ GameObject:
   - component: {fileID: 431190332}
   - component: {fileID: 431190328}
   - component: {fileID: 431190323}
-  - component: {fileID: 431190324}
   - component: {fileID: 431190327}
   - component: {fileID: 431190329}
   - component: {fileID: 431190330}
@@ -1666,54 +1665,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &431190324
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431190318}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.6, y: 0.6}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.23162523, y: -0.018384807}
-      - {x: 0.15048926, y: 0.0796134}
-      - {x: 0.12513235, y: 0.09728376}
-      - {x: 0.12371491, y: 0.20057307}
-      - {x: 0.049094565, y: 0.26573595}
-      - {x: -0.017199086, y: 0.2614739}
-      - {x: -0.06841512, y: 0.2506795}
-      - {x: -0.116376325, y: 0.18034095}
-      - {x: -0.117668696, y: 0.074310005}
-      - {x: -0.2133586, y: -0.013093929}
-      - {x: -0.206205, y: -0.09108595}
-      - {x: -0.15416119, y: -0.09908486}
-      - {x: -0.11668013, y: -0.03818916}
-      - {x: -0.123736285, y: -0.2233586}
-      - {x: -0.044770304, y: -0.22053947}
-      - {x: -0.02218322, y: -0.14847858}
-      - {x: 0.02404066, y: -0.15028672}
-      - {x: 0.06431996, y: -0.22235954}
-      - {x: 0.12305683, y: -0.22415105}
-      - {x: 0.12086831, y: -0.025548775}
-      - {x: 0.18739669, y: -0.09852809}
-      - {x: 0.2218368, y: -0.08517528}
-      - {x: 0.24207552, y: -0.05558425}
 --- !u!114 &431190325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,7 +2064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Component: {fileID: 519420030}
-  Destroy: 1
+  Destroy: 0
 --- !u!224 &519420033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5452,7 +5403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -302.99, y: -86.51001}
+  m_AnchoredPosition: {x: -302.99, y: -86.510254}
   m_SizeDelta: {x: 560.98, y: 120.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1577323350
