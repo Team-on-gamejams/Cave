@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Character {
+	public bool IsPlayingBlockerAnimation = false;
+
 	public Inventory Inventory;
 	public Equipment Equipment;
 	public PlayerKeyboardMover PlayerKeyboardMover;
+	public Animator Animator;
 
 	public float InteractDist;
 	internal float InteractDistSqr;

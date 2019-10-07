@@ -4,6 +4,8 @@ using UnityEngine;
 
 //TODO: fix by split sprite onto 2 parts. 
 public class SpriteOrderSorter : MonoBehaviour {
+	[SerializeField] int Correction = 0;
+
 	SpriteRenderer spriteRenderer;
 
 	void Awake() {
@@ -11,7 +13,7 @@ public class SpriteOrderSorter : MonoBehaviour {
 	}
 
 	void Update() {
-		//TOOD: міряти по нижній грані, а не центрі.
-		spriteRenderer.sortingOrder = Mathf.FloorToInt(-transform.position.y);
+		//TOOD: міряти по нижній грані, а не центрі. І позбутися Correction
+		spriteRenderer.sortingOrder = Mathf.FloorToInt(-transform.position.y) + Correction;
 	}
 }

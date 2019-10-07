@@ -1,13 +1,69 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 //TODO: Make not MonoBehaviour
 public class Equipment : MonoBehaviour {
+	public SpriteRenderer ItemInHand;
+
 	public ItemSO hands;
+	public Action OnUseHandAnimEndEvent;
+
+	Animator animator;
+
+	private void Start() {
+		animator = GameManager.Instance.Player.Animator;
+	}
+
+	public void PlayUseHandItemAnim() {
+		if(hands != null) {
+			switch (hands.Type) {
+				case ItemSO.ItemType.Axe:
+					OnStartAnim();
+					animator.Play("AxePunch");
+					break;
+				case ItemSO.ItemType.Pickaxe:
+					OnStartAnim();
+					animator.Play("PickaxePunch");
+					break;
+				case ItemSO.ItemType.Spear:
+					OnStartAnim();
+					animator.Play("SpearPunch");
+					break;
+				default:
+					//TODO: show that it cant be used
+					break;
+			}
+		}
+		//else {
+		//	//TODO: Assume that it will use for pick-up anims
+		//}
+	}
+
+	public void OnUseHandAnimEnd() {
+		if(OnUseHandAnimEndEvent != null) {
+			OnUseHandAnimEndEvent();
+			OnUseHandAnimEndEvent = null;
+			ItemInHand.enabled = true;
+			GameManager.Instance.Player.IsPlayingBlockerAnimation = false;
+		}
+	}
 
 	public void EquipItem(ItemSO item) {
 		//TODO: also add equip for armor
 		hands = item;
+		if(hands == null) {
+			ItemInHand.enabled = false;
+		}
+		else {
+			ItemInHand.sprite = hands.Sprite;
+			ItemInHand.enabled = true;
+		}
+	}
+
+	void OnStartAnim() {
+		ItemInHand.enabled = false;
+		GameManager.Instance.Player.IsPlayingBlockerAnimation = true;
 	}
 }

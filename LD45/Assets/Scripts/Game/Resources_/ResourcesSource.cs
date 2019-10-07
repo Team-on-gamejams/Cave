@@ -5,37 +5,43 @@ using UnityEngine;
 public class ResourcesSource : Interactable {
 	public ItemSO.ItemType NeededHands;
 	public GameObject ResourcePrefab;
-	public int ResourceCount;
+	public byte ResourceCount;
 	public float DropTime;
 	public float DropDistance;
 	public Vector3 ResourceDropPointСorrection;
-	public int NeededClick;
+	public byte NeededHits;
 
-	int CurrentClick;
+	int CurrentHit;
 
 	protected override void Awake() {
 		base.Awake();
-		CurrentClick = 0;
+		CurrentHit = 0;
 
-		OnMouseClick += HitSource;
+		OnMouseClick += TryInterract;
 	}
 
-	void HitSource() {
+	public bool IsSuitableHand() {
+		return (GameManager.Instance.Player.Equipment.hands?.Type ?? ItemSO.ItemType.None) == NeededHands;
+	}
+
+	//TODO: hit particles
+	//TODO: visially show that source damaged
+	void TryInterract() {
 		if (!IsSuitableHand())
 			return;
 
-		if (++CurrentClick == NeededClick){
+		GameManager.Instance.Player.Equipment.OnUseHandAnimEndEvent += HitSource;
+		GameManager.Instance.Player.Equipment.PlayUseHandItemAnim();
+	}
 
-			while(ResourceCount-- != 0) {
+	void HitSource(){
+		if (++CurrentHit == NeededHits) {
+			while (ResourceCount-- != 0) {
 				GameObject res = Instantiate(ResourcePrefab, transform.position + ResourceDropPointСorrection, Quaternion.identity);
 				LeanTween.moveLocal(res, res.transform.position + new Vector3(Random.Range(-DropDistance, DropDistance), Random.Range(-DropDistance, DropDistance), 0), DropTime);
 			}
 
 			Destroy(gameObject);
 		}
-	}
-
-	bool IsSuitableHand() {
-		return (GameManager.Instance.Player.Equipment.hands?.Type ?? ItemSO.ItemType.None) == NeededHands;
 	}
 }

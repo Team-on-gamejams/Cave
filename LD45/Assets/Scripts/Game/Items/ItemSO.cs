@@ -28,7 +28,7 @@ public class ItemSO : ScriptableObject {
 	}
 
 	public ItemSlot Slot;
-	public ItemMetaType MataType {
+	public ItemMetaType MataType {  //TODO: OMAGAD!! Rename it to MetaType
 		get {
 			if (1 <= (int)Type && (int)Type < 1000)
 				return ItemMetaType.Hands;

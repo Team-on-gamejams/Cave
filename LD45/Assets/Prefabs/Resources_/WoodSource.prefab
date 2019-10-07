@@ -202,7 +202,7 @@ MonoBehaviour:
   DropTime: 0.2
   DropDistance: 0.3
   "ResourceDropPoint\u0421orrection": {x: 0, y: -1.5, z: 0}
-  NeededClick: 3
+  NeededHits: 3
 --- !u!61 &371649881
 BoxCollider2D:
   m_ObjectHideFlags: 0
