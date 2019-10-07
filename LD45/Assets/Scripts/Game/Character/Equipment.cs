@@ -57,6 +57,7 @@ public class Equipment : MonoBehaviour {
 			ItemInHand.enabled = false;
 		}
 		else {
+			ItemInHand.transform.localScale = new Vector3(hands.ScaleInHand, hands.ScaleInHand, 1.0f);
 			ItemInHand.sprite = hands.Sprite;
 			ItemInHand.enabled = true;
 		}

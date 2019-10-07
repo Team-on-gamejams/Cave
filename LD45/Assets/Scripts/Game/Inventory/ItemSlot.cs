@@ -105,7 +105,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		draggingSlot.InventoryUI.UpdateUI();
 
 		if (InventoryUI.Inventory is Hotbar) {
-			if((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId && InventoryUI.Inventory.Items[invId].MataType == ItemSO.ItemMetaType.Hands)
+			if((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
 				GameManager.Instance.Player.Equipment.EquipItem(InventoryUI.Inventory.Items[invId]);
 		}
 		if (draggingSlot.InventoryUI.Inventory is Hotbar) {

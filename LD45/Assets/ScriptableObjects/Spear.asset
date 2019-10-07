@@ -19,3 +19,4 @@ MonoBehaviour:
   Count: 1
   MaxCount: 1
   Sprite: {fileID: 7155652846937496742, guid: 34911602aac0c8f4cb8cf8fc21121824, type: 3}
+  ScaleInHand: 1

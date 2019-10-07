@@ -44,7 +44,10 @@ public class ItemSO : ScriptableObject {
 
 	public string Name;
 	public string Description;
+
 	public ushort Count;
 	public ushort MaxCount;
+
 	public Sprite Sprite;
+	public float ScaleInHand;
 }
