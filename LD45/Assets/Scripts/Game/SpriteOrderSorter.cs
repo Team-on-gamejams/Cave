@@ -11,6 +11,7 @@ public class SpriteOrderSorter : MonoBehaviour {
 	}
 
 	void Update() {
+		//TOOD: міряти по нижній грані, а не центрі.
 		spriteRenderer.sortingOrder = Mathf.FloorToInt(-transform.position.y);
 	}
 }
