@@ -1,4 +1,4 @@
-It’s # Cave
+# Cave
 Ludum Dare Jam #45 entry. Theme: "Start with nothing"
 
 2D survival RPG with Dark Souls battle system
