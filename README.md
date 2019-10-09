@@ -21,7 +21,7 @@ Ludum Dare is one of the world's largest and longest running Game Jam events. Is
 [Cave in Ludum Dare #45](https://ldjam.com/events/ludum-dare/45/cave)
 
 # Credits
- * [Team-on](https://github.com/Team-on) - programmer the best programmer ever
+ * [Team-on](https://github.com/Team-on) - the best programmer ever
  * [Long-as-Python](https://github.com/Long-as-Python) - artist and programmer
  * [sleeplessmaliance](https://github.com/sleeplessmaliance) - artist of hentai
  * [moogy73](https://freesound.org/people/moogy73/sounds/425728) - click sound
