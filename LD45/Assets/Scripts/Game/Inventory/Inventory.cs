@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-//TODO: Make not MonoBehaviour
 public class Inventory : MonoBehaviour {
 	public UnityEvent OnItemsChanged;
 

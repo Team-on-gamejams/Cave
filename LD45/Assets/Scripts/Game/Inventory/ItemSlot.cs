@@ -92,7 +92,6 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 			return;
 
 		//TODO: додавати до стака якщо 1 типу
-		//TODO: міняти місцями при отпуску на ітемі
 		if (item == null || (item.Type != draggingSlot.item.Type)) {
 			ItemSO prevItem = InventoryUI.Inventory.Items[invId];
 			InventoryUI.Inventory.Items[invId] = draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId];
