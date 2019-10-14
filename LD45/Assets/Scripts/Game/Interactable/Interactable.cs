@@ -19,6 +19,8 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
+		GameManager.Instance.SelectedOutlineGO = this;
+
 		if (outline == null) {
 			outline = CreateOutline(gameObject, true);
 			if (AdditionalOutlineGO) {
@@ -31,11 +33,12 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
+		GameManager.Instance.Player.InterruptAction();
+		GameManager.Instance.Player.PlayerKeyboardMover.MoveTo(transform.position);
 		if (CanInteract()) {
 			OnMouseClick?.Invoke();
 		}
 		else {
-			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd = null;
 			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += () => {
 				if (this != null && CanInteract()) {
 					OnMouseClick?.Invoke();
@@ -48,6 +51,9 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseExit() {
+		if (GameManager.Instance.SelectedOutlineGO == this)
+			GameManager.Instance.SelectedOutlineGO = null;
+
 		outline.gameObject.SetActive(false);
 		if (outlineAdditional)
 			outlineAdditional.gameObject.SetActive(false);

@@ -45,7 +45,6 @@ public class Equipment : MonoBehaviour {
 			OnUseHandAnimEndEvent();
 			OnUseHandAnimEndEvent = null;
 			ItemInHand.enabled = true;
-			GameManager.Instance.Player.IsPlayingBlockerAnimation = false;
 		}
 	}
 
@@ -62,8 +61,16 @@ public class Equipment : MonoBehaviour {
 		}
 	}
 
+	public bool NeednInterrupt() {
+		return OnUseHandAnimEndEvent != null;
+	}
+
+	public void InterruptAction() {
+		OnUseHandAnimEndEvent = null;
+		ItemInHand.enabled = true;
+	}
+
 	void OnStartAnim() {
 		ItemInHand.enabled = false;
-		GameManager.Instance.Player.IsPlayingBlockerAnimation = true;
 	}
 }

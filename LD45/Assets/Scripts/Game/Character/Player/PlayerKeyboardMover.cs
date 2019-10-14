@@ -32,7 +32,7 @@ public class PlayerKeyboardMover : MonoBehaviour {
 			if (Input.GetKeyDown(Inputs[i].Key)) {
 				Inputs[i].OnButtonPressed?.Invoke();
 				if (Inputs[i].InterruptAnim)
-					player.IsPlayingBlockerAnimation = true;
+					player.InterruptAction();
 			}
 		}
 	}
@@ -45,11 +45,35 @@ public class PlayerKeyboardMover : MonoBehaviour {
 		if (v != 0 || h != 0)
 			WASDMove(v, h, ref wasMoved);
 
-		if (CanMouseMove && Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
-			MouseMove(Input.mousePosition, ref wasMoved);
+		if (CanMouseMove && Input.GetMouseButton(0) && GameManager.Instance.SelectedOutlineGO == null) {
+			player.InterruptAction();
+			MoveTo(GameManager.Instance.MainCamera.ScreenToWorldPoint(Input.mousePosition));
+		}
 
 		ProcessMove(ref wasMoved);
 
+	}
+
+	public bool NeednInterrupt() {
+		return moveToPoint != Vector3.zero;
+	}
+
+	public void InterruptAction() {
+		StopMove();
+	}
+
+	public void MoveTo(Vector3 position) {
+		moveToPoint = position;
+		moveToPoint.z = 0;
+		moveToDirection = moveToPoint - transform.position;
+
+		if ((moveToDirection.x > 0 && transform.localScale.x < 0) || (moveToDirection.x < 0 && transform.localScale.x > 0))
+			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+	}
+
+	void StopMove() {
+		OnMouseMoveEnd = null;
+		moveToPoint = moveToPoint = Vector3.zero;
 	}
 
 	void WASDMove(float v, float h, ref bool wasMoved) {
@@ -57,20 +81,12 @@ public class PlayerKeyboardMover : MonoBehaviour {
 			moveToPoint = Vector3.zero;
 			OnMouseMoveEnd = null;
 		}
+		player.InterruptAction();
 		rigidbody.MovePosition(transform.localPosition + new Vector3(h, v).normalized * player.speed * Time.deltaTime);
 		wasMoved = true;
 
 		if ((h > 0 && transform.localScale.x < 0) || (h < 0 && transform.localScale.x > 0))
 			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); ;
-	}
-
-	void MouseMove(Vector3 mousePos, ref bool wasMoved) {
-		moveToPoint = GameManager.Instance.MainCamera.ScreenToWorldPoint(mousePos);
-		moveToPoint.z = 0;
-		moveToDirection = moveToPoint - transform.position;
-
-		if ((moveToDirection.x > 0 && transform.localScale.x < 0) || (moveToDirection.x < 0 && transform.localScale.x > 0))
-			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 	}
 
 	void ProcessMove(ref bool wasMoved) {
