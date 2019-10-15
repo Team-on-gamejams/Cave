@@ -99,6 +99,7 @@ MonoBehaviour:
   AdditionalOutlineGO: {fileID: 0}
   OutlineScale: 1.2
   InteractDist: 0.5
+  interactPosOnCenter: 1
   outlineSize: 1
   Item: {fileID: 11400000, guid: 2da611b7135b8db44907c34b1d4d9f55, type: 2}
 --- !u!60 &6875373921423303759

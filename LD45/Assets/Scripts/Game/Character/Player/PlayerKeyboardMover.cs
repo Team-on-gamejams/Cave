@@ -19,6 +19,9 @@ public class PlayerKeyboardMover : MonoBehaviour {
 	Vector3 moveToDirection;
 	Vector3 moveToPoint;
 
+	const float mouseHoldTimeMax = 0.15f;
+	float mouseHoldTime;
+
 	void Awake() {
 		moveToPoint = Vector3.zero;
 	}
@@ -45,7 +48,17 @@ public class PlayerKeyboardMover : MonoBehaviour {
 		if (v != 0 || h != 0)
 			WASDMove(v, h, ref wasMoved);
 
-		if (CanMouseMove && Input.GetMouseButton(0) && GameManager.Instance.SelectedOutlineGO == null) {
+		if (Input.GetMouseButton(0)) 
+			mouseHoldTime += Time.fixedDeltaTime;
+		else 
+			mouseHoldTime = 0;
+
+		if (
+			CanMouseMove &&
+			(Input.GetMouseButtonDown(0) || mouseHoldTime >= mouseHoldTimeMax)
+			&& !EventSystem.current.IsPointerOverGameObject() 
+			&& GameManager.Instance.SelectedOutlineGO == null
+		) {
 			player.InterruptAction();
 			MoveTo(GameManager.Instance.MainCamera.ScreenToWorldPoint(Input.mousePosition));
 		}
@@ -54,8 +67,8 @@ public class PlayerKeyboardMover : MonoBehaviour {
 
 	}
 
-	public bool NeednInterrupt() {
-		return moveToPoint != Vector3.zero;
+	public bool NeedInterrupt() {
+		return OnMouseMoveEnd != null;
 	}
 
 	public void InterruptAction() {

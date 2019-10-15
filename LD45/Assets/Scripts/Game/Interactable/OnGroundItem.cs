@@ -16,7 +16,9 @@ public class OnGroundItem : Interactable {
 		//TODO: add fly animation
 		//TODO: or show special frame around new items
 		//TODO: Play pickup anim
-		if(GameManager.Instance.Player.Inventory.AddItem(Item))
+
+		GameManager.Instance.Player.Equipment.GOLinkedAnim = null;
+		if (GameManager.Instance.Player.Inventory.AddItem(Item))
 			Destroy(gameObject);
 	}
 }

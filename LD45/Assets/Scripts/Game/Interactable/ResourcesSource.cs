@@ -35,10 +35,13 @@ public class ResourcesSource : Interactable {
 	}
 
 	void HitSource(){
+		GameManager.Instance.Player.Equipment.GOLinkedAnim = null;
+
 		if (++CurrentHit == NeededHits) {
 			while (ResourceCount-- != 0) {
 				GameObject res = Instantiate(ResourcePrefab, transform.position + ResourceDropPointСorrection, Quaternion.identity, GameManager.Instance.CollectorItems.transform);
-                LeanTween.moveLocal(res, res.transform.position + new Vector3(Random.Range(-DropDistance, DropDistance), Random.Range(-DropDistance, DropDistance), 0), DropTime);
+                LeanTween.moveLocal(res, res.transform.position + new Vector3(Random.Range(-DropDistance, DropDistance), Random.Range(-DropDistance, DropDistance), 0), DropTime)
+					.setOnComplete(res.GetComponent<Interactable>().RecalcInteractPos);
 			}
 			Destroy(gameObject);
 		}
