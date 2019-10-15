@@ -70,6 +70,7 @@ public class Equipment : MonoBehaviour {
 	public void InterruptAction() {
 		OnUseHandAnimEndEvent = null;
 		ItemInHand.enabled = true;
+		GOLinkedAnim = null;
 	}
 
 	void OnStartAnim() {
