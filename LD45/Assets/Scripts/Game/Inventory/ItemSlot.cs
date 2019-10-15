@@ -91,11 +91,23 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		if (draggingSlot == this || draggingSlot.item == null)
 			return;
 
-		//TODO: додавати до стака якщо 1 типу
-		if (item == null || (item.Type != draggingSlot.item.Type)) {
+		if (item == null || (item.Type != draggingSlot.item.Type) || item.IsMaxStack() || draggingSlot.item.IsMaxStack()) {
 			ItemSO prevItem = InventoryUI.Inventory.Items[invId];
 			InventoryUI.Inventory.Items[invId] = draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId];
 			draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId] = prevItem;
+		}
+		else if(item.Type == draggingSlot.item.Type) {
+			ItemSO slotItem = InventoryUI.Inventory.Items[invId];
+			ItemSO dragItem = draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId];
+
+			slotItem.Count += dragItem.Count;
+			if (slotItem.Count > slotItem.MaxCount) {
+				dragItem.Count = (ushort)(slotItem.Count - slotItem.MaxCount);
+				slotItem.Count = slotItem.MaxCount;
+			}
+			else {
+				draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId] = null;
+			}
 		}
 
 		ReInit();

@@ -50,4 +50,9 @@ public class ItemSO : ScriptableObject {
 
 	public Sprite Sprite;
 	public float ScaleInHand;
+
+
+	public bool IsMaxStack() {
+		return Count == MaxCount;
+	}
 }
