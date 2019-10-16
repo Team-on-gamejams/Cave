@@ -38,6 +38,8 @@ public static class BuildManager {
 	static int _LastBuildPatch = -1;
 
 	public static void BuildAll() {
+		Debug.Log("Start building all");
+		DateTime startTime = DateTime.Now;
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
 
@@ -51,6 +53,8 @@ public static class BuildManager {
 		++LastBuildPatch;
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
+
+		Debug.Log($"End building all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
 	}
 
 	public static void BuildWindows(bool isInBuildSequence) {
@@ -107,12 +111,9 @@ public static class BuildManager {
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
 
-		Debug.Log($"{LastBundleVersion} != {PlayerSettings.bundleVersion} ::: {LastBundleVersion != PlayerSettings.bundleVersion}");
 		if (LastBundleVersion != PlayerSettings.bundleVersion) {
-			Debug.Log($"1 {LastBundleVersion} {LastBuildPatch}");
 			LastBundleVersion = PlayerSettings.bundleVersion;
 			LastBuildPatch = 0;
-			Debug.Log($"2 {LastBundleVersion} {LastBuildPatch}");
 		}
 
 		BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions {
@@ -124,16 +125,21 @@ public static class BuildManager {
 		};
 
 
-		//TODO: detail summary
 		BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
 		BuildSummary summary = report.summary;
 
+		//TODO: Зробити вивід гарнішим. Щоб виглядало по типу таблиці.
+		//Зараз \t не вирівнює його, коли summary.platform дуже різних довжин, наприклад StandaloneWindows та StandaloneOSX
 		if (summary.result == BuildResult.Succeeded) {
-			Debug.Log("Build succeeded: " + summary.totalSize + " bytes");
-		}
+			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576f}");
 
-		if (summary.result == BuildResult.Failed) {
-			Debug.Log("Build failed");
+		}
+		else if (summary.result == BuildResult.Failed) {
+			Debug.Log(
+				$"{summary.platform} failed.   \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576f}" + "\n" +
+				$"Warnings: {summary.totalWarnings}" + "\n" +
+				$"Errors:   {summary.totalErrors}"
+			);
 		}
 
 		if (incrementPatch)
