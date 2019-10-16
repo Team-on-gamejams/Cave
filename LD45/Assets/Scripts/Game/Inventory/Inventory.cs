@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class Inventory : MonoBehaviour {
 	public UnityEvent OnItemsChanged;
 
-	public byte MaxSlots;
 	public ItemSO[] Items;
 
 	public bool AddItem(ItemSO item) {
@@ -51,8 +50,31 @@ public class Inventory : MonoBehaviour {
 		return addAllItems;
 	}
 
+	public bool ContainsItem(ItemSO item) {
+		ushort findCount = 0;
+
+		for (byte i = 0; i < Items.Length; ++i)
+			if (Items[i]?.Type == item.Type && (findCount += Items[i].Count) > item.Count)
+				break;
+
+		return findCount >= item.Count;
+	}
+
 	public void RemoveItem(ItemSO item) {
-		//TODO: Remove to Count
-		//Items.Remove(item);
+		for (byte i = 0; i < Items.Length; ++i) {
+			if(Items[i]?.Type == item.Type) {
+				if(Items[i].Count >= item.Count) {
+					Items[i].Count -= item.Count;
+					item.Count = 0;
+				}
+				else {
+					item.Count -= Items[i].Count;
+					Items[i] = null;
+				}
+			}
+
+			if (item.Count == 0)
+				break;
+		}
 	}
 }
