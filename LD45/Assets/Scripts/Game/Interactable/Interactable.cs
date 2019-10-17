@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
 // Всі класи, що наслідуються мають всередині виконувати   
@@ -10,7 +12,7 @@ public class Interactable : MonoBehaviour {
 	public GameObject AdditionalOutlineGO;
 	public float OutlineScale = 1;
 	public float InteractDist;
-	public System.Action OnMouseClick;
+	public Action OnMouseClick;
 
 	[SerializeField] bool interactPosOnCenter;
 	[SerializeField] float outlineSize;
@@ -32,7 +34,7 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
-		if (GameManager.Instance.SelectedOutlineGO != null)
+		if (GameManager.Instance.SelectedOutlineGO != null || EventSystem.current.IsPointerOverGameObject())
 			return;
 
 		GameManager.Instance.SelectedOutlineGO = this;
