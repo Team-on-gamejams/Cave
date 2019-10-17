@@ -18,9 +18,6 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 	ItemSO item;
 
-	Vector3 mouseOffsetImage;
-	Vector3 mouseOffsetCount;
-
 	virtual protected void Awake() {
 		CountText.gameObject.SetActive(false);
 		ItemImage.gameObject.SetActive(false);
@@ -66,19 +63,18 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 		ItemImage.transform.SetParent(canvas.transform, true);
 		CountText.transform.SetParent(canvas.transform, true);
+		ItemImage.raycastTarget = false;
 
-		mouseOffsetImage = ItemImage.transform.position - Input.mousePosition;
-		mouseOffsetCount = CountText.transform.position - Input.mousePosition;
+		ItemImage.transform.position += (Vector3)eventData.delta;
+		CountText.transform.position += (Vector3)eventData.delta;
 	}
 
 	public void OnDrag(PointerEventData eventData) {
 		if (item == null)
 			return;
 
-		ItemImage.transform.position = Input.mousePosition + mouseOffsetImage;
-		CountText.transform.position = Input.mousePosition + mouseOffsetCount;
-
-		ItemImage.raycastTarget = false;
+		ItemImage.transform.position += (Vector3)eventData.delta;
+		CountText.transform.position += (Vector3)eventData.delta;
 	}
 
 	public void OnEndDrag(PointerEventData eventData) {
