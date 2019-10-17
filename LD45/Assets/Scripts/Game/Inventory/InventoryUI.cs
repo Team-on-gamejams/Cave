@@ -14,7 +14,6 @@ public class InventoryUI : MonoBehaviour {
 
 	CanvasGroup canvasGroup;
 
-	bool canChange = true;
 	bool isShowed = false;
 
 	virtual protected void Awake() {
@@ -29,7 +28,7 @@ public class InventoryUI : MonoBehaviour {
 		
 		Inventory.OnItemsChanged.AddListener(UpdateUI);
 
-		itemSlots = new List <ItemSlot>(Inventory.MaxSlots);
+		itemSlots = new List <ItemSlot>(Inventory.Items.Length);
 		ItemSlot[] items = GetComponentsInChildren<ItemSlot>();
 		for(byte i = 0; i <items.Length; ++i) {
 			itemSlots.Add(items[i]);
@@ -42,7 +41,7 @@ public class InventoryUI : MonoBehaviour {
 	}
 
 	public void ChangeShowHide() {
-		if (!canChange || isDrag)
+		if (isDrag)
 			return;
 		if (isShowed)
 			Hide();
@@ -51,35 +50,24 @@ public class InventoryUI : MonoBehaviour {
 	}
 
 	public void Show() {
-		if (isShowed)
-			return;
 		gameObject.SetActive(true);
 		isShowed = true;
-		canChange = false;
 		UpdateUI();
 
 		LeanTween.cancel(gameObject);
 		LeanTween.value(gameObject, canvasGroup.alpha, 1.0f, ShowTime)
 			.setOnUpdate((float a) => {
 				canvasGroup.alpha = a;
-			})
-			.setOnComplete(()=> {
-				canChange = true;
 			});
 	}
 
 	public void Hide() {
-		if (!isShowed)
-			return;
-		canChange = false;
-
 		LeanTween.cancel(gameObject);
 		LeanTween.value(gameObject, canvasGroup.alpha, 0.0f, ShowTime)
 			.setOnUpdate((float a)=> {
 				canvasGroup.alpha = a;
 			})
 			.setOnComplete(() => {
-				canChange = true;
 				isShowed = false;
 				gameObject.SetActive(false);
 			});

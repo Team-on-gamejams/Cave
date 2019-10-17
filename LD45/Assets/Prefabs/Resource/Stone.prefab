@@ -98,6 +98,7 @@ MonoBehaviour:
   AdditionalOutlineGO: {fileID: 0}
   OutlineScale: 1.2
   InteractDist: 0.5
+  interactPosOnCenter: 1
   outlineSize: 1
   Item: {fileID: 11400000, guid: c05ae737758ce004b80875b065ebc009, type: 2}
 --- !u!60 &6875373921423303759
@@ -117,7 +118,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 0.3}
+    oldSize: {x: 0.22, y: 0.16}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,4 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b797b6d6a97b644afa604804dc44a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Correction: -2
+  Precision: 10
+  Offset: 0
+  SortingOrigin: 1
+  SortingAxis: 1

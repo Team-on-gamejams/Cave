@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Character {
-	public bool IsPlayingBlockerAnimation = false;
-
 	public Inventory Inventory;
 	public Equipment Equipment;
 	public PlayerKeyboardMover PlayerKeyboardMover;
@@ -22,8 +20,16 @@ public class Player : Character {
 		return (transform.position - pos).sqrMagnitude < InteractDistSqr;
 	}
 
+	public void InterruptAction() {
+		if (PlayerKeyboardMover.NeedInterrupt() || Equipment.NeedInterrupt()) {
+			PlayerKeyboardMover.InterruptAction();
+			Equipment.InterruptAction();
+			Animator.Play("DwarfAnim");
+		}
+	}
+
 	public bool CanInteract(Vector3 pos, float InteractDistSqr) {
-		Debug.Log($"Interact len: {(transform.position - pos).magnitude}");
+		//Debug.Log($"Interact len: {(transform.position - pos).magnitude}");
 		return (transform.position - pos).sqrMagnitude < InteractDistSqr;
 	}
 }

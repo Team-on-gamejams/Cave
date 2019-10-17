@@ -99,6 +99,7 @@ MonoBehaviour:
   AdditionalOutlineGO: {fileID: 0}
   OutlineScale: 1.2
   InteractDist: 0.5
+  interactPosOnCenter: 1
   outlineSize: 1
   Item: {fileID: 11400000, guid: fad7a8455019fd84d80969127272929d, type: 2}
 --- !u!60 &1172074004276336650
@@ -147,4 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b797b6d6a97b644afa604804dc44a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Correction: -2
+  Precision: 10
+  Offset: 0
+  SortingOrigin: 1
+  SortingAxis: 1

@@ -8,6 +8,8 @@ public class GameManager : Singleton<GameManager> {
 	protected GameManager() { }
 
 	public Camera MainCamera;
+	public GameObject CollectorItems;
+	public Interactable SelectedOutlineGO;
 
 	public Player Player;
 	public EventManager EventManager;

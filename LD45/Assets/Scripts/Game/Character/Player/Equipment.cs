@@ -6,6 +6,8 @@ using UnityEngine;
 public class Equipment : MonoBehaviour {
 	public SpriteRenderer ItemInHand;
 
+	public GameObject GOLinkedAnim;
+
 	public ItemSO hands;
 	public Action OnUseHandAnimEndEvent;
 
@@ -45,7 +47,6 @@ public class Equipment : MonoBehaviour {
 			OnUseHandAnimEndEvent();
 			OnUseHandAnimEndEvent = null;
 			ItemInHand.enabled = true;
-			GameManager.Instance.Player.IsPlayingBlockerAnimation = false;
 		}
 	}
 
@@ -62,8 +63,17 @@ public class Equipment : MonoBehaviour {
 		}
 	}
 
+	public bool NeedInterrupt() {
+		return OnUseHandAnimEndEvent != null;
+	}
+
+	public void InterruptAction() {
+		OnUseHandAnimEndEvent = null;
+		ItemInHand.enabled = true;
+		GOLinkedAnim = null;
+	}
+
 	void OnStartAnim() {
 		ItemInHand.enabled = false;
-		GameManager.Instance.Player.IsPlayingBlockerAnimation = true;
 	}
 }
