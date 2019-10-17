@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Component: {fileID: 738878352330902538}
-  Destroy: 0
+  Destroy: 1
 --- !u!1 &738878352377382234
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,12 +48,12 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject)
+		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
 			return;
 
 		GameManager.Instance.Player.InterruptAction();
 		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
-		if (CanInteract()) {
+		if (IsInRange()) {
 			OnMouseClick?.Invoke();
 		}
 		else {
@@ -82,7 +82,9 @@ public class Interactable : MonoBehaviour {
 		OnMouseDown();
 	}
 
-	public bool CanInteract() {
+	public virtual bool CanInteract() => true;
+
+	public bool IsInRange() {
 		return GameManager.Instance.Player.CanInteract(transform.position, InteractDistSqr);
 	}
 
