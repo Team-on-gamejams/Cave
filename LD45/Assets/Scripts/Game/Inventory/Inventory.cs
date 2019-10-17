@@ -6,9 +6,14 @@ using UnityEngine.Events;
 public class Inventory : MonoBehaviour {
 	public UnityEvent OnItemsChanged;
 
+	[SerializeField] Inventory DelegatedInventory;
+
 	public ItemSO[] Items;
 
 	public bool AddItem(ItemSO item) {
+		if(DelegatedInventory?.AddItem(item) ?? false)
+			return true;
+
 		bool addAllItems = item.Count == 0;
 		ushort startCount = item.Count;
 
@@ -57,10 +62,16 @@ public class Inventory : MonoBehaviour {
 			if (Items[i]?.Type == item.Type && (findCount += Items[i].Count) > item.Count)
 				break;
 
+		for (byte i = 0; i < DelegatedInventory.Items.Length; ++i)
+			if (DelegatedInventory.Items[i]?.Type == item.Type && (findCount += DelegatedInventory.Items[i].Count) > item.Count)
+				break;
+
 		return findCount >= item.Count;
 	}
 
 	public void RemoveItem(ItemSO item) {
+		DelegatedInventory?.RemoveItem(item);
+
 		for (byte i = 0; i < Items.Length; ++i) {
 			if(Items[i]?.Type == item.Type) {
 				if(Items[i].Count >= item.Count) {

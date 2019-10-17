@@ -49,6 +49,11 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		else {
 			CountText.gameObject.SetActive(false);
 		}
+
+		if (InventoryUI.Inventory is Hotbar) {
+			if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
+				GameManager.Instance.Player.Equipment.EquipItem(InventoryUI.Inventory.Items[invId]);
+		}
 	}
 
 	public void OnBeginDrag(PointerEventData eventData) {

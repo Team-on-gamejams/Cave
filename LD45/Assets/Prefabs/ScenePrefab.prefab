@@ -1330,6 +1330,7 @@ MonoBehaviour:
   OnItemsChanged:
     m_PersistentCalls:
       m_Calls: []
+  DelegatedInventory: {fileID: 738878352377382216}
   Items:
   - {fileID: 0}
   - {fileID: 0}
@@ -1371,6 +1372,7 @@ MonoBehaviour:
   OnItemsChanged:
     m_PersistentCalls:
       m_Calls: []
+  DelegatedInventory: {fileID: 0}
   Items:
   - {fileID: 0}
   - {fileID: 0}
