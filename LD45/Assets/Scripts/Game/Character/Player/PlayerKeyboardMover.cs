@@ -90,11 +90,11 @@ public class PlayerKeyboardMover : MonoBehaviour {
 	}
 
 	void WASDMove(float v, float h, ref bool wasMoved) {
+		player.InterruptAction();
 		if (moveToPoint != Vector3.zero) {
 			moveToPoint = Vector3.zero;
 			OnMouseMoveEnd = null;
 		}
-		player.InterruptAction();
 		rigidbody.MovePosition(transform.localPosition + new Vector3(h, v).normalized * player.speed * Time.deltaTime);
 		wasMoved = true;
 

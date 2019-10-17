@@ -51,8 +51,8 @@ public class Interactable : MonoBehaviour {
 		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject)
 			return;
 
-		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
 		GameManager.Instance.Player.InterruptAction();
+		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
 		if (CanInteract()) {
 			OnMouseClick?.Invoke();
 		}

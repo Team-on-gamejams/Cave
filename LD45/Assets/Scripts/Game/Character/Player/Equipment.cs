@@ -64,7 +64,7 @@ public class Equipment : MonoBehaviour {
 	}
 
 	public bool NeedInterrupt() {
-		return OnUseHandAnimEndEvent != null || GOLinkedAnim != null;
+		return OnUseHandAnimEndEvent != null;
 	}
 
 	public void InterruptAction() {
