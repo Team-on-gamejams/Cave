@@ -1330,7 +1330,6 @@ MonoBehaviour:
   OnItemsChanged:
     m_PersistentCalls:
       m_Calls: []
-  MaxSlots: 25
   Items:
   - {fileID: 0}
   - {fileID: 0}
@@ -1372,7 +1371,6 @@ MonoBehaviour:
   OnItemsChanged:
     m_PersistentCalls:
       m_Calls: []
-  MaxSlots: 5
   Items:
   - {fileID: 0}
   - {fileID: 0}
