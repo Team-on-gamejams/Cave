@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,5 +21,16 @@ public class OnGroundItem : Interactable {
 		GameManager.Instance.Player.Equipment.GOLinkedAnim = null;
 		if (GameManager.Instance.Player.Inventory.AddItem(Item))
 			Destroy(gameObject);
+	}
+
+	static public OnGroundItem CreateOnGround(ItemSO item, Vector3 pos, Transform parent) {
+		pos.z = 0;
+
+		GameObject go = new GameObject(item.Name, new Type[] { typeof(OnGroundItem) });
+		go.transform.parent = parent;
+		go.transform.position = pos;
+		OnGroundItem ogi = go.GetComponent<OnGroundItem>();
+		ogi.Item = item;
+		return ogi;
 	}
 }

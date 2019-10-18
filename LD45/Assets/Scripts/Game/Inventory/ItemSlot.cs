@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
+//TODO: переробити на людський поліморфізм, а не чекати типи
 public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler {
 	static ItemSlot draggingSlot;
 
@@ -80,10 +81,18 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnEndDrag(PointerEventData eventData) {
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = true;
 
-		if (item == null)
+		if (item == null || eventData.hovered.Count != 0)
 			return;
 
+		OnGroundItem.CreateOnGround(item, GameManager.Instance.MainCamera.ScreenToWorldPoint(eventData.position), GameManager.Instance.CollectorItems.transform);
+
 		ReInit();
+		InventoryUI.Inventory.Items[invId] = null;
+		InventoryUI.UpdateUI();
+		if (InventoryUI.Inventory is Hotbar) {
+			if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
+				GameManager.Instance.Player.Equipment.EquipItem(null);
+		}
 	}
 
 	public void OnDrop(PointerEventData eventData) {
