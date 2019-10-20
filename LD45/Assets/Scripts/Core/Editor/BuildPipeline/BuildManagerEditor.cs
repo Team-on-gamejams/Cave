@@ -8,14 +8,24 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 
 public static class BuildManagerEditor {
+	[MenuItem("Build/Build All & ZIP & itch.io push")]
+	public static void BuildAllZippedPush() {
+		BuildManager.BuildAll(true, true);
+	}
+
+	[MenuItem("Build/Build All & itch.io push")]
+	public static void BuildAllPush() {
+		BuildManager.BuildAll(false, true);
+	}
+
 	[MenuItem("Build/Build All & ZIP")]
 	public static void BuildAllZipped() {
-		BuildManager.BuildAll(true);
+		BuildManager.BuildAll(true, false);
 	}
 
 	[MenuItem("Build/Build All")]
 	public static void BuildAll() {
-		BuildManager.BuildAll(false);
+		BuildManager.BuildAll(false, false);
 	}
 
 	[MenuItem("Build/Build Windows")]
