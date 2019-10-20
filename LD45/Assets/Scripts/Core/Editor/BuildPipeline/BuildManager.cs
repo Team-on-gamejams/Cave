@@ -61,7 +61,6 @@ public static class BuildManager {
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
 
 		List<string> buildsPath = new List<string>(5);
-		buildsPath.Add("Builds/Cave_0.0.4.11_Windows");
 		buildsPath.Add(BuildWindows(true, needZip));
 		buildsPath.Add(BuildWindowsX64(true, needZip));
 		buildsPath.Add(BuildLinux(true, needZip));
@@ -82,26 +81,27 @@ public static class BuildManager {
 		DateTime startTime = DateTime.Now;
 		Debug.Log($"Start pushing all");
 
-		StringBuilder command = new StringBuilder(256);
+		StringBuilder fileName = new StringBuilder(128);
+		StringBuilder args = new StringBuilder(128);
 		for(byte i = 0; i < buildsPath.Count; ++i) {
-			command.Append("\"");
-			command.Append(Application.dataPath);
-			command.Append("/");
-			command.Append(butlerRelativePath);
-			command.Append("\" ");
+			fileName.Append(Application.dataPath);
+			fileName.Append("/");
+			fileName.Append(butlerRelativePath);
 
-			command.Append("push \"");
-			command.Append(Application.dataPath);
-			command.Append("/../");
-			command.Append(buildsPath[i]);
-			command.Append("\" ");
+			args.Append("push \"");
+			args.Append(Application.dataPath);
+			args.Append("/../");
+			args.Append(buildsPath[i]);
+			args.Append("\" ");
 
-			command.Append($"teamon/{PlayerSettings.productName}:{channelNames[i]} ");
-			command.Append($"--userversion {PlayerSettings.bundleVersion}.{LastBuildPatch} ");
+			args.Append($"teamon/{PlayerSettings.productName}:{channelNames[i]} ");
+			args.Append($"--userversion {PlayerSettings.bundleVersion}.{LastBuildPatch} ");
 
-			Debug.Log(command.ToString());
-			//Process.Start("CMD.exe", command.ToString());
-			command.Clear();
+			Debug.Log(fileName.ToString() + args.ToString());
+			Process.Start(fileName.ToString(), args.ToString());
+
+			fileName.Clear();
+			args.Clear();
 		}
 
 		Debug.Log($"End pushing all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
@@ -114,8 +114,8 @@ public static class BuildManager {
 			!isInBuildSequence,
 			!isInBuildSequence,
 			needZip,
-			$"_Windows/",
-			$"_Windows/{PlayerSettings.productName}.exe"
+			$"_Windows",
+			$"_Windows/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}/{PlayerSettings.productName}.exe"
 		);
 	}
 
@@ -127,7 +127,7 @@ public static class BuildManager {
 			!isInBuildSequence,
 			needZip, 
 			"_Windows64",
-			$"_Windows64/{PlayerSettings.productName}.exe"
+			$"_Windows64/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}/{PlayerSettings.productName}.exe"
 		);
 	}
 
@@ -139,7 +139,7 @@ public static class BuildManager {
 			!isInBuildSequence,
 			needZip, 
 			"_Linux",
-			$"_Linux/{PlayerSettings.productName}.x86_64"
+			$"_Linux/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}/{PlayerSettings.productName}.x86_64"
 		);
 	}
 
@@ -151,7 +151,7 @@ public static class BuildManager {
 			!isInBuildSequence,
 			needZip,
 			"_OSX",
-			$"_OSX/{PlayerSettings.productName}"
+			$"_OSX/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}/{PlayerSettings.productName}"
 		);
 	}
 
@@ -192,7 +192,7 @@ public static class BuildManager {
 		//TODO: Зробити вивід гарнішим. Щоб виглядало по типу таблиці.
 		//Зараз \t не вирівнює його, коли summary.platform дуже різних довжин, наприклад StandaloneWindows та StandaloneOSX
 		if (summary.result == BuildResult.Succeeded) {
-			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576f}");
+			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576}");
 
 			if (needZip)
 				Compress(basePath + folderPath);
