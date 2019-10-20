@@ -1147,7 +1147,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanMouseMove: 1
   Inputs:
-  - Key: 105
+  - Type: 1
+    Key: 105
+    IsWheelUp: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
@@ -1163,8 +1165,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 49
-    InterruptAnim: 1
+  - Type: 1
+    Key: 49
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
@@ -1179,8 +1183,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 50
-    InterruptAnim: 1
+  - Type: 1
+    Key: 50
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
@@ -1195,8 +1201,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 51
-    InterruptAnim: 1
+  - Type: 1
+    Key: 51
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
@@ -1211,8 +1219,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 52
-    InterruptAnim: 1
+  - Type: 1
+    Key: 52
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
@@ -1227,14 +1237,52 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 53
-    InterruptAnim: 1
+  - Type: 1
+    Key: 53
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 738878352377382216}
           m_MethodName: SetSelection
           m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 2
+    Key: 119
+    IsWheelUp: 1
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 738878352377382216}
+          m_MethodName: MoveSelectionUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 2
+    Key: 119
+    IsWheelUp: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 738878352377382216}
+          m_MethodName: MoveSelectionDown
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

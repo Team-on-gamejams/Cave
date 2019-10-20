@@ -20,4 +20,20 @@ public class Hotbar : Inventory {
 		GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId]);
 		OnSelectionChange?.Invoke();
 	}
+
+	public void MoveSelectionUp() {
+		++SelectedSlotId;
+		if (SelectedSlotId == Items.Length)
+			SelectedSlotId = 0;
+		GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId]);
+		OnSelectionChange?.Invoke();
+	}
+
+	public void MoveSelectionDown() {
+		--SelectedSlotId;
+		if (SelectedSlotId == byte.MaxValue)
+			SelectedSlotId = (byte)(Items.Length - 1);
+		GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId]);
+		OnSelectionChange?.Invoke();
+	}
 }

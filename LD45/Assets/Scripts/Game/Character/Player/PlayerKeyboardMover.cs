@@ -32,11 +32,35 @@ public class PlayerKeyboardMover : MonoBehaviour {
 
 	void Update() {
 		for (byte i = 0; i < Inputs.Length; ++i) {
-			if (Input.GetKeyDown(Inputs[i].Key)) {
-				Inputs[i].OnButtonPressed?.Invoke();
-				if (Inputs[i].InterruptAnim)
-					player.InterruptAction();
+			InputEvent input = Inputs[i];
+
+			switch (input.Type) {
+				case InputEvent.InputEventType.Key:
+					if (Input.GetKeyDown(input.Key)) {
+						input.OnButtonPressed?.Invoke();
+						if (input.InterruptAnim)
+							player.InterruptAction();
+					}
+					break;
+				case InputEvent.InputEventType.MouseWheel:
+					var wheelDelta = Input.GetAxis("Mouse ScrollWheel");
+					if (wheelDelta > 0f && input.IsWheelUp) {
+						input.OnButtonPressed?.Invoke();
+						if (input.InterruptAnim)
+							player.InterruptAction();
+					}
+					else if (wheelDelta < 0f && !input.IsWheelUp) {
+						input.OnButtonPressed?.Invoke();
+						if (input.InterruptAnim)
+							player.InterruptAction();
+					}
+					break;
+				case InputEvent.InputEventType.None:
+				default:
+					break;
 			}
+
+			
 		}
 	}
 
@@ -121,9 +145,17 @@ public class PlayerKeyboardMover : MonoBehaviour {
 	}
 }
 
+//TODO: probably need custom inspector
+// Кнопки для Hotbar НЕ використовують InterruptAnim, бо всередині Hotbar вона преривається при EquipItem
 [Serializable]
 public class InputEvent {
+	public enum InputEventType : byte { None, Key, MouseWheel};
+
+	public InputEventType Type;
 	public KeyCode Key;
+	public bool IsWheelUp; //true - up, false - down
+
 	public bool InterruptAnim;
+
 	public UnityEvent OnButtonPressed;
 }
