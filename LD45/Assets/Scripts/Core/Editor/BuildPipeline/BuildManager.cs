@@ -159,7 +159,17 @@ public static class BuildManager {
 	public static void Compress(string dirPath) {
 		using (ZipFile zip = new ZipFile()) {
 			zip.AddDirectory(dirPath, $"{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}");
+			DateTime startTime = DateTime.Now;
+			zip.AddDirectory(dirPath);
 			zip.Save(dirPath + ".zip");
+
+			long uncompresedSize = 0;
+			long compresedSize = 0;
+			foreach (var e in zip.Entries) {
+				uncompresedSize += e.UncompressedSize;
+				compresedSize += e.CompressedSize;
+			}
+			Debug.Log($"Make .ZIP.  \t\t\t Time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}  \t Size: {uncompresedSize / 1048576} - {compresedSize / 1048576}");
 		}
 	}
 }
