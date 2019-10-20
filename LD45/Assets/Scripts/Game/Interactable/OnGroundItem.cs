@@ -8,9 +8,11 @@ public class OnGroundItem : Interactable {
 
 	protected override void Awake() {
 		base.Awake();
-		OnMouseClick += CollectItem;
 		//TODO: not sure that it shoud be there
 		Item = Instantiate(Item);
+        tip = $"Pickup {Item.Name}";
+
+		OnMouseClick += CollectItem;
 	}
 
 	void CollectItem() {

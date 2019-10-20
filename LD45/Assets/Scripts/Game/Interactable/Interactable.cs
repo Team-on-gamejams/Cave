@@ -10,11 +10,14 @@ using UnityEngine.EventSystems;
 // Це треба для анимашок, щоб не викликати одне і те ж саме, якщо спамиш кликами
 public class Interactable : MonoBehaviour {
 	public GameObject AdditionalOutlineGO;
+
 	public float OutlineScale = 1;
 	public float InteractDist;
 	public Action OnMouseClick;
 
-	[SerializeField] bool interactPosOnCenter;
+	[SerializeField] protected string tip;
+
+    [SerializeField] bool interactPosOnCenter;
 	[SerializeField] float outlineSize;
 
 	SpriteRenderer spriteRenderer;
@@ -31,7 +34,7 @@ public class Interactable : MonoBehaviour {
 		InteractDistSqr = InteractDist * InteractDist;
 
 		RecalcInteractPos();
-	}
+    }
 
 	void OnMouseEnter() {
 		if (EventSystem.current.IsPointerOverGameObject())
@@ -45,6 +48,12 @@ public class Interactable : MonoBehaviour {
 
 		AddOutline();
 	}
+
+    private void OnMouseOver() {
+        EventData eventData = new EventData("OnPopUpShow");
+        eventData["tipText"] = tip;
+        GameManager.Instance.EventManager.CallOnPopUpShow(eventData);
+    }
 
 	void OnMouseDown() {
 		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
@@ -68,7 +77,7 @@ public class Interactable : MonoBehaviour {
 		RemoveOutline();
 	}
 
-	public void RecalcInteractPos() {
+    public void RecalcInteractPos() {
 		interactPos = spriteRenderer.bounds.center;
 		if (!interactPosOnCenter)
 			interactPos += Vector3.down * spriteRenderer.bounds.size.y / 2;

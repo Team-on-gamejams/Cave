@@ -99,6 +99,8 @@ MonoBehaviour:
   AdditionalOutlineGO: {fileID: 0}
   OutlineScale: 1.05
   InteractDist: 2.1
+  tip: Chop tree
+  interactPosOnCenter: 0
   outlineSize: 1
   NeededHands: 1
   ResourcePrefab: {fileID: 4949850401918132681, guid: 9316ebcd1b460a94ab57a39743bc10fd,
