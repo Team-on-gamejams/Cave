@@ -121,6 +121,8 @@ MonoBehaviour:
   AdditionalOutlineGO: {fileID: 0}
   OutlineScale: 1
   InteractDist: 1.5
+  tip: Light bonfire
+  interactPosOnCenter: 0
   outlineSize: 1
 --- !u!114 &8301309024093751162
 MonoBehaviour:

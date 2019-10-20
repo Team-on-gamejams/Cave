@@ -99,6 +99,8 @@ MonoBehaviour:
   AdditionalOutlineGO: {fileID: 0}
   OutlineScale: 1.1
   InteractDist: 1
+  tip: Broke rock
+  interactPosOnCenter: 0
   outlineSize: 1
   NeededHands: 2
   ResourcePrefab: {fileID: 4847483186995451876, guid: d411e1216d4ed6747980c0f08569abc6,

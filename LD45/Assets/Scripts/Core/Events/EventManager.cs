@@ -13,4 +13,7 @@ public class EventManager {
 
 	public static event EventController.MethodContainer OnSceneLoadEnd;
 	public void CallOnSceneLoadEnd(EventData ob = null) => OnSceneLoadEnd?.Invoke(ob);
+
+    public static event EventController.MethodContainer OnPopUpShow;
+    public void CallOnPopUpShow(EventData ob = null) => OnPopUpShow?.Invoke(ob);
 }

@@ -8,11 +8,14 @@ using UnityEngine;
 // Це треба для анимашок, щоб не викликати одне і те ж саме, якщо спамиш кликами
 public class Interactable : MonoBehaviour {
 	public GameObject AdditionalOutlineGO;
+
 	public float OutlineScale = 1;
 	public float InteractDist;
 	public System.Action OnMouseClick;
 
-	[SerializeField] bool interactPosOnCenter;
+	[SerializeField] protected string tip;
+
+    [SerializeField] bool interactPosOnCenter;
 	[SerializeField] float outlineSize;
 
 	SpriteRenderer spriteRenderer;
@@ -29,9 +32,9 @@ public class Interactable : MonoBehaviour {
 		InteractDistSqr = InteractDist * InteractDist;
 
 		RecalcInteractPos();
-	}
+    }
 
-	void OnMouseEnter() {
+    void OnMouseEnter() {
 		if (GameManager.Instance.SelectedOutlineGO != null)
 			return;
 
@@ -47,7 +50,13 @@ public class Interactable : MonoBehaviour {
 			outlineAdditional.gameObject.SetActive(true);
 	}
 
-	void OnMouseDown() {
+    private void OnMouseOver() {
+        EventData eventData = new EventData("OnPopUpShow");
+        eventData["tipText"] = tip;
+        GameManager.Instance.EventManager.CallOnPopUpShow(eventData);
+    }
+
+    void OnMouseDown() {
 		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject)
 			return;
 
@@ -70,9 +79,9 @@ public class Interactable : MonoBehaviour {
 		outline.gameObject.SetActive(false);
 		if (outlineAdditional)
 			outlineAdditional.gameObject.SetActive(false);
-	}
+    }
 
-	public void RecalcInteractPos() {
+    public void RecalcInteractPos() {
 		interactPos = spriteRenderer.bounds.center;
 		if (!interactPosOnCenter)
 			interactPos += Vector3.down * spriteRenderer.bounds.size.y / 2;
