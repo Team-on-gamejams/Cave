@@ -36,20 +36,14 @@ public class Interactable : MonoBehaviour {
 		RecalcInteractPos();
     }
 
+	// OnMouseEnter та OnMouseExit викликаються завжди послідовно. Якщо курсор буде над 2 обєктами, то буде: OnMouseEnter -> OnMouseExit -> OnMouseEnter
+	// Якщо буде дуже важно мати правильну обводку, то треба буде в OnMouseOver або в OnMouseEnter робити рейкасти, і чекати найвищий спрайт
 	void OnMouseEnter() {
 		if (GameManager.Instance.SelectedOutlineGO != null || EventSystem.current.IsPointerOverGameObject())
 			return;
 
 		GameManager.Instance.SelectedOutlineGO = this;
-		if (outline == null) {
-			outline = CreateOutline(gameObject, true);
-			if (AdditionalOutlineGO) {
-				outlineAdditional = CreateOutline(AdditionalOutlineGO, false);
-			}
-		}
-		outline.gameObject.SetActive(true);
-		if (outlineAdditional)
-			outlineAdditional.gameObject.SetActive(true);
+		ShowOutline();
 	}
 
     private void OnMouseOver() {
@@ -78,9 +72,7 @@ public class Interactable : MonoBehaviour {
 			return;
 
 		GameManager.Instance.SelectedOutlineGO = null;
-		outline.gameObject.SetActive(false);
-		if (outlineAdditional)
-			outlineAdditional.gameObject.SetActive(false);
+		HideOutline();
 	}
 
     public void RecalcInteractPos() {
@@ -97,6 +89,24 @@ public class Interactable : MonoBehaviour {
 
 	public bool IsInRange() {
 		return GameManager.Instance.Player.CanInteract(transform.position, InteractDistSqr);
+	}
+
+	void ShowOutline() {
+		if (outline == null) {
+			outline = CreateOutline(gameObject, true);
+			if (AdditionalOutlineGO) {
+				outlineAdditional = CreateOutline(AdditionalOutlineGO, false);
+			}
+		}
+		outline.gameObject.SetActive(true);
+		if (outlineAdditional)
+			outlineAdditional.gameObject.SetActive(true);
+	}
+
+	void HideOutline() {
+		outline.gameObject.SetActive(false);
+		if (outlineAdditional)
+			outlineAdditional.gameObject.SetActive(false);
 	}
 
 	SpriteOutline CreateOutline(GameObject parentGO, bool needScale) {
