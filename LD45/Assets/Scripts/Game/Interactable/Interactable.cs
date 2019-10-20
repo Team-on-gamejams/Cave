@@ -34,19 +34,16 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
-		if (GameManager.Instance.SelectedOutlineGO != null || EventSystem.current.IsPointerOverGameObject())
+		if (EventSystem.current.IsPointerOverGameObject())
 			return;
 
-		GameManager.Instance.SelectedOutlineGO = this;
-		if (outline == null) {
-			outline = CreateOutline(gameObject, true);
-			if (AdditionalOutlineGO) {
-				outlineAdditional = CreateOutline(AdditionalOutlineGO, false);
-			}
+		GameManager.Instance.SelectedOutlineGOArr.Add(this);
+
+		if (GameManager.Instance.SelectedOutlineGO.spriteRenderer.sortingOrder < spriteRenderer.sortingOrder) { 
+			GameManager.Instance.SelectedOutlineGO.RemoveOutline();
 		}
-		outline.gameObject.SetActive(true);
-		if (outlineAdditional)
-			outlineAdditional.gameObject.SetActive(true);
+
+		AddOutline();
 	}
 
 	void OnMouseDown() {
@@ -65,19 +62,34 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseExit() {
-		if (GameManager.Instance.SelectedOutlineGO != this)
-			return;
+		GameManager.Instance.SelectedOutlineGO.Remove(this);
 
 		GameManager.Instance.SelectedOutlineGO = null;
-		outline.gameObject.SetActive(false);
-		if (outlineAdditional)
-			outlineAdditional.gameObject.SetActive(false);
+		RemoveOutline();
 	}
 
 	public void RecalcInteractPos() {
 		interactPos = spriteRenderer.bounds.center;
 		if (!interactPosOnCenter)
 			interactPos += Vector3.down * spriteRenderer.bounds.size.y / 2;
+	}
+
+	void AddOutline() {
+		if (outline == null) {
+			outline = CreateOutline(gameObject, true);
+			if (AdditionalOutlineGO) {
+				outlineAdditional = CreateOutline(AdditionalOutlineGO, false);
+			}
+		}
+		outline.gameObject.SetActive(true);
+		if (outlineAdditional)
+			outlineAdditional.gameObject.SetActive(true);
+	}
+
+	void RemoveOutline() {
+		outline.gameObject.SetActive(false);
+		if (outlineAdditional)
+			outlineAdditional.gameObject.SetActive(false);
 	}
 
 	public void SimulateMouseClick() {

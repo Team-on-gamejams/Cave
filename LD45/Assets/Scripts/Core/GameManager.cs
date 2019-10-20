@@ -9,14 +9,21 @@ public class GameManager : Singleton<GameManager> {
 
 	public Camera MainCamera;
 	public GameObject CollectorItems;
-	public Interactable SelectedOutlineGO;
+
+	public Interactable SelectedOutlineGO => SelectedOutlineGOArr[SelectedOutlineGOMax];
+	public List<Interactable> SelectedOutlineGOArr;
+	public int SelectedOutlineGOMax;
 
 	public Player Player;
 	public EventManager EventManager;
 
 	void Awake() {
-		MainCamera = Camera.main;
 		EventManager = new EventManager();
+		SelectedOutlineGO = new List<Interactable>();
+		SelectedOutlineGOMax = 0;
+
+		MainCamera = Camera.main;
+
 		Input.multiTouchEnabled = false;
 		LeanTween.init(800);
 
