@@ -81,12 +81,16 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnEndDrag(PointerEventData eventData) {
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = true;
 
-		if (item == null || eventData.hovered.Count != 0)
+		if (item == null)
+			return;
+
+		ReInit();
+
+		if (eventData.hovered.Count != 0)
 			return;
 
 		OnGroundItem.CreateOnGround(item, GameManager.Instance.MainCamera.ScreenToWorldPoint(eventData.position), GameManager.Instance.CollectorItems.transform);
 
-		ReInit();
 		InventoryUI.Inventory.Items[invId] = null;
 		InventoryUI.UpdateUI();
 		if (InventoryUI.Inventory is Hotbar) {
