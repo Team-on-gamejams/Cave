@@ -14,9 +14,9 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	[SerializeField] Image ItemImage;
 	[SerializeField] TextMeshProUGUI CountText;
 
-	GameObject canvas;
-	InventoryUI InventoryUI;
+	protected InventoryUI InventoryUI;
 
+	GameObject canvas;
 	ItemSO item;
 
 	virtual protected void Awake() {
