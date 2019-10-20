@@ -25,12 +25,9 @@ public class OnGroundItem : Interactable {
 
 	static public OnGroundItem CreateOnGround(ItemSO item, Vector3 pos, Transform parent) {
 		pos.z = 0;
-
-		GameObject go = new GameObject(item.Name, new Type[] { typeof(OnGroundItem) });
-		go.transform.parent = parent;
-		go.transform.position = pos;
-		OnGroundItem ogi = go.GetComponent<OnGroundItem>();
-		ogi.Item = item;
-		return ogi;
+		GameObject go = Instantiate(OnGroundItemsList.instance.GetItemPrefab(item), pos, Quaternion.identity, parent);
+		OnGroundItem newItem = go.GetComponent<OnGroundItem>();
+		newItem.Item.Count = item.Count;
+		return newItem;
 	}
 }

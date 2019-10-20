@@ -1784,8 +1784,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1435856676686716744}
+  - component: {fileID: 838059867}
   m_Layer: 0
-  m_Name: OnGroundItemList
+  m_Name: OnGroundItemsList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1805,6 +1806,24 @@ Transform:
   m_Father: {fileID: 738878352321705315}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &838059867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6272208459744365511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33f2221fbdcfa24593bcca34d613e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGroundItemsPrefabs:
+  - {fileID: 7179299255259088472, guid: 10a8992cd7a5efa4b838a6d425820c85, type: 3}
+  - {fileID: 4847483186995451876, guid: 8e3dfe8f9c2739742964815eef2ca303, type: 3}
+  - {fileID: 894966701500476321, guid: a202915e18ec55949bc914f602730d28, type: 3}
+  - {fileID: 4847483186995451876, guid: d411e1216d4ed6747980c0f08569abc6, type: 3}
+  - {fileID: 4949850401918132681, guid: 9316ebcd1b460a94ab57a39743bc10fd, type: 3}
 --- !u!1 &8127612646601639354
 GameObject:
   m_ObjectHideFlags: 0

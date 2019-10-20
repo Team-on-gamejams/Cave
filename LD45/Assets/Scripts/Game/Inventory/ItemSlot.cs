@@ -89,13 +89,31 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		if (eventData.hovered.Count != 0)
 			return;
 
-		OnGroundItem.CreateOnGround(item, GameManager.Instance.MainCamera.ScreenToWorldPoint(eventData.position), GameManager.Instance.CollectorItems.transform);
 
-		InventoryUI.Inventory.Items[invId] = null;
-		InventoryUI.UpdateUI();
-		if (InventoryUI.Inventory is Hotbar) {
-			if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
-				GameManager.Instance.Player.Equipment.EquipItem(null);
+		if (GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject)
+			return;
+
+		Vector3 newItemPos = GameManager.Instance.MainCamera.ScreenToWorldPoint(eventData.position);
+		GameManager.Instance.Player.InterruptAction();
+		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
+
+		if (GameManager.Instance.Player.CanInteract(newItemPos)) {
+			DropItemOnGround();
+		}
+		else {
+			GameManager.Instance.Player.PlayerKeyboardMover.MoveTo(newItemPos);
+			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += DropItemOnGround;
+		}
+
+		void DropItemOnGround() {
+			OnGroundItem.CreateOnGround(item, newItemPos, GameManager.Instance.CollectorItems.transform);
+
+			InventoryUI.Inventory.Items[invId] = null;
+			InventoryUI.UpdateUI();
+			if (InventoryUI.Inventory is Hotbar) {
+				if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
+					GameManager.Instance.Player.Equipment.EquipItem(null);
+			}
 		}
 	}
 
