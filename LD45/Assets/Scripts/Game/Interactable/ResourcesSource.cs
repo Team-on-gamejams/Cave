@@ -17,19 +17,16 @@ public class ResourcesSource : Interactable {
 		base.Awake();
 		CurrentHit = 0;
 
-		OnMouseClick += TryInterract;
+		OnMouseClick += Interract;
 	}
 
-	public bool IsSuitableHand() {
+	public override bool CanInteract() {
 		return (GameManager.Instance.Player.Equipment.hands?.Type ?? ItemSO.ItemType.None) == NeededHands;
 	}
 
 	//TODO: hit particles
 	//TODO: visially show that source damaged
-	void TryInterract() {
-		if (!IsSuitableHand())
-			return;
-
+	void Interract() {
 		GameManager.Instance.Player.Equipment.OnUseHandAnimEndEvent += HitSource;
 		GameManager.Instance.Player.Equipment.PlayUseHandItemAnim();
 	}

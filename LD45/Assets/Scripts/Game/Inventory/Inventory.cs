@@ -6,10 +6,14 @@ using UnityEngine.Events;
 public class Inventory : MonoBehaviour {
 	public UnityEvent OnItemsChanged;
 
-	public byte MaxSlots;
+	[SerializeField] Inventory DelegatedInventory;
+
 	public ItemSO[] Items;
 
 	public bool AddItem(ItemSO item) {
+		if(DelegatedInventory?.AddItem(item) ?? false)
+			return true;
+
 		bool addAllItems = item.Count == 0;
 		ushort startCount = item.Count;
 
@@ -51,8 +55,37 @@ public class Inventory : MonoBehaviour {
 		return addAllItems;
 	}
 
+	public bool ContainsItem(ItemSO item) {
+		ushort findCount = 0;
+
+		for (byte i = 0; i < Items.Length; ++i)
+			if (Items[i]?.Type == item.Type && (findCount += Items[i].Count) > item.Count)
+				break;
+
+		for (byte i = 0; i < DelegatedInventory.Items.Length; ++i)
+			if (DelegatedInventory.Items[i]?.Type == item.Type && (findCount += DelegatedInventory.Items[i].Count) > item.Count)
+				break;
+
+		return findCount >= item.Count;
+	}
+
 	public void RemoveItem(ItemSO item) {
-		//TODO: Remove to Count
-		//Items.Remove(item);
+		DelegatedInventory?.RemoveItem(item);
+
+		for (byte i = 0; i < Items.Length; ++i) {
+			if(Items[i]?.Type == item.Type) {
+				if(Items[i].Count >= item.Count) {
+					Items[i].Count -= item.Count;
+					item.Count = 0;
+				}
+				else {
+					item.Count -= Items[i].Count;
+					Items[i] = null;
+				}
+			}
+
+			if (item.Count == 0)
+				break;
+		}
 	}
 }

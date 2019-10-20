@@ -550,8 +550,9 @@ Transform:
   - {fileID: 8188539249883487058}
   - {fileID: 8188539250111096729}
   - {fileID: 8188539249619862462}
+  - {fileID: 3623051489839914272}
   m_Father: {fileID: 738878352321705315}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &738878352169156414
 GameObject:
@@ -889,10 +890,10 @@ Transform:
   m_Children:
   - {fileID: 738878352330902773}
   - {fileID: 738878352798402870}
+  - {fileID: 1435856676686716744}
   - {fileID: 738878352665038569}
   - {fileID: 738878351830933802}
   - {fileID: 738878352377382212}
-  - {fileID: 3623051489839914272}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -909,8 +910,6 @@ GameObject:
   - component: {fileID: 738878352330902775}
   - component: {fileID: 738878352330902537}
   - component: {fileID: 738878352330902774}
-  - component: {fileID: 738878352330902538}
-  - component: {fileID: 738878352330902772}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1009,59 +1008,6 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738878352330902536}
   m_Enabled: 1
---- !u!114 &738878352330902538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738878352330902536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 4
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 1917e4ae00000000
-  m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &738878352330902772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738878352330902536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c9f66d1e163abc4987ec7dab2139ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Component: {fileID: 738878352330902538}
-  Destroy: 0
 --- !u!1 &738878352377382234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1048,7 @@ Transform:
   m_Children:
   - {fileID: 738878351475720236}
   m_Father: {fileID: 738878352321705315}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &738878352377382235
 SpriteRenderer:
@@ -1201,7 +1147,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanMouseMove: 1
   Inputs:
-  - Key: 105
+  - Type: 1
+    Key: 105
+    IsWheelUp: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
@@ -1217,8 +1165,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 49
-    InterruptAnim: 1
+  - Type: 1
+    Key: 49
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
@@ -1233,8 +1183,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 50
-    InterruptAnim: 1
+  - Type: 1
+    Key: 50
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
@@ -1249,8 +1201,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 51
-    InterruptAnim: 1
+  - Type: 1
+    Key: 51
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
@@ -1265,8 +1219,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 52
-    InterruptAnim: 1
+  - Type: 1
+    Key: 52
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
@@ -1281,14 +1237,52 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - Key: 53
-    InterruptAnim: 1
+  - Type: 1
+    Key: 53
+    IsWheelUp: 0
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 738878352377382216}
           m_MethodName: SetSelection
           m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 2
+    Key: 119
+    IsWheelUp: 1
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 738878352377382216}
+          m_MethodName: MoveSelectionUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 2
+    Key: 119
+    IsWheelUp: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 738878352377382216}
+          m_MethodName: MoveSelectionDown
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1330,7 +1324,7 @@ MonoBehaviour:
   OnItemsChanged:
     m_PersistentCalls:
       m_Calls: []
-  MaxSlots: 25
+  DelegatedInventory: {fileID: 738878352377382216}
   Items:
   - {fileID: 0}
   - {fileID: 0}
@@ -1372,7 +1366,7 @@ MonoBehaviour:
   OnItemsChanged:
     m_PersistentCalls:
       m_Calls: []
-  MaxSlots: 5
+  DelegatedInventory: {fileID: 0}
   Items:
   - {fileID: 0}
   - {fileID: 0}
@@ -1648,7 +1642,7 @@ RectTransform:
   - {fileID: 738878351243575073}
   - {fileID: 738878352425554542}
   m_Father: {fileID: 738878352321705315}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1781,6 +1775,55 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!1 &6272208459744365511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435856676686716744}
+  - component: {fileID: 838059867}
+  m_Layer: 0
+  m_Name: OnGroundItemsList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435856676686716744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6272208459744365511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 738878352321705315}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &838059867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6272208459744365511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33f2221fbdcfa24593bcca34d613e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGroundItemsPrefabs:
+  - {fileID: 7179299255259088472, guid: 10a8992cd7a5efa4b838a6d425820c85, type: 3}
+  - {fileID: 4847483186995451876, guid: 8e3dfe8f9c2739742964815eef2ca303, type: 3}
+  - {fileID: 894966701500476321, guid: a202915e18ec55949bc914f602730d28, type: 3}
+  - {fileID: 4847483186995451876, guid: d411e1216d4ed6747980c0f08569abc6, type: 3}
+  - {fileID: 4949850401918132681, guid: 9316ebcd1b460a94ab57a39743bc10fd, type: 3}
 --- !u!1 &8127612646601639354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,8 +1852,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 738878352321705315}
-  m_RootOrder: 5
+  m_Father: {fileID: 738878351830933802}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5326549852893948771
 MonoBehaviour:

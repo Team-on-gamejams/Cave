@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
+//TODO: переробити на людський поліморфізм, а не чекати типи
 public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler {
 	static ItemSlot draggingSlot;
 
@@ -13,13 +14,10 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	[SerializeField] Image ItemImage;
 	[SerializeField] TextMeshProUGUI CountText;
 
+	protected InventoryUI InventoryUI;
+
 	GameObject canvas;
-	InventoryUI InventoryUI;
-
 	ItemSO item;
-
-	Vector3 mouseOffsetImage;
-	Vector3 mouseOffsetCount;
 
 	virtual protected void Awake() {
 		CountText.gameObject.SetActive(false);
@@ -49,6 +47,11 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		else {
 			CountText.gameObject.SetActive(false);
 		}
+
+		if (InventoryUI.Inventory is Hotbar) {
+			if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
+				GameManager.Instance.Player.Equipment.EquipItem(InventoryUI.Inventory.Items[invId]);
+		}
 	}
 
 	public void OnBeginDrag(PointerEventData eventData) {
@@ -61,19 +64,18 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 		ItemImage.transform.SetParent(canvas.transform, true);
 		CountText.transform.SetParent(canvas.transform, true);
+		ItemImage.raycastTarget = false;
 
-		mouseOffsetImage = ItemImage.transform.position - Input.mousePosition;
-		mouseOffsetCount = CountText.transform.position - Input.mousePosition;
+		ItemImage.transform.position += (Vector3)eventData.delta;
+		CountText.transform.position += (Vector3)eventData.delta;
 	}
 
 	public void OnDrag(PointerEventData eventData) {
 		if (item == null)
 			return;
 
-		ItemImage.transform.position = Input.mousePosition + mouseOffsetImage;
-		CountText.transform.position = Input.mousePosition + mouseOffsetCount;
-
-		ItemImage.raycastTarget = false;
+		ItemImage.transform.position += (Vector3)eventData.delta;
+		CountText.transform.position += (Vector3)eventData.delta;
 	}
 
 	public void OnEndDrag(PointerEventData eventData) {
@@ -83,6 +85,36 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 			return;
 
 		ReInit();
+
+		if (eventData.hovered.Count != 0)
+			return;
+
+
+		if (GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject)
+			return;
+
+		Vector3 newItemPos = GameManager.Instance.MainCamera.ScreenToWorldPoint(eventData.position);
+		GameManager.Instance.Player.InterruptAction();
+		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
+
+		if (GameManager.Instance.Player.CanInteract(newItemPos)) {
+			DropItemOnGround();
+		}
+		else {
+			GameManager.Instance.Player.PlayerKeyboardMover.MoveTo(newItemPos);
+			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += DropItemOnGround;
+		}
+
+		void DropItemOnGround() {
+			OnGroundItem.CreateOnGround(item, newItemPos, GameManager.Instance.CollectorItems.transform);
+
+			InventoryUI.Inventory.Items[invId] = null;
+			InventoryUI.UpdateUI();
+			if (InventoryUI.Inventory is Hotbar) {
+				if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
+					GameManager.Instance.Player.Equipment.EquipItem(null);
+			}
+		}
 	}
 
 	public void OnDrop(PointerEventData eventData) {

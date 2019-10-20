@@ -28,7 +28,7 @@ public class InventoryUI : MonoBehaviour {
 		
 		Inventory.OnItemsChanged.AddListener(UpdateUI);
 
-		itemSlots = new List <ItemSlot>(Inventory.MaxSlots);
+		itemSlots = new List <ItemSlot>(Inventory.Items.Length);
 		ItemSlot[] items = GetComponentsInChildren<ItemSlot>();
 		for(byte i = 0; i <items.Length; ++i) {
 			itemSlots.Add(items[i]);

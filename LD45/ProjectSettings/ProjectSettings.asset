@@ -122,7 +122,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.4.7
+  bundleVersion: 0.0.4
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -645,7 +645,10 @@ PlayerSettings:
   scriptingRuntimeVersion: 1
   gcIncremental: 0
   gcWBarrierValidation: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Android: 3
+    Standalone: 3
+    WebGL: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template_2D

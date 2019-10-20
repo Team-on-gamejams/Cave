@@ -52,6 +52,7 @@ public class Equipment : MonoBehaviour {
 
 	public void EquipItem(ItemSO item) {
 		//TODO: also add equip for armor
+		GameManager.Instance.Player.InterruptAction();
 		hands = item;
 		if(hands == null) {
 			ItemInHand.enabled = false;

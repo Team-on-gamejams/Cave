@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
 // Всі класи, що наслідуються мають всередині виконувати   
@@ -11,7 +13,7 @@ public class Interactable : MonoBehaviour {
 
 	public float OutlineScale = 1;
 	public float InteractDist;
-	public System.Action OnMouseClick;
+	public Action OnMouseClick;
 
 	[SerializeField] protected string tip;
 
@@ -34,8 +36,8 @@ public class Interactable : MonoBehaviour {
 		RecalcInteractPos();
     }
 
-    void OnMouseEnter() {
-		if (GameManager.Instance.SelectedOutlineGO != null)
+	void OnMouseEnter() {
+		if (GameManager.Instance.SelectedOutlineGO != null || EventSystem.current.IsPointerOverGameObject())
 			return;
 
 		GameManager.Instance.SelectedOutlineGO = this;
@@ -56,13 +58,13 @@ public class Interactable : MonoBehaviour {
         GameManager.Instance.EventManager.CallOnPopUpShow(eventData);
     }
 
-    void OnMouseDown() {
-		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject)
+	void OnMouseDown() {
+		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
 			return;
 
-		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
 		GameManager.Instance.Player.InterruptAction();
-		if (CanInteract()) {
+		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
+		if (IsInRange()) {
 			OnMouseClick?.Invoke();
 		}
 		else {
@@ -91,7 +93,9 @@ public class Interactable : MonoBehaviour {
 		OnMouseDown();
 	}
 
-	public bool CanInteract() {
+	public virtual bool CanInteract() => true;
+
+	public bool IsInRange() {
 		return GameManager.Instance.Player.CanInteract(transform.position, InteractDistSqr);
 	}
 
