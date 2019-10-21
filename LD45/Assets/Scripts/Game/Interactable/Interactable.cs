@@ -9,23 +9,19 @@ using UnityEngine.EventSystems;
 // GameManager.Instance.Player.Equipment.GOLinkedAnim = null;
 // Це треба для анимашок, щоб не викликати одне і те ж саме, якщо спамиш кликами
 public class Interactable : MonoBehaviour {
-	public GameObject AdditionalOutlineGO;
-
-	public float OutlineScale = 1;
 	public float InteractDist;
 	public Action OnMouseClick;
 
 	[SerializeField] protected string tip;
 
     [SerializeField] bool interactPosOnCenter;
-	[SerializeField] float outlineSize;
+	[SerializeField] float outlineScale = 1;
+	[SerializeField] float outlineSize = 1;
 
 	SpriteRenderer spriteRenderer;
 
-	Vector3 interactPos;
-
-	SpriteOutline outlineAdditional;
 	SpriteOutline outline;
+	Vector3 interactPos;
 	float InteractDistSqr;
 
 	protected virtual void Awake() {
@@ -92,21 +88,13 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void ShowOutline() {
-		if (outline == null) {
+		if (outline == null)
 			outline = CreateOutline(gameObject, true);
-			if (AdditionalOutlineGO) {
-				outlineAdditional = CreateOutline(AdditionalOutlineGO, false);
-			}
-		}
 		outline.gameObject.SetActive(true);
-		if (outlineAdditional)
-			outlineAdditional.gameObject.SetActive(true);
 	}
 
 	void HideOutline() {
 		outline.gameObject.SetActive(false);
-		if (outlineAdditional)
-			outlineAdditional.gameObject.SetActive(false);
 	}
 
 	SpriteOutline CreateOutline(GameObject parentGO, bool needScale) {
@@ -115,7 +103,7 @@ public class Interactable : MonoBehaviour {
 		};
 		gameObject.transform.parent = parentGO.transform;
 		gameObject.transform.localPosition = Vector3.zero;
-		gameObject.transform.localScale = new Vector3(needScale ? OutlineScale : 1, needScale ? OutlineScale : 1, 1f);
+		gameObject.transform.localScale = Vector3.one * outlineScale;
 
 		SpriteRenderer parentsr = parentGO.GetComponent<SpriteRenderer>();
 		SpriteRenderer sr = gameObject.AddComponent<SpriteRenderer>();

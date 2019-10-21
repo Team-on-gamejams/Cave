@@ -96,9 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497a8ad671a55f64f996b4a01f7e73db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalOutlineGO: {fileID: 0}
-  OutlineScale: 1
   InteractDist: 1.5
+  tip: 
+  interactPosOnCenter: 0
+  outlineScale: 1.1
   outlineSize: 1
 --- !u!114 &8499932633975898898
 MonoBehaviour:
@@ -131,9 +132,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.03, y: 0.16, z: 0.02, w: 0.17}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.45, y: 0.17}
+    oldSize: {x: 0.47, y: 0.19}
     newSize: {x: 0.3, y: 0.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -157,9 +158,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.050649866}
   m_SpriteTilingProperty:
-    border: {x: 0.03, y: 0.16, z: 0.02, w: 0.17}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.45, y: 0.17}
+    oldSize: {x: 0.47, y: 0.19}
     newSize: {x: 0.3, y: 0.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

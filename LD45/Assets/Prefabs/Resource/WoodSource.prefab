@@ -96,11 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e450be1e30db91d4dbe8fadd3c0b0697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalOutlineGO: {fileID: 0}
-  OutlineScale: 1.05
   InteractDist: 2.1
   tip: Chop tree
   interactPosOnCenter: 0
+  outlineScale: 1.1
   outlineSize: 1
   NeededHands: 1
   ResourcePrefab: {fileID: 4949850401918132681, guid: 9316ebcd1b460a94ab57a39743bc10fd,
@@ -125,7 +124,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.018316276, y: -0.33885133}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.01, y: 0.01, z: 0.01, w: 0.01}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.82, y: 0.82}
     newSize: {x: 0.82, y: 0.82}
@@ -151,7 +150,7 @@ PolygonCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.01, y: 0.01, z: 0.01, w: 0.01}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.82, y: 0.82}
     newSize: {x: 0.82, y: 0.82}

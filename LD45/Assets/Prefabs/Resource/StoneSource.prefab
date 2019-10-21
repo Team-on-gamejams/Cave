@@ -96,11 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e450be1e30db91d4dbe8fadd3c0b0697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalOutlineGO: {fileID: 0}
-  OutlineScale: 1.1
   InteractDist: 1
   tip: Broke rock
   interactPosOnCenter: 0
+  outlineScale: 1.1
   outlineSize: 1
   NeededHands: 2
   ResourcePrefab: {fileID: 4847483186995451876, guid: d411e1216d4ed6747980c0f08569abc6,
@@ -127,7 +126,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0.04, y: 0.04, z: 0.03, w: 0.04}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.53, y: 0.52}
+    oldSize: {x: 0.55, y: 0.54}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -163,7 +162,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0.04, y: 0.04, z: 0.03, w: 0.04}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.53, y: 0.52}
+    oldSize: {x: 0.55, y: 0.54}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

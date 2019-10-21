@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8aa26a458d4bd4b9bd24a9ea7ff46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalOutlineGO: {fileID: 0}
-  OutlineScale: 1.2
   InteractDist: 0.5
+  tip: 
+  outlineScale: 1.2
   interactPosOnCenter: 1
   outlineSize: 1
   Item: {fileID: 11400000, guid: 2da611b7135b8db44907c34b1d4d9f55, type: 2}
