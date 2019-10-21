@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractDist: 1.5
-  tip: 
+  tip: Light torch
   interactPosOnCenter: 0
   outlineScale: 1.1
   outlineSize: 1
