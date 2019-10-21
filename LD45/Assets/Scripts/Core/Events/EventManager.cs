@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class EventManager {
+	public static event EventController.MethodContainer OnPauseChanged;
+	public void CallOnPauseChanged(EventData ob = null) => OnPauseChanged?.Invoke(ob);
+
+	public static event EventController.MethodContainer OnGameSpeedChanged;
+	public void CallOnGameSpeedChanged(EventData ob = null) => OnGameSpeedChanged?.Invoke(ob);
 
 	//Scene Loader
 	public static event EventController.MethodContainer OnSceneNeedLoad;

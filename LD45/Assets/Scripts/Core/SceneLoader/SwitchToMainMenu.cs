@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SwitchToMainMenu : MonoBehaviour {
-	void Update() {
+	void Start() {
 		SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
 	}
 }

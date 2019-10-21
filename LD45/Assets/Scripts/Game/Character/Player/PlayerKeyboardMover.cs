@@ -33,6 +33,8 @@ public class PlayerKeyboardMover : MonoBehaviour {
 	void Update() {
 		for (byte i = 0; i < Inputs.Length; ++i) {
 			InputEvent input = Inputs[i];
+			if (GameManager.Instance.IsPaused && !input.IgnorePause)
+				continue;
 
 			switch (input.Type) {
 				case InputEvent.InputEventType.Key:
@@ -65,6 +67,9 @@ public class PlayerKeyboardMover : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		if (GameManager.Instance.IsPaused)
+			return;
+
 		float v = Input.GetAxisRaw("Vertical");
 		float h = Input.GetAxisRaw("Horizontal");
 		bool wasMoved = false;
@@ -155,6 +160,7 @@ public class InputEvent {
 	public KeyCode Key;
 	public bool IsWheelUp; //true - up, false - down
 
+	public bool IgnorePause;
 	public bool InterruptAnim;
 
 	public UnityEvent OnButtonPressed;

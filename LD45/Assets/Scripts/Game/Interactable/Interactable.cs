@@ -35,7 +35,7 @@ public class Interactable : MonoBehaviour {
 	// OnMouseEnter та OnMouseExit викликаються завжди послідовно. Якщо курсор буде над 2 обєктами, то буде: OnMouseEnter -> OnMouseExit -> OnMouseEnter
 	// Якщо буде дуже важно мати правильну обводку, то треба буде в OnMouseOver або в OnMouseEnter робити рейкасти, і чекати найвищий спрайт
 	void OnMouseEnter() {
-		if (GameManager.Instance.SelectedOutlineGO != null || EventSystem.current.IsPointerOverGameObject())
+		if (GameManager.Instance.IsPaused || GameManager.Instance.SelectedOutlineGO != null || EventSystem.current.IsPointerOverGameObject())
 			return;
 
 		GameManager.Instance.SelectedOutlineGO = this;
@@ -49,7 +49,7 @@ public class Interactable : MonoBehaviour {
     }
 
 	void OnMouseDown() {
-		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
+		if (GameManager.Instance.IsPaused || GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
 			return;
 
 		GameManager.Instance.Player.InterruptAction();
@@ -64,7 +64,7 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseExit() {
-		if (GameManager.Instance.SelectedOutlineGO != this)
+		if (GameManager.Instance.IsPaused || GameManager.Instance.SelectedOutlineGO != this)
 			return;
 
 		GameManager.Instance.SelectedOutlineGO = null;

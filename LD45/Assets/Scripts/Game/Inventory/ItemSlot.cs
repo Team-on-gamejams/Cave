@@ -55,6 +55,9 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	}
 
 	public void OnBeginDrag(PointerEventData eventData) {
+		if (GameManager.Instance.IsPaused)
+			return;
+
 		draggingSlot = this;
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = false;
 		InventoryUI.isDrag = true;
@@ -71,7 +74,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	}
 
 	public void OnDrag(PointerEventData eventData) {
-		if (item == null)
+		if (GameManager.Instance.IsPaused || item == null)
 			return;
 
 		ItemImage.transform.position += (Vector3)eventData.delta;
@@ -79,6 +82,8 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	}
 
 	public void OnEndDrag(PointerEventData eventData) {
+		if (GameManager.Instance.IsPaused)
+			return;
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = true;
 
 		if (item == null)

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,22 +17,30 @@ public abstract class BaseWindow : MonoBehaviour {
 
 	public virtual void Show(bool isForce) {
 		isShowed = true;
-		Move(isForce, ShowPos);
+		BeforeShow();
+		Move(isForce, ShowPos, AfterShow);
 	}
 
 	public virtual void Hide(bool isForce) {
 		isShowed = false;
-		Move(isForce, HidePos);
+		BeforeHide();
+		Move(isForce, HidePos, AfterHide);
 	}
 
-	void Move(bool isForce, Vector2 pos) {
+	void Move(bool isForce, Vector2 pos, Action onEnd) {
 		if (isForce) {
 			transform.position = HidePos;
 		}
 		else {
-			LeanTween.cancel(gameObject);
+			LeanTween.cancel(gameObject, false);
 			LeanTween.moveLocal(gameObject, pos, MoveTime)
-				.setEase(Ease);
+				.setEase(Ease)
+				.setOnComplete(onEnd);
 		}
 	}
+
+	protected virtual void BeforeShow() { }
+	protected virtual void AfterShow() { }
+	protected virtual void BeforeHide() { }
+	protected virtual void AfterHide() { }
 }

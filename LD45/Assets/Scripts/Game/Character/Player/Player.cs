@@ -21,7 +21,7 @@ public class Player : Character {
 	}
 
 	public void InterruptAction() {
-		if (PlayerKeyboardMover.NeedInterrupt() || Equipment.NeedInterrupt()) {
+		if ((PlayerKeyboardMover.NeedInterrupt() || Equipment.NeedInterrupt()) && !GameManager.Instance.IsPaused) {
 			PlayerKeyboardMover.InterruptAction();
 			Equipment.InterruptAction();
 			Animator.Play("DwarfAnim");
