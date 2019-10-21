@@ -125,7 +125,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnDrop(PointerEventData eventData) {
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = true;
 
-		if (draggingSlot == this || draggingSlot.item == null)
+		if (draggingSlot == this || draggingSlot?.item == null)
 			return;
 
 		if (item == null || (item.Type != draggingSlot.item.Type) || item.IsMaxStack() || draggingSlot.item.IsMaxStack()) {
@@ -169,5 +169,10 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		ItemImage.transform.localPosition = Vector3.zero;
 		CountText.rectTransform.anchoredPosition = Vector3.zero;
 		ItemImage.raycastTarget = true;
+	}
+
+	public static void OnPause() {
+		draggingSlot?.ReInit();
+		draggingSlot = null;
 	}
 }

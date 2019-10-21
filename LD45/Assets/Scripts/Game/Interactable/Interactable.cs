@@ -116,4 +116,9 @@ public class Interactable : MonoBehaviour {
 		outline.UpdateOutline(outline._outlineSize);
 		return outline;
 	}
+
+	public static void OnPause() {
+		GameManager.Instance?.SelectedOutlineGO?.HideOutline();
+		GameManager.Instance.SelectedOutlineGO = null;
+	}
 }
