@@ -158,7 +158,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		}
 		if (draggingSlot.InventoryUI.Inventory is Hotbar) {
 			if ((draggingSlot.InventoryUI.Inventory as Hotbar).SelectedSlotId == draggingSlot.invId)
-				GameManager.Instance.Player.Equipment.EquipItem(null);
+				GameManager.Instance.Player.Equipment.EquipItem(draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId]);
 		}
 	}
 
