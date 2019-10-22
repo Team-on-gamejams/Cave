@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
-public class BaseStat{
+public class BaseStat : MonoBehaviour {
 	public float MaxValue {
 		get {
 			return _maxValue;
@@ -25,6 +27,8 @@ public class BaseStat{
 		}
 	}
 
+	public Action OnValueChange;
+
 	[SerializeField] float _maxValue;
 	[SerializeField] float _value;
 
@@ -34,5 +38,6 @@ public class BaseStat{
 
 	public void ChangeBy(float val) {
 		Value += val;
+		OnValueChange?.Invoke();
 	}
 }

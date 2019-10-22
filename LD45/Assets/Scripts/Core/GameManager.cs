@@ -42,7 +42,7 @@ public class GameManager : Singleton<GameManager> {
 		Input.multiTouchEnabled = false;
 		LeanTween.init(800);
 
-		IsPaused = false;
+		_IsPaused = false;
 
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
 	}
