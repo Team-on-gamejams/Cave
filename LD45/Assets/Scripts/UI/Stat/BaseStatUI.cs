@@ -8,9 +8,6 @@ public class BaseStatUI : MonoBehaviour {
 	[SerializeField] Image filledImg;
 	[SerializeField] BaseStat stat;
 
-	delegate int a(int b, int a);
-	event a onval;
-
 	void Awake() {
 		stat.OnValueChange += UpdateFill;
 	}
