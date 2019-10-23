@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6106678205888161603}
   - component: {fileID: 8301309024093751163}
   - component: {fileID: 8301309024093751165}
+  - component: {fileID: 8362370675531545963}
   m_Layer: 0
   m_Name: Bonfire
   m_TagString: Untagged
@@ -136,6 +137,7 @@ MonoBehaviour:
   interactPosOnCenter: 0
   outlineScale: 1.1
   outlineSize: 1
+  Item: {fileID: 11400000, guid: 56cca3cb787bd0c4189412b7b036f88a, type: 2}
 --- !u!114 &8301309024093751162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +245,21 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &8362370675531545963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8301309024093751156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497a8ad671a55f64f996b4a01f7e73db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractDist: 0
+  tip: 
+  interactPosOnCenter: 0
+  outlineScale: 1
+  outlineSize: 1
+  Item: {fileID: 11400000, guid: 56cca3cb787bd0c4189412b7b036f88a, type: 2}

@@ -45,7 +45,7 @@ public class Interactable : MonoBehaviour {
     private void OnMouseOver() {
         EventData eventData = new EventData("OnPopUpShow");
         eventData["tipText"] = tip;
-        GameManager.Instance.EventManager.CallOnPopUpShow(eventData);
+        GameManager.Instance.EventManager.CallOnMouseOverTip(eventData);
     }
 
 	void OnMouseDown() {

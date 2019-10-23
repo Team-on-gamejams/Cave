@@ -101,6 +101,7 @@ MonoBehaviour:
   interactPosOnCenter: 0
   outlineScale: 1.1
   outlineSize: 1
+  Item: {fileID: 11400000, guid: 8679939f574acec448dca3106545e30e, type: 2}
 --- !u!114 &8499932633975898898
 MonoBehaviour:
   m_ObjectHideFlags: 0

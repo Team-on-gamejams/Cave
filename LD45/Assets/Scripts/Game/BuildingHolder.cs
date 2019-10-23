@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemHolder : MonoBehaviour {
+public class BuildingHolder : MonoBehaviour {
 	void Start() {
-		GameManager.Instance.CollectorItems = gameObject;
+		GameManager.Instance.CollectorBuilding = gameObject;
 	}
 }

@@ -16,11 +16,6 @@ public class OnGroundItemsList : MonoBehaviour {
 			ItemsData[i] = OnGroundItemsPrefabs[i].GetComponent<OnGroundItem>().Item;
 	}
 
-	void OnDestroy() {
-		if(instance == this)
-			instance = null;
-	}
-
 	public GameObject GetItemPrefab(ItemSO item) {
 		for(ushort i = 0; i < OnGroundItemsPrefabs.Length; ++i) {
 			if (ItemsData[i].Type == item.Type)
@@ -28,4 +23,5 @@ public class OnGroundItemsList : MonoBehaviour {
 		}
 		return null;
 	}
+
 }
