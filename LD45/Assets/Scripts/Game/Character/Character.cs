@@ -8,6 +8,7 @@ public abstract class Character : MonoBehaviour {
 	public BaseStat ManaPoints;
 	public BaseStat SleepPoints;
 	public BaseStat HungerPoints;
+	public ExperienceStat ExperiencePoints;
 
 	public float speed;
 }
