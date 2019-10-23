@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,27 +10,22 @@ using TMPro;
 public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler {
 	static ItemSlot draggingSlot;
 
-	internal int invId;
+	[NonSerialized] public int invId;
 
 	[SerializeField] Image ItemImage;
 	[SerializeField] TextMeshProUGUI CountText;
 
 	protected InventoryUI InventoryUI;
-
-	GameObject canvas;
-	ItemSO item;
+	protected ItemSO item;
 
 	virtual protected void Awake() {
 		CountText.gameObject.SetActive(false);
 		ItemImage.gameObject.SetActive(false);
 
-		//TODO: нормально передвавати канвас
-		canvas = gameObject.transform.parent.parent.gameObject;
-
-		InventoryUI = gameObject.transform.parent.gameObject.GetComponent<InventoryUI>();
+		InventoryUI = transform.parent.GetComponent<InventoryUI>();
 	}
 
-	public void SetItem(ItemSO _item) {
+	public virtual void SetItem(ItemSO _item) {
 		item = _item;
 		if (item == null) {
 			CountText.gameObject.SetActive(false);
@@ -47,27 +43,20 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		else {
 			CountText.gameObject.SetActive(false);
 		}
-
-		if (InventoryUI.Inventory is Hotbar) {
-			if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
-				GameManager.Instance.Player.Equipment.EquipItem(InventoryUI.Inventory.Items[invId]);
-		}
 	}
 
 	public void OnBeginDrag(PointerEventData eventData) {
-		if (GameManager.Instance.IsPaused)
+		if (GameManager.Instance.IsPaused || item == null)
 			return;
 
 		draggingSlot = this;
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = false;
 		InventoryUI.isDrag = true;
 
-		if (item == null)
-			return;
-
-		ItemImage.transform.SetParent(canvas.transform, true);
-		CountText.transform.SetParent(canvas.transform, true);
+		ItemImage.transform.SetParent(InventoryUI.ParentForDraggedSlot.transform, true);
+		CountText.transform.SetParent(InventoryUI.ParentForDraggedSlot.transform, true);
 		ItemImage.raycastTarget = false;
+		CountText.raycastTarget = false;
 
 		ItemImage.transform.position += (Vector3)eventData.delta;
 		CountText.transform.position += (Vector3)eventData.delta;
@@ -82,20 +71,13 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	}
 
 	public void OnEndDrag(PointerEventData eventData) {
-		if (GameManager.Instance.IsPaused)
+		if (GameManager.Instance.IsPaused || item == null)
 			return;
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = true;
-
-		if (item == null)
-			return;
 
 		ReInit();
 
 		if (eventData.hovered.Count != 0)
-			return;
-
-
-		if (GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject)
 			return;
 
 		Vector3 newItemPos = GameManager.Instance.MainCamera.ScreenToWorldPoint(eventData.position);
@@ -103,22 +85,11 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
 
 		if (GameManager.Instance.Player.CanInteract(newItemPos)) {
-			DropItemOnGround();
+			DropItemOnGround(newItemPos);
 		}
 		else {
 			GameManager.Instance.Player.PlayerKeyboardMover.MoveTo(newItemPos);
-			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += DropItemOnGround;
-		}
-
-		void DropItemOnGround() {
-			OnGroundItem.CreateOnGround(item, newItemPos, GameManager.Instance.CollectorItems.transform);
-
-			InventoryUI.Inventory.Items[invId] = null;
-			InventoryUI.UpdateUI();
-			if (InventoryUI.Inventory is Hotbar) {
-				if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
-					GameManager.Instance.Player.Equipment.EquipItem(null);
-			}
+			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += () => DropItemOnGround(newItemPos);
 		}
 	}
 
@@ -151,15 +122,12 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		draggingSlot.ReInit();
 		InventoryUI.UpdateUI();
 		draggingSlot.InventoryUI.UpdateUI();
+	}
 
-		if (InventoryUI.Inventory is Hotbar) {
-			if((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
-				GameManager.Instance.Player.Equipment.EquipItem(InventoryUI.Inventory.Items[invId]);
-		}
-		if (draggingSlot.InventoryUI.Inventory is Hotbar) {
-			if ((draggingSlot.InventoryUI.Inventory as Hotbar).SelectedSlotId == draggingSlot.invId)
-				GameManager.Instance.Player.Equipment.EquipItem(draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId]);
-		}
+	void DropItemOnGround(Vector3 newItemPos) {
+		OnGroundItem.CreateOnGround(item, newItemPos, GameManager.Instance.CollectorItems.transform);
+		InventoryUI.Inventory.Items[invId] = null;
+		InventoryUI.UpdateUI();
 	}
 
 	void ReInit() {
@@ -169,6 +137,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		ItemImage.transform.localPosition = Vector3.zero;
 		CountText.rectTransform.anchoredPosition = Vector3.zero;
 		ItemImage.raycastTarget = true;
+		CountText.raycastTarget = true;
 	}
 
 	public static void OnPause() {

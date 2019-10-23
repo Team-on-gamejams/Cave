@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class InventoryUI : BaseUI {
 	public Inventory Inventory;
+	public GameObject ParentForDraggedSlot;
 
 	[NonSerialized] public bool isDrag;
 
@@ -32,14 +33,17 @@ public class InventoryUI : BaseUI {
 	}
 
 	protected override void BeforeShow() {
-		UpdateUI();
+		UpdateUIForce();
 	}
 
-	public virtual void UpdateUI() {
+	public void UpdateUI() {
 		if (!IsShowed)
 			return;
+		UpdateUIForce();
+	}
 
-		for(byte i = 0; i < Inventory.Items.Length; ++i) 
+	public void UpdateUIForce() {
+		for (byte i = 0; i < Inventory.Items.Length; ++i)
 			itemSlots[i].SetItem(Inventory.Items[i]);
 	}
 }

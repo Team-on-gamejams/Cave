@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: да тут же оверхед по памяті огромний. В InventoryUI є свої посилання на всі приватні поля, а тут вони же, але іншого типу
 public class HotbarUI : InventoryUI {
 	List<ItemSlotHotbar> itemSlotsHotbar = new List<ItemSlotHotbar>();
 	Hotbar hotbar;

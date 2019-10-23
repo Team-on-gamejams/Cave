@@ -41,6 +41,7 @@ public class Equipment : MonoBehaviour {
 		//}
 	}
 
+	//Callback for animations
 	public void OnUseHandAnimEnd() {
 		if(OnUseHandAnimEndEvent != null) {
 			OnUseHandAnimEndEvent();

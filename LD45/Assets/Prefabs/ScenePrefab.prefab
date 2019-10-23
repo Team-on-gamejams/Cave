@@ -981,6 +981,7 @@ MonoBehaviour:
   NeedShowHide: 0
   ShowTime: 0.2
   Inventory: {fileID: 738878352377382216}
+  ParentForDraggedSlot: {fileID: 738878352665038573}
 --- !u!1 &738878351475720227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1272,7 @@ MonoBehaviour:
   NeedShowHide: 1
   ShowTime: 0.05
   Inventory: {fileID: 738878352377382209}
+  ParentForDraggedSlot: {fileID: 738878352665038573}
 --- !u!1 &738878352224747761
 GameObject:
   m_ObjectHideFlags: 0
