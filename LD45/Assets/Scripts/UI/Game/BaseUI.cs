@@ -14,13 +14,14 @@ public abstract class BaseUI : MonoBehaviour {
 	virtual protected void Awake() {
 		if (NeedShowHide) {
 			canvasGroup = GetComponent<CanvasGroup>();
-			canvasGroup.alpha = 0;
-			gameObject.SetActive(false);
+			if (!isShowed) {
+				canvasGroup.alpha = 0;
+				gameObject.SetActive(false);
+			}
 		}
 		else {
 			isShowed = true;
 		}
-		
 	}
 
 	public void ChangeShowHide() {
@@ -34,8 +35,8 @@ public abstract class BaseUI : MonoBehaviour {
 
 	public void Show() {
 		BeforeShow();
-		gameObject.SetActive(true);
 		isShowed = true;
+		gameObject.SetActive(true);
 
 		LeanTween.cancel(gameObject);
 		LeanTween.value(gameObject, canvasGroup.alpha, 1.0f, ShowTime)
