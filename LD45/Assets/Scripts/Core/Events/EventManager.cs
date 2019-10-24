@@ -20,4 +20,7 @@ public class EventManager {
 
     public static event EventController.MethodContainer OnMouseOverTip;
     public void CallOnMouseOverTip(EventData ob = null) => OnMouseOverTip?.Invoke(ob);
+
+	public static event EventController.MethodContainer OnEquipmentChange;
+	public void CallOnEquipmentChange(EventData ob = null) => OnEquipmentChange?.Invoke(ob);
 }
