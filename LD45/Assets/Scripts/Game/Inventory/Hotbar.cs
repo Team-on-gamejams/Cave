@@ -15,7 +15,18 @@ public class Hotbar : Inventory {
 		OnSelectionChange?.Invoke();
 	}
 
-	public void SetSelection(int id) { //Arrr!111! Unity dont show it in editor if [id] is [byte]
+	public override bool AddItem(ItemSO item) {
+		bool rez = base.AddItem(item);
+		SetSelection(SelectedSlotId);
+		return rez;
+	}
+
+	public override void RemoveItem(ItemSO item) {
+		base.RemoveItem(item);
+		SetSelection(SelectedSlotId);
+	}
+
+	public void SetSelection(int id) { //Unity dont show it in editor if [id] is [byte]
 		SelectedSlotId = (byte)id;
 		GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId]);
 		OnSelectionChange?.Invoke();

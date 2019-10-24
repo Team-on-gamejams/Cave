@@ -8,13 +8,24 @@ using TMPro;
 public class ItemSlotHotbar: ItemSlot, IPointerClickHandler {
 	[SerializeField] Image SelectedFrame;
 
+	Hotbar hotbar;
+
 	protected override void Awake() {
 		base.Awake();
+		hotbar = InventoryUI.Inventory as Hotbar;
+
 		SelectedFrame.gameObject.SetActive(false);
 	}
 
+	public override void SetItem(ItemSO _item) {
+		base.SetItem(_item);
+
+		if (hotbar.SelectedSlotId == invId)
+			GameManager.Instance.Player.Equipment.EquipItem(item);
+	}
+
 	public void OnPointerClick(PointerEventData eventData) {
-		(InventoryUI.Inventory as Hotbar).SetSelection(invId);
+		hotbar.SetSelection(invId);
 	}
 
 	public void SetSelectedFrame() {

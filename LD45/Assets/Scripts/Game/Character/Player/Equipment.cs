@@ -6,9 +6,8 @@ using UnityEngine;
 public class Equipment : MonoBehaviour {
 	public SpriteRenderer ItemInHand;
 
-	public GameObject GOLinkedAnim;
-
-	public ItemSO hands;
+	[NonSerialized] public GameObject GOLinkedAnim;
+	[NonSerialized] public ItemSO hands;
 	public Action OnUseHandAnimEndEvent;
 
 	Animator animator;
@@ -43,6 +42,7 @@ public class Equipment : MonoBehaviour {
 		//}
 	}
 
+	//Callback for animations
 	public void OnUseHandAnimEnd() {
 		if(OnUseHandAnimEndEvent != null) {
 			OnUseHandAnimEndEvent();
