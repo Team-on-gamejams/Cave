@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour {
 
 	public ItemSO[] Items;
 
-	public bool AddItem(ItemSO item) {
+	public virtual bool AddItem(ItemSO item) {
 		if(DelegatedInventory?.AddItem(item) ?? false)
 			return true;
 
@@ -69,7 +69,7 @@ public class Inventory : MonoBehaviour {
 		return findCount >= item.Count;
 	}
 
-	public void RemoveItem(ItemSO item) {
+	public virtual void RemoveItem(ItemSO item) {
 		DelegatedInventory?.RemoveItem(item);
 
 		for (byte i = 0; i < Items.Length; ++i) {

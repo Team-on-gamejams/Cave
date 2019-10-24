@@ -6,7 +6,7 @@ Ludum Dare Jam #45 entry. Theme: "Start with nothing"
 ![Cover](Screenshots/cover1.png)
 
 # Downloads and Links
-Available in [Windows, OSX, and Linux](https://teamon.itch.io/cave). If you encounter any problem, please leave a issue! 
+Available in [Windows, OSX, Linux and Web](https://teamon.itch.io/cave). If you encounter any problem, please leave a issue! 
 
 # Controls
  * WASD or LMB(Left Mouse Button) for moving​

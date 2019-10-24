@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
 public class BaseStat : MonoBehaviour {
 	public float MaxValue {
 		get {
@@ -12,6 +11,7 @@ public class BaseStat : MonoBehaviour {
 		}
 		set {
 			_maxValue = value;
+			OnValueChange?.Invoke();
 		}
 	}
 	public float Value {
@@ -24,20 +24,16 @@ public class BaseStat : MonoBehaviour {
 				_value = MaxValue;
 			if (_value < 0)
 				_value = 0;
+			OnValueChange?.Invoke();
 		}
 	}
 
 	public Action OnValueChange;
 
-	[SerializeField] float _maxValue;
 	[SerializeField] float _value;
-
-	public BaseStat() {
-		_value = _maxValue = 0;
-	}
+	[SerializeField] float _maxValue;
 
 	public void ChangeBy(float val) {
 		Value += val;
-		OnValueChange?.Invoke();
 	}
 }

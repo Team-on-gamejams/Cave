@@ -2,46 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUI : MonoBehaviour {
-	public Inventory Inventory;
-
-	internal bool isDrag;
-
+public abstract class BaseUI : MonoBehaviour {
 	[SerializeField] protected bool NeedShowHide = true;
 	[SerializeField] float ShowTime = 0.2f;
 
-	protected List<ItemSlot> itemSlots;
-
 	CanvasGroup canvasGroup;
 
+	protected bool IsShowed => isShowed;
 	bool isShowed = false;
 
 	virtual protected void Awake() {
 		if (NeedShowHide) {
 			canvasGroup = GetComponent<CanvasGroup>();
-			canvasGroup.alpha = 0;
-			gameObject.SetActive(false);
+			if (!isShowed) {
+				canvasGroup.alpha = 0;
+				gameObject.SetActive(false);
+			}
 		}
 		else {
 			isShowed = true;
 		}
-		
-		Inventory.OnItemsChanged.AddListener(UpdateUI);
-
-		itemSlots = new List <ItemSlot>(Inventory.Items.Length);
-		ItemSlot[] items = GetComponentsInChildren<ItemSlot>();
-		for(byte i = 0; i <items.Length; ++i) {
-			itemSlots.Add(items[i]);
-			items[i].invId = i;
-		}
-	}
-
-	virtual protected void OnDestroy() {
-		Inventory.OnItemsChanged.RemoveListener(UpdateUI);
 	}
 
 	public void ChangeShowHide() {
-		if (isDrag)
+		if (!CanChangeShowHide())
 			return;
 		if (isShowed)
 			Hide();
@@ -50,18 +34,20 @@ public class InventoryUI : MonoBehaviour {
 	}
 
 	public void Show() {
-		gameObject.SetActive(true);
+		BeforeShow();
 		isShowed = true;
-		UpdateUI();
+		gameObject.SetActive(true);
 
 		LeanTween.cancel(gameObject);
 		LeanTween.value(gameObject, canvasGroup.alpha, 1.0f, ShowTime)
 			.setOnUpdate((float a) => {
 				canvasGroup.alpha = a;
+				AfterShow();
 			});
 	}
 
 	public void Hide() {
+		BeforeHide();
 		LeanTween.cancel(gameObject);
 		LeanTween.value(gameObject, canvasGroup.alpha, 0.0f, ShowTime)
 			.setOnUpdate((float a)=> {
@@ -70,14 +56,14 @@ public class InventoryUI : MonoBehaviour {
 			.setOnComplete(() => {
 				isShowed = false;
 				gameObject.SetActive(false);
+				AfterHide();
 			});
 	}
 
-	public virtual void UpdateUI() {
-		if (!isShowed)
-			return;
+	virtual protected bool CanChangeShowHide() => true;
 
-		for(byte i = 0; i < Inventory.Items.Length; ++i) 
-			itemSlots[i].SetItem(Inventory.Items[i]);
-	}
+	virtual protected void BeforeShow() { }
+	virtual protected void AfterShow() { }
+	virtual protected void BeforeHide() { }
+	virtual protected void AfterHide() { }
 }
