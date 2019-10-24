@@ -9,12 +9,12 @@ public class MouseOverTip : MonoBehaviour
 
     void Awake()
     {
-        EventManager.OnPopUpShow += OnPopUpShow;
+        EventManager.OnMouseOverTip += OnPopUpShow;
     }
 
     void OnDestroy()
     {
-        EventManager.OnPopUpShow -= OnPopUpShow;
+        EventManager.OnMouseOverTip -= OnPopUpShow;
     }
 
     void OnPopUpShow(EventData ed)

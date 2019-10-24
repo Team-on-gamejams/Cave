@@ -4,7 +4,7 @@ using UnityEngine;
 
 //TODO: make it abstract after cream done hotbar & inventory
 public class BaseBuilding : Interactable {
-	ItemSO Item;
+	public ItemSO Item;
 
 	void Start() {
 

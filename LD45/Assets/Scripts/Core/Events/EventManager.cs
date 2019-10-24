@@ -8,7 +8,6 @@ public class EventManager {
 
 	public static event EventController.MethodContainer OnGameSpeedChanged;
 	public void CallOnGameSpeedChanged(EventData ob = null) => OnGameSpeedChanged?.Invoke(ob);
-
 	//Scene Loader
 	public static event EventController.MethodContainer OnSceneNeedLoad;
 	public void CallOnSceneNeedLoad(EventData ob = null) => OnSceneNeedLoad?.Invoke(ob);
@@ -19,6 +18,6 @@ public class EventManager {
 	public static event EventController.MethodContainer OnSceneLoadEnd;
 	public void CallOnSceneLoadEnd(EventData ob = null) => OnSceneLoadEnd?.Invoke(ob);
 
-    public static event EventController.MethodContainer OnPopUpShow;
-    public void CallOnPopUpShow(EventData ob = null) => OnPopUpShow?.Invoke(ob);
+    public static event EventController.MethodContainer OnMouseOverTip;
+    public void CallOnMouseOverTip(EventData ob = null) => OnMouseOverTip?.Invoke(ob);
 }
