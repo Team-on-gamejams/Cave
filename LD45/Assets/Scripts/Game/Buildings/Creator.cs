@@ -16,14 +16,13 @@ public class Creator : MonoBehaviour //Todo rename behaviour
 	//Todo buildings
 	//1) Fix bug with don's set enable to false (invisible object let fors for Player)
 	//2) Fix bug with no visibility of creating GameObjec
-	private void OnEquipmentChange(EventData data) {
-		Debug.Log("123");
-		
-		Debug.Log((data["ItemSlotType"]).GetType());
+
+	private void OnEquipmentChange(EventData data) {		
 		var item = data["ItemSlotType"] as ItemSO;
 		if (item is null == false && item.MataType is ItemSO.ItemMetaType.Building) {
-			Debug.Log($"{item.Description}");
-			Debug.Log($"{item.name}");
+			Debug.Log("hear we are");
+
+
 			//GameObject building = ItemSO.
 			//building = Instantiate(BuildingsList.instance.GetItemPrefab(item), Input.mousePosition, Quaternion.identity, GameManager.Instance.CollectorBuilding.transform);
 			//building.GetComponent<BoxCollider2D>().enabled = false;

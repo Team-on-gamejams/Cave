@@ -62,14 +62,11 @@ public class Equipment : MonoBehaviour {
 			ItemInHand.transform.localScale = new Vector3(hands.ScaleInHand, hands.ScaleInHand, 1.0f);
 			ItemInHand.sprite = hands.Sprite;
 			ItemInHand.enabled = true;
-			CallEvent(item);
+			
+			EventData eventData = new EventData("OnItemSlotChange");
+			eventData["ItemSlotType"] = item;
+			GameManager.Instance.EventManager.CallOnEquipmentChange(eventData);
 		}
-	}
-
-	private void CallEvent(ItemSO item) {
-		EventData eventData = new EventData("OnItemSlotChange");
-		eventData["ItemSlotType"] = item.Type;
-		GameManager.Instance.EventManager.CallOnEquipmentChange(eventData);
 	}
 
 	public bool NeedInterrupt() {
