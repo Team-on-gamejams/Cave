@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3878022209268221469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e450be1e30db91d4dbe8fadd3c0b0697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractDist: 2.1
+  InteractDist: 0.7
   tip: Chop tree
   interactPosOnCenter: 0
   outlineScale: 1.1
@@ -106,8 +106,8 @@ MonoBehaviour:
     type: 3}
   ResourceCount: 3
   DropTime: 0.2
-  DropDistance: 0.3
-  "ResourceDropPoint\u0421orrection": {x: 0, y: -1.5, z: 0}
+  DropDistance: 0.1
+  "ResourceDropPoint\u0421orrection": {x: 0, y: -0.6, z: 0}
   NeededHits: 3
 --- !u!61 &371649881
 BoxCollider2D:
