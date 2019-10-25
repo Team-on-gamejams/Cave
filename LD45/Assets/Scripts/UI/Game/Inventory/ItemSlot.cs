@@ -88,8 +88,8 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 			DropItemOnGround(newItemPos);
 		}
 		else {
-			GameManager.Instance.Player.PlayerKeyboardMover.MoveTo(newItemPos);
-			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += () => DropItemOnGround(newItemPos);
+			GameManager.Instance.Player.MoveTo(newItemPos);
+			GameManager.Instance.Player.OnMoveEndEvent += () => DropItemOnGround(newItemPos);
 		}
 	}
 

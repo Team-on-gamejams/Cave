@@ -1755,11 +1755,12 @@ MonoBehaviour:
   HungerPoints: {fileID: 1964822568966339300}
   ExperiencePoints: {fileID: 1228772613}
   speed: 2
+  InteractDist: 0.1
+  Animator: {fileID: 738878352377382221}
+  Rigidbody: {fileID: 738878352377382215}
   Inventory: {fileID: 738878352377382209}
   Equipment: {fileID: 738878352377382210}
   PlayerKeyboardMover: {fileID: 738878352377382214}
-  Animator: {fileID: 738878352377382221}
-  InteractDist: 0.1
 --- !u!114 &738878352377382214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2002,8 +2003,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  spriteRenderer: {fileID: 738878352377382235}
-  rigidbody: {fileID: 738878352377382215}
   player: {fileID: 738878352377382213}
 --- !u!114 &738878352377382210
 MonoBehaviour:

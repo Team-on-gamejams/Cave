@@ -61,8 +61,8 @@ public class Interactable : MonoBehaviour {
 			OnMouseClick?.Invoke();
 		}
 		else {
-			GameManager.Instance.Player.PlayerKeyboardMover.MoveTo(interactPos);
-			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += OnMouseClick;
+			GameManager.Instance.Player.MoveTo(interactPos);
+			GameManager.Instance.Player.OnMoveEndEvent += OnMouseClick;
 		}
 	}
 
