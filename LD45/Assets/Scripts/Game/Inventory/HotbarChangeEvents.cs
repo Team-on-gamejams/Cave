@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Creator : MonoBehaviour //Todo rename behaviour
+public class HotbarChangeEvents : MonoBehaviour //Todo rename behaviour
 {
 	void Awake() {
 		EventManager.OnEquipmentChange += OnEquipmentChange;
@@ -12,16 +12,9 @@ public class Creator : MonoBehaviour //Todo rename behaviour
 		EventManager.OnEquipmentChange += OnEquipmentChange;
 	}
 
-
-	//Todo buildings
-	//1) Fix bug with don's set enable to false (invisible object let fors for Player)
-	//2) Fix bug with no visibility of creating GameObjec
-
 	private void OnEquipmentChange(EventData data) {		
 		var item = data["ItemSlotType"] as ItemSO;
 		if (item is null == false && item.MataType is ItemSO.ItemMetaType.Building) {
-			Debug.Log("hear we are");
-
 
 			//GameObject building = ItemSO.
 			//building = Instantiate(BuildingsList.instance.GetItemPrefab(item), Input.mousePosition, Quaternion.identity, GameManager.Instance.CollectorBuilding.transform);
@@ -29,10 +22,5 @@ public class Creator : MonoBehaviour //Todo rename behaviour
 
 			//Test.GetComponent<Renderer>().material.color = Color.;
 		}
-	}
-
-	private void SetPosition(GameObject @object) { //Need to be like a updete with turn on and turn off
-		var pos = GameManager.Instance.MainCamera.ScreenToWorldPoint(Input.mousePosition);
-		@object.transform.position = pos;
 	}
 }
