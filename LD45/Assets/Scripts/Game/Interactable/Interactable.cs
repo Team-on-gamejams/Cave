@@ -43,7 +43,10 @@ public class Interactable : MonoBehaviour {
 	}
 
     private void OnMouseOver() {
-        EventData eventData = new EventData("OnPopUpShow");
+		if (GameManager.Instance.IsPaused || GameManager.Instance.SelectedOutlineGO != this)
+			return;
+
+		EventData eventData = new EventData("OnPopUpShow");
         eventData["tipText"] = tip;
         GameManager.Instance.EventManager.CallOnMouseOverTip(eventData);
     }
