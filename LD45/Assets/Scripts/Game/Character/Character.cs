@@ -88,6 +88,7 @@ public abstract class Character : MonoBehaviour {
 		else if (moveToDirection != Vector3.zero) {
 			Rigidbody.MovePosition(transform.localPosition + moveToDirection * speed * Time.deltaTime);
 			wasMoved = true;
+			moveToDirection = Vector3.zero;
 		}
 
 		Animator.SetBool("IsMoving", wasMoved);
