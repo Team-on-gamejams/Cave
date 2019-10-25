@@ -20,8 +20,12 @@ public class ItemSlotHotbar: ItemSlot, IPointerClickHandler {
 	public override void SetItem(ItemSO _item) {
 		base.SetItem(_item);
 
-		if (hotbar.SelectedSlotId == invId)
-			GameManager.Instance.Player.Equipment.EquipItem(item);
+		if (hotbar.SelectedSlotId == invId) {
+			if(item != null)
+				GameManager.Instance.Player.Equipment.EquipItem(item, true);
+			else
+				GameManager.Instance.Player.Equipment.UnequipItem(ItemSO.ItemSlot.Hands);
+		}
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {

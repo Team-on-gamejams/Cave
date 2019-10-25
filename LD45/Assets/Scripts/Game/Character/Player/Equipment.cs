@@ -8,6 +8,8 @@ public class Equipment : MonoBehaviour {
 
 	[NonSerialized] public GameObject GOLinkedAnim;
 	[NonSerialized] public ItemSO hands;
+	[NonSerialized] public ItemSO head;
+	[NonSerialized] public ItemSO armor;
 	public Action OnUseHandAnimEndEvent;
 
 	Animator animator;
@@ -63,23 +65,57 @@ public class Equipment : MonoBehaviour {
 		}
 	}
 
-	public void EquipItem(ItemSO item) {
-		//TODO: also add equip for armor
+	public void EquipItem(ItemSO item, bool forceHand = false) {
 		GameManager.Instance.Player.InterruptAction();
-		hands = item;
-		if(hands == null) {
-			ItemInHand.enabled = false;
+		if (item == null)
+			return;
+
+		if (forceHand) {
+			EquipInHand(item);
 		}
 		else {
-			ItemInHand.transform.localScale = new Vector3(hands.ScaleInHand, hands.ScaleInHand, 1.0f);
-			ItemInHand.sprite = hands.Sprite;
-			ItemInHand.enabled = true;
-            //CheckForBuilding(item);
-        }
+			switch (item.Slot) {
+				case ItemSO.ItemSlot.None:
+				case ItemSO.ItemSlot.Hands:
+					EquipInHand(item);
+					break;
+
+				case ItemSO.ItemSlot.Head:
+					head = item;
+					break;
+
+				case ItemSO.ItemSlot.Armor:
+					armor = item;
+					break;
+			}
+		}
+	}
+
+	public void UnequipItem(ItemSO.ItemSlot slot) {
+		switch (slot) {
+			case ItemSO.ItemSlot.None:
+			case ItemSO.ItemSlot.Hands:
+				hands = null;
+				ItemInHand.enabled = false;
+				break;
+			case ItemSO.ItemSlot.Head:
+				head = null;
+				break;
+			case ItemSO.ItemSlot.Armor:
+				armor = null;
+				break;
+		}
 	}
 
 	public bool NeedInterrupt() {
 		return OnUseHandAnimEndEvent != null;
+	}
+
+	void EquipInHand(ItemSO item) {
+		hands = item;
+		ItemInHand.transform.localScale = new Vector3(hands.ScaleInHand, hands.ScaleInHand, 1.0f);
+		ItemInHand.sprite = hands.Sprite;
+		ItemInHand.enabled = true;
 	}
 
  //   private void CheckForBuilding(ItemSO item)
