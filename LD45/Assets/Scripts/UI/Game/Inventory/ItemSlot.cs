@@ -8,7 +8,7 @@ using TMPro;
 
 //TODO: переробити на людський поліморфізм, а не чекати типи
 public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler {
-	static ItemSlot draggingSlot;
+	static protected ItemSlot draggingSlot;
 
 	[NonSerialized] public int invId;
 
@@ -96,7 +96,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnDrop(PointerEventData eventData) {
 		GameManager.Instance.Player.PlayerKeyboardMover.CanMouseMove = true;
 
-		if (draggingSlot == this || draggingSlot?.item == null)
+		if (!CanDrop(draggingSlot?.item))
 			return;
 
 		if (item == null || (item.Type != draggingSlot.item.Type) || item.IsMaxStack() || draggingSlot.item.IsMaxStack()) {
@@ -122,6 +122,10 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		draggingSlot.ReInit();
 		InventoryUI.UpdateUI();
 		draggingSlot.InventoryUI.UpdateUI();
+	}
+
+	public virtual bool CanDrop(ItemSO item) {
+		return draggingSlot != this && item != null;
 	}
 
 	void DropItemOnGround(Vector3 newItemPos) {

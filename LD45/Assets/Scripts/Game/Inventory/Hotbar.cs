@@ -28,7 +28,10 @@ public class Hotbar : Inventory {
 
 	public void SetSelection(int id) { //Unity dont show it in editor if [id] is [byte]
 		SelectedSlotId = (byte)id;
-		GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId]);
+		if (Items[SelectedSlotId] != null)
+			GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId], true);
+		else
+			GameManager.Instance.Player.Equipment.UnequipItem(ItemSO.ItemSlot.Hands);
 		OnSelectionChange?.Invoke();
 	}
 
@@ -36,7 +39,10 @@ public class Hotbar : Inventory {
 		++SelectedSlotId;
 		if (SelectedSlotId == Items.Length)
 			SelectedSlotId = 0;
-		GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId]);
+		if (Items[SelectedSlotId] != null)
+			GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId], true);
+		else
+			GameManager.Instance.Player.Equipment.UnequipItem(ItemSO.ItemSlot.Hands);
 		OnSelectionChange?.Invoke();
 	}
 
@@ -44,7 +50,10 @@ public class Hotbar : Inventory {
 		--SelectedSlotId;
 		if (SelectedSlotId == byte.MaxValue)
 			SelectedSlotId = (byte)(Items.Length - 1);
-		GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId]);
+		if (Items[SelectedSlotId] != null)
+			GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId], true);
+		else
+			GameManager.Instance.Player.Equipment.UnequipItem(ItemSO.ItemSlot.Hands);
 		OnSelectionChange?.Invoke();
 	}
 }
