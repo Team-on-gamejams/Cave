@@ -97,7 +97,7 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void HideOutline() {
-		outline.gameObject.SetActive(false);
+		outline?.gameObject?.SetActive(false);
 	}
 
 	SpriteOutline CreateOutline(GameObject parentGO, bool needScale) {
