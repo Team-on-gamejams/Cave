@@ -29,7 +29,7 @@ public class ItemSlotHotbar: ItemSlot, IPointerClickHandler {
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {
-		hotbar.SetSelection(invId);
+		hotbar.SetSelection((byte)invId);
 	}
 
 	public void SetSelectedFrame() {

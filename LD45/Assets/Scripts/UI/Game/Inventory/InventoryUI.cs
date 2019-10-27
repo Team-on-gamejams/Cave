@@ -17,18 +17,23 @@ public class InventoryUI : BaseUI {
 		Inventory.OnItemsChanged.AddListener(UpdateUI);
 
 		itemSlots = new List <ItemSlot>(Inventory.Items.Length);
-		ItemSlot[] items = GetComponentsInChildren<ItemSlot>();
-		for(byte i = 0; i <items.Length; ++i) {
+	}
+
+	protected virtual void Start() {
+		ItemSlot[] items = GetComponentsInChildren<ItemSlot>(true);
+		for (byte i = 0; i < items.Length; ++i) {
 			itemSlots.Add(items[i]);
 			items[i].invId = i;
 		}
+
+		HideAfterStart();
 	}
 
 	virtual protected void OnDestroy() {
 		Inventory.OnItemsChanged.RemoveListener(UpdateUI);
 	}
 
-	protected override bool CanChangeShowHide() {
+	public override bool CanChangeShowHide() {
 		return !isDrag;
 	}
 

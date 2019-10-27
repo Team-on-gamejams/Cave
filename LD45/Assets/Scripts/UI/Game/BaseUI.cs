@@ -12,16 +12,7 @@ public abstract class BaseUI : MonoBehaviour {
 	bool isShowed = false;
 
 	virtual protected void Awake() {
-		if (NeedShowHide) {
-			canvasGroup = GetComponent<CanvasGroup>();
-			if (!isShowed) {
-				canvasGroup.alpha = 0;
-				gameObject.SetActive(false);
-			}
-		}
-		else {
-			isShowed = true;
-		}
+		canvasGroup = GetComponent<CanvasGroup>();
 	}
 
 	public void ChangeShowHide() {
@@ -60,7 +51,19 @@ public abstract class BaseUI : MonoBehaviour {
 			});
 	}
 
-	virtual protected bool CanChangeShowHide() => true;
+	protected void HideAfterStart() {
+		if (NeedShowHide) {
+			if (!isShowed) {
+				canvasGroup.alpha = 0;
+				gameObject.SetActive(false);
+			}
+		}
+		else {
+			isShowed = true;
+		}
+	}
+
+	virtual public bool CanChangeShowHide() => true;
 
 	virtual protected void BeforeShow() { }
 	virtual protected void AfterShow() { }

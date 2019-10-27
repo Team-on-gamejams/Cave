@@ -12,12 +12,13 @@ public class HotbarUI : InventoryUI {
 		base.Awake();
 		hotbar = Inventory as Hotbar;
 		hotbar.OnSelectionChange.AddListener(UpdateSelectionFrame);
-
-		foreach (var i in itemSlots) 
-			itemSlotsHotbar.Add(i as ItemSlotHotbar);
 	}
 
-	private void Start() {
+	protected override void Start() {
+		base.Start();
+
+		foreach (var i in itemSlots)
+			itemSlotsHotbar.Add(i as ItemSlotHotbar);
 		itemSlotsHotbar[(lastSelection = hotbar.SelectedSlotId)].SetSelectedFrame();
 	}
 

@@ -26,7 +26,7 @@ public class Hotbar : Inventory {
 		SetSelection(SelectedSlotId);
 	}
 
-	public void SetSelection(int id) { //Unity dont show it in editor if [id] is [byte]
+	public void SetSelection(byte id) {
 		SelectedSlotId = (byte)id;
 		if (Items[SelectedSlotId] != null)
 			GameManager.Instance.Player.Equipment.EquipItem(Items[SelectedSlotId], true);
