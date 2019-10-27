@@ -12,4 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31498d716880fc2479f8dd587ace74b7, type: 3}
   m_Name: PlayerInputBigmap
   m_EditorClassIdentifier: 
-  Inputs: []
+  flyweight:
+    player: {fileID: 0}
+    inventoryUI: {fileID: 0}
+    craftUI: {fileID: 0}
+    statUI: {fileID: 0}
+    equipmentUI: {fileID: 0}
+    inGameMenu: {fileID: 0}
+    hotbar: {fileID: 0}
+  Inputs:
+  - Type: 1
+    Key: 27
+    IsWheelUp: 0
+    IgnorePause: 1
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_MethodName: ShowHideInGameMenu
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

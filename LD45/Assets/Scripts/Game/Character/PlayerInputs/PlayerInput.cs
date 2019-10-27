@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour {
 	[SerializeField] protected PlayerInputStateBase BigmapInput;
 
 	protected PlayerInputStateBase currInput;
+	protected Stack<PlayerInputStateBase> prevInputs;
 
 	void Awake() {
 		DefaultInput.flyweight = Flyweight;
@@ -21,10 +22,28 @@ public class PlayerInput : MonoBehaviour {
 		PauseInput.flyweight = Flyweight;
 		BigmapInput.flyweight = Flyweight;
 
+		prevInputs = new Stack<PlayerInputStateBase>(4);
 		currInput = DefaultInput;
+		prevInputs.Push(currInput);
+
+		EventManager.OnPauseChanged += OnPauseChanged;
+	}
+
+	void OnDestroy() {
+		EventManager.OnPauseChanged -= OnPauseChanged;
 	}
 
 	void Update() {
 		currInput.Update();
+	}
+
+	void OnPauseChanged(EventData ed) {
+		if (GameManager.Instance.IsPaused) {
+			prevInputs.Push(currInput);
+			currInput = PauseInput;
+		}
+		else {
+			currInput = prevInputs.Pop();
+		}
 	}
 }
