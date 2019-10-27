@@ -1851,7 +1851,7 @@ GameObject:
   - component: {fileID: 738878352377382212}
   - component: {fileID: 738878352377382235}
   - component: {fileID: 738878352377382213}
-  - component: {fileID: 738878352377382214}
+  - component: {fileID: 944741346}
   - component: {fileID: 738878352377382210}
   - component: {fileID: 738878352377382209}
   - component: {fileID: 738878352377382216}
@@ -1964,8 +1964,8 @@ MonoBehaviour:
   Rigidbody: {fileID: 738878352377382215}
   Inventory: {fileID: 738878352377382209}
   Equipment: {fileID: 738878352377382210}
-  PlayerKeyboardMover: {fileID: 738878352377382214}
---- !u!114 &738878352377382214
+  PlayerInput: {fileID: 944741346}
+--- !u!114 &944741346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1974,240 +1974,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 738878352377382234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7012407debad5d742b9a6ae716748b98, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f187518a31a3cd40a82b8aff8f8b0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanMouseMove: 1
-  Inputs:
-  - Type: 1
-    Key: 105
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 738878352169156411}
-          m_MethodName: ChangeShowHide
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 105
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1531931173}
-          m_MethodName: ChangeShowHide
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 99
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 395668244}
-          m_MethodName: ChangeShowHide
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 118
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1006674397}
-          m_MethodName: ChangeShowHide
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 49
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 738878352377382216}
-          m_MethodName: SetSelection
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 50
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 738878352377382216}
-          m_MethodName: SetSelection
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 51
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 738878352377382216}
-          m_MethodName: SetSelection
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 52
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 738878352377382216}
-          m_MethodName: SetSelection
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 53
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 738878352377382216}
-          m_MethodName: SetSelection
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 2
-    Key: 119
-    IsWheelUp: 1
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 738878352377382216}
-          m_MethodName: MoveSelectionUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 2
-    Key: 119
-    IsWheelUp: 0
-    IgnorePause: 0
-    InterruptAnim: 0
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 738878352377382216}
-          m_MethodName: MoveSelectionDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Type: 1
-    Key: 27
-    IsWheelUp: 0
-    IgnorePause: 1
-    InterruptAnim: 1
-    OnButtonPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 132295706}
-          m_MethodName: ChangeShowHide
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  player: {fileID: 738878352377382213}
+  Flyweight:
+    player: {fileID: 738878352377382213}
+    inventoryUI: {fileID: 738878352169156411}
+    craftUI: {fileID: 1531931173}
+    statUI: {fileID: 395668244}
+    equipmentUI: {fileID: 1006674397}
+    inGameMenu: {fileID: 132295706}
+    hotbar: {fileID: 738878352377382216}
+  DefaultInput: {fileID: 11400000, guid: fe2cae0a4d228ae4490e2d31e1a030a3, type: 2}
+  BattleInput: {fileID: 11400000, guid: e6b98eef8bd98c0418c2cc0db3be498b, type: 2}
+  PauseInput: {fileID: 11400000, guid: d48cd5e9ba12fa34f8e0271ce32c8e77, type: 2}
+  BigmapInput: {fileID: 11400000, guid: 04bf0f1719abc844b97b09b7dba648bd, type: 2}
 --- !u!114 &738878352377382210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11464,81 +11245,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052150746874427972, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052150746874427972, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7052150746874427972, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7630802046671557738, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7630802046671557738, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6465142097993751953, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6465142097993751953, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678281386732354237, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678281386732354237, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984627515119246905, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984627515119246905, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984627515119246905, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 338072503313714432, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 338072503313714432, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 338072503313714432, guid: 44f78102e64c4af4a8c80df26b147f1b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44f78102e64c4af4a8c80df26b147f1b, type: 3}
