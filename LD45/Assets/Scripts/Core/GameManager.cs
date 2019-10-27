@@ -56,5 +56,6 @@ public class GameManager : Singleton<GameManager> {
 
 	void OnSceneLoadEnd(EventData data) {
 		MainCamera = Camera.main;
+		IsPaused = false;
 	}
 }
