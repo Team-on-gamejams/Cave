@@ -29,7 +29,8 @@ public class ItemSlotHotbar: ItemSlot, IPointerClickHandler {
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {
-		hotbar.SetSelection((byte)invId);
+		if(!GameManager.Instance.IsPaused)
+			hotbar.SetSelection((byte)invId);
 	}
 
 	public void SetSelectedFrame() {
