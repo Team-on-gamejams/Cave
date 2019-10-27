@@ -26,15 +26,28 @@ public class PlayerInput : MonoBehaviour {
 		currInput = DefaultInput;
 		prevInputs.Push(currInput);
 
+		EventManager.OnBigMapShow += OnBigMapShow;
+		EventManager.OnBigMapHide += OnBigMapHide;
 		EventManager.OnPauseChanged += OnPauseChanged;
 	}
 
 	void OnDestroy() {
+		EventManager.OnBigMapShow -= OnBigMapShow;
+		EventManager.OnBigMapHide -= OnBigMapHide;
 		EventManager.OnPauseChanged -= OnPauseChanged;
 	}
 
 	void Update() {
 		currInput.Update();
+	}
+
+	void OnBigMapShow(EventData ed) {
+		prevInputs.Push(currInput);
+		currInput = BigmapInput;
+	}
+
+	void OnBigMapHide(EventData ed) {
+		currInput = prevInputs.Pop();
 	}
 
 	void OnPauseChanged(EventData ed) {

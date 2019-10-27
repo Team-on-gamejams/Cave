@@ -25,6 +25,9 @@ public abstract class BaseUI : MonoBehaviour {
 	}
 
 	public void Show() {
+		if (!CanChangeShowHide())
+			return;
+
 		BeforeShow();
 		isShowed = true;
 		gameObject.SetActive(true);
@@ -38,6 +41,9 @@ public abstract class BaseUI : MonoBehaviour {
 	}
 
 	public void Hide() {
+		if (!CanChangeShowHide())
+			return;
+
 		BeforeHide();
 		LeanTween.cancel(gameObject);
 		LeanTween.value(gameObject, canvasGroup.alpha, 0.0f, ShowTime)

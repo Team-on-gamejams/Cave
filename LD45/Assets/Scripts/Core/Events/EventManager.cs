@@ -20,6 +20,12 @@ public class EventManager {
 	public void CallOnSceneLoadEnd(EventData ob = null) => OnSceneLoadEnd?.Invoke(ob);
 	#endregion
 
+	public static event EventController.MethodContainer OnBigMapShow;
+	public void CallOnBigMapShow(EventData ob = null) => OnBigMapShow?.Invoke(ob);
+
+	public static event EventController.MethodContainer OnBigMapHide;
+	public void CallOnBigMapHide(EventData ob = null) => OnBigMapHide?.Invoke(ob);
+
 	public static event EventController.MethodContainer OnMouseOverTip;
     public void CallOnMouseOverTip(EventData ob = null) => OnMouseOverTip?.Invoke(ob);
 
