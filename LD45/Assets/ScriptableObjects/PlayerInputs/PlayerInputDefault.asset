@@ -215,7 +215,7 @@ MonoBehaviour:
     Key: 27
     IsWheelUp: 0
     IgnorePause: 1
-    InterruptAnim: 1
+    InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
