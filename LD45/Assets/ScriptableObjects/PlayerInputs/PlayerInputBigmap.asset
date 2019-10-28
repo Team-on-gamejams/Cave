@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31498d716880fc2479f8dd587ace74b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9244de147e17b0247ad9cf0cc4324ad0, type: 3}
   m_Name: PlayerInputBigmap
   m_EditorClassIdentifier: 
   flyweight:
@@ -24,7 +24,7 @@ MonoBehaviour:
   - Type: 1
     Key: 27
     IsWheelUp: 0
-    IgnorePause: 1
+    IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:

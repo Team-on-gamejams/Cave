@@ -254,7 +254,7 @@ RectTransform:
   m_GameObject: {fileID: 521295012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 738878352321705315}
   m_RootOrder: 0
@@ -779,6 +779,8 @@ MonoBehaviour:
   MapCamera: {fileID: 521295014}
   minZoom: 1
   maxZoom: 20
+  WASDMoveSpeed: 20
+  dragMultDiv: 500
 --- !u!1 &2110340981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,7 +1920,7 @@ RectTransform:
   m_GameObject: {fileID: 738878352330902536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 135111766192863146}
   m_Father: {fileID: 738878352321705315}
@@ -2043,7 +2045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738878352377382234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.61, y: 3.54, z: 0}
+  m_LocalPosition: {x: -3.39, y: 3.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 738878351475720236}
@@ -2149,7 +2151,7 @@ MonoBehaviour:
   DefaultInput: {fileID: 11400000, guid: fe2cae0a4d228ae4490e2d31e1a030a3, type: 2}
   BattleInput: {fileID: 11400000, guid: e6b98eef8bd98c0418c2cc0db3be498b, type: 2}
   PauseInput: {fileID: 11400000, guid: d48cd5e9ba12fa34f8e0271ce32c8e77, type: 2}
-  BigmapInput: {fileID: 11400000, guid: 04bf0f1719abc844b97b09b7dba648bd, type: 2}
+  BigmapInput: {fileID: 11400000, guid: 0a15d5ea99e47e644aa3f93185b7528c, type: 2}
 --- !u!114 &738878352377382210
 MonoBehaviour:
   m_ObjectHideFlags: 0
