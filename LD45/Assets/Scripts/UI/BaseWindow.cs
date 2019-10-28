@@ -9,6 +9,7 @@ public abstract class BaseWindow : MonoBehaviour {
 	[SerializeField] Vector2 HidePos = new Vector2(0, 1000);
 	[SerializeField] Vector2 ShowPos = new Vector2(0, 0);
 
+	public bool IsShowed => isShowed;
 	protected bool isShowed = false;
 
 	protected void Awake() {

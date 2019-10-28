@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InGameMenu : BaseWindow {
+	[SerializeField] SettingsWindow SettingsWindow;
+
 	public void ChangeShowHide() {
-		if (isShowed)
-			Hide(false);
-		else
-			Show(false);
+		if (CanChangeShowHide()) {
+			if (isShowed)
+				Hide(false);
+			else
+				Show(false);
+		}
+	}
+
+	protected bool CanChangeShowHide() {
+		return !SettingsWindow.IsShowed;
 	}
 
 	protected override void BeforeShow() {
