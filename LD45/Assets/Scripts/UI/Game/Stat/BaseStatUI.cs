@@ -17,6 +17,7 @@ public class BaseStatUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
 	void Start() {
 		statText.gameObject.SetActive(false);
+		statText.text = $"{stat.Value} / {stat.MaxValue}";
 		UpdateFill();
 	}
 
