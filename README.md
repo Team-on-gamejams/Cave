@@ -26,6 +26,7 @@ Ludum Dare is one of the world's largest and longest running Game Jam events. Is
  * [Ambyss](https://github.com/Ambyss) - programmer
  * [Long-as-Python](https://github.com/Long-as-Python) - artist
  * [sleeplessmaliance](https://github.com/sleeplessmaliance) - artist
+ * [MalumDominum](https://github.com/MalumDominum) - artist
  
 # Thanks for assets
  * [moogy73](https://freesound.org/people/moogy73/sounds/425728) - click sound
