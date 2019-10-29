@@ -14,6 +14,8 @@ public class BigMapUI : BaseUI, IDragHandler {
 
 	void Start() {
 		dragMult = MapCamera.orthographicSize / dragMultDiv;
+		if (NeedShowHide && !IsShowed)
+			MapCamera.gameObject.SetActive(false);
 		HideAfterStart();
 	}
 
@@ -30,11 +32,16 @@ public class BigMapUI : BaseUI, IDragHandler {
 	}
 
 	protected override void BeforeShow() {
+		MapCamera.gameObject.SetActive(true);
 		GameManager.Instance.EventManager.CallOnBigMapShow();
 	}
 
 	protected override void BeforeHide() {
 		GameManager.Instance.EventManager.CallOnBigMapHide();
+	}
+
+	protected override void AfterHide() {
+		MapCamera.gameObject.SetActive(false);
 	}
 
 	public override bool CanChangeShowHide() {
