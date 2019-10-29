@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Equipment : MonoBehaviour {
-	public SpriteRenderer ItemInHand;
+	public SpriteRenderer ItemInHandLeft;
+	public SpriteRenderer ItemInHandRight;
 
 	[NonSerialized] public GameObject GOLinkedAnim;
-	[NonSerialized] public ItemSO hands;
+	public Action OnUseHandAnimEndEvent;
+
+	[NonSerialized] public ItemSO handLeft;
+	[NonSerialized] public ItemSO handRight;
 	[NonSerialized] public ItemSO head;
 	[NonSerialized] public ItemSO armor;
-	public Action OnUseHandAnimEndEvent;
 
 	Animator animator;
 
@@ -19,29 +22,24 @@ public class Equipment : MonoBehaviour {
 		animator = GameManager.Instance.Player.Animator;
 	}
 
-    public void PlayUseHandItemAnim() {
-		if(hands != null) {
-			switch (hands.Type) {
-				case ItemSO.ItemType.Axe:
-					OnStartAnim();
-					animator.Play("AxePunch");
-					break;
-				case ItemSO.ItemType.Pickaxe:
-					OnStartAnim();
-					animator.Play("PickaxePunch");
-					break;
-				case ItemSO.ItemType.Spear:
-					OnStartAnim();
-					animator.Play("SpearPunch");
-					break;                              
-				default:
-					//TODO: show that it cant be used
-					break;
-			}
+    public void PlayUseHandItemAnim(bool isLeftHand) {
+		switch ((isLeftHand ? handLeft : handRight).Type) {
+			case ItemSO.ItemType.Axe:
+				OnStartAnim();
+				animator.Play("AxePunch");
+				break;
+			case ItemSO.ItemType.Pickaxe:
+				OnStartAnim();
+				animator.Play("PickaxePunch");
+				break;
+			case ItemSO.ItemType.Spear:
+				OnStartAnim();
+				animator.Play("SpearPunch");
+				break;                              
+			default:
+				//TODO: show that it cant be used
+				break;
 		}
-		//else {
-		//	//TODO: Assume that it will use for pick-up anims
-		//}
 	}
 
 	//Callback for animations
@@ -49,29 +47,30 @@ public class Equipment : MonoBehaviour {
 		if(OnUseHandAnimEndEvent != null) {
 			OnUseHandAnimEndEvent();
 			OnUseHandAnimEndEvent = null;
-			ItemInHand.enabled = true;
+			ItemInHandLeft.enabled = true;
+			ItemInHandRight.enabled = true;
 		}
 	}
 
-	public void EquipItem(ItemSO item, bool forceHand = false) {
+	public void EquipItem(ItemSO item, bool forceHand = false, bool isLeftHand = false) {
 		GameManager.Instance.Player.InterruptAction();
 		if (item == null)
 			return;
 
 		if (forceHand) {
-			EquipInHand(item);
+			EquipInHand(item, isLeftHand);
 		}
 		else {
 			switch (item.Slot) {
-				case ItemSO.ItemSlot.None:
-				case ItemSO.ItemSlot.Hands:
-					EquipInHand(item);
+				case ItemSO.ItemSlot.HandLeft:
+					EquipInHand(item, true);
 					break;
-
+				case ItemSO.ItemSlot.HandRight:
+					EquipInHand(item, false);
+					break;
 				case ItemSO.ItemSlot.Head:
 					head = item;
 					break;
-
 				case ItemSO.ItemSlot.Armor:
 					armor = item;
 					break;
@@ -81,10 +80,13 @@ public class Equipment : MonoBehaviour {
 
 	public void UnequipItem(ItemSO.ItemSlot slot) {
 		switch (slot) {
-			case ItemSO.ItemSlot.None:
-			case ItemSO.ItemSlot.Hands:
-				hands = null;
-				ItemInHand.enabled = false;
+			case ItemSO.ItemSlot.HandLeft:
+				handLeft = null;
+				ItemInHandLeft.enabled = false;
+				break;
+			case ItemSO.ItemSlot.HandRight:
+				handRight = null;
+				ItemInHandRight.enabled = false;
 				break;
 			case ItemSO.ItemSlot.Head:
 				head = null;
@@ -99,11 +101,19 @@ public class Equipment : MonoBehaviour {
 		return OnUseHandAnimEndEvent != null;
 	}
 
-	void EquipInHand(ItemSO item) {
-		hands = item;
-		ItemInHand.transform.localScale = new Vector3(hands.ScaleInHand, hands.ScaleInHand, 1.0f);
-		ItemInHand.sprite = hands.Sprite;
-		ItemInHand.enabled = true;
+	void EquipInHand(ItemSO item, bool isLeftHand) {
+		if (isLeftHand) {
+			handLeft = item;
+			ItemInHandLeft.transform.localScale = new Vector3(item.ScaleInHand, item.ScaleInHand, 1.0f);
+			ItemInHandLeft.sprite = item.Sprite;
+			ItemInHandLeft.enabled = true;
+		}
+		else {
+			handRight = item;
+			ItemInHandRight.transform.localScale = new Vector3(item.ScaleInHand, item.ScaleInHand, 1.0f);
+			ItemInHandRight.sprite = item.Sprite;
+			ItemInHandRight.enabled = true;
+		}
 		
 		EventData eventData = new EventData("OnItemSlotChange");
 		eventData["ItemSlotType"] = item;
@@ -112,11 +122,13 @@ public class Equipment : MonoBehaviour {
 	
 	public void InterruptAction() {
 		OnUseHandAnimEndEvent = null;
-		ItemInHand.enabled = true;
+		ItemInHandLeft.enabled = true;
+		ItemInHandRight.enabled = true;
 		GOLinkedAnim = null;
 	}
 
 	void OnStartAnim() {
-		ItemInHand.enabled = false;
+		ItemInHandLeft.enabled = false;
+		ItemInHandRight.enabled = false;
 	}
 }

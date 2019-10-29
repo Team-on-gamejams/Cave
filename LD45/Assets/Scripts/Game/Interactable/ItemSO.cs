@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "New ItemSO", menuName = "ItemSO", order = 51)]
 public class ItemSO : ScriptableObject {
-	public enum ItemSlot : byte { None, Hands, Head, Armor }
+	public enum ItemSlot : byte { None, HandLeft, Head, Armor, HandRight }
 
 	public enum ItemMetaType : byte {
 		None,

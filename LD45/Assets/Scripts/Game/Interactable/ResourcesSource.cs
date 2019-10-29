@@ -17,6 +17,7 @@ public class ResourcesSource : Interactable {
 	public Sprite[] DamagedSprites;
 
 	int CurrentHit;
+	bool isInteractLMB;
 
 	protected override void Awake() {
 		base.Awake();
@@ -26,14 +27,14 @@ public class ResourcesSource : Interactable {
 	}
 
 	public override bool CanInteract() {
-		return (GameManager.Instance.Player.Equipment.hands?.Type ?? ItemSO.ItemType.None) == NeededHands;
+		return ((isInteractLMB ? GameManager.Instance.Player.Equipment.handLeft : GameManager.Instance.Player.Equipment.handRight)?.Type ?? ItemSO.ItemType.None) == NeededHands;
 	}
 
 	//TODO: hit particles
 	//TODO: visially show that source damaged
 	void Interract() {
 		GameManager.Instance.Player.Equipment.OnUseHandAnimEndEvent += HitSource;
-		GameManager.Instance.Player.Equipment.PlayUseHandItemAnim();
+		GameManager.Instance.Player.Equipment.PlayUseHandItemAnim(isInteractLMB);
 	}
 
 	void HitSource(){

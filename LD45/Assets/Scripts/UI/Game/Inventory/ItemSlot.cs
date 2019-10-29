@@ -10,7 +10,7 @@ using TMPro;
 public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler {
 	static protected ItemSlot draggingSlot;
 
-	[NonSerialized] public int invId;
+	[NonSerialized] public byte invId;
 
 	[SerializeField] Image ItemImage;
 	[SerializeField] TextMeshProUGUI CountText;

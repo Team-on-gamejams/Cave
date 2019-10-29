@@ -6,10 +6,12 @@ using UnityEngine;
 public class HotbarUI : InventoryUI {
 	List<ItemSlotHotbar> itemSlotsHotbar = new List<ItemSlotHotbar>();
 	Hotbar hotbar;
-	byte lastSelection;
+	byte lastSelectionLeft;
+	byte lastSelectionRight;
 
 	protected override void Awake() {
 		base.Awake();
+
 		hotbar = Inventory as Hotbar;
 		hotbar.OnSelectionChange.AddListener(UpdateSelectionFrame);
 	}
@@ -19,7 +21,8 @@ public class HotbarUI : InventoryUI {
 
 		foreach (var i in itemSlots)
 			itemSlotsHotbar.Add(i as ItemSlotHotbar);
-		itemSlotsHotbar[(lastSelection = hotbar.SelectedSlotId)].SetSelectedFrame();
+		itemSlotsHotbar[(lastSelectionLeft = hotbar.SelectedSlotIdLeft)].SetSelectedFrame(true);
+		itemSlotsHotbar[(lastSelectionRight = hotbar.SelectedSlotIdRight)].SetSelectedFrame(false);
 	}
 
 	protected override void OnDestroy() {
@@ -28,7 +31,9 @@ public class HotbarUI : InventoryUI {
 	}
 
 	void UpdateSelectionFrame() {
-		itemSlotsHotbar[lastSelection].RemoveSelectedFrame();
-		itemSlotsHotbar[(lastSelection = hotbar.SelectedSlotId)].SetSelectedFrame();
+		itemSlotsHotbar[lastSelectionLeft].RemoveSelectedFrame(true);
+		itemSlotsHotbar[lastSelectionRight].RemoveSelectedFrame(false);
+		itemSlotsHotbar[(lastSelectionLeft = hotbar.SelectedSlotIdLeft)].SetSelectedFrame(true);
+		itemSlotsHotbar[(lastSelectionRight = hotbar.SelectedSlotIdRight)].SetSelectedFrame(false);
 	}
 }
