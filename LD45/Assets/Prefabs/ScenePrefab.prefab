@@ -244,7 +244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &521295013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2145,6 +2145,7 @@ MonoBehaviour:
     inventoryUI: {fileID: 738878352169156411}
     craftUI: {fileID: 1531931173}
     statUI: {fileID: 395668244}
+    bigMapUI: {fileID: 1955288858}
     equipmentUI: {fileID: 1006674397}
     inGameMenu: {fileID: 132295706}
     hotbar: {fileID: 738878352377382216}

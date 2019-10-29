@@ -14,6 +14,7 @@ public class PlayerInputFlyweight {
 	public InventoryUI inventoryUI;
 	public CraftUI craftUI;
 	public StatUI statUI;
+	public BigMapUI bigMapUI;
 	public EquipmentUI equipmentUI;
 	public InGameMenu inGameMenu;
 	public Hotbar hotbar;
