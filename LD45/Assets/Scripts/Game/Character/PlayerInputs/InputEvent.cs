@@ -12,6 +12,8 @@ public class InputEvent {
 	public KeyCode Key;
 	public bool IsWheelUp; //true - up, false - down
 
+	public bool NeedShift;
+
 	public bool IgnorePause;
 	public bool InterruptAnim;
 

@@ -25,6 +25,7 @@ MonoBehaviour:
   - Type: 1
     Key: 105
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
@@ -44,6 +45,7 @@ MonoBehaviour:
   - Type: 1
     Key: 99
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
@@ -63,6 +65,7 @@ MonoBehaviour:
   - Type: 1
     Key: 118
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
@@ -82,6 +85,7 @@ MonoBehaviour:
   - Type: 1
     Key: 109
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
@@ -101,13 +105,14 @@ MonoBehaviour:
   - Type: 1
     Key: 49
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000}
-          m_MethodName: SetHotbarSelection
+          m_MethodName: SetHotbarSelectionLeft
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -120,13 +125,14 @@ MonoBehaviour:
   - Type: 1
     Key: 50
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000}
-          m_MethodName: SetHotbarSelection
+          m_MethodName: SetHotbarSelectionLeft
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -139,13 +145,14 @@ MonoBehaviour:
   - Type: 1
     Key: 51
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000}
-          m_MethodName: SetHotbarSelection
+          m_MethodName: SetHotbarSelectionLeft
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -158,13 +165,14 @@ MonoBehaviour:
   - Type: 1
     Key: 52
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000}
-          m_MethodName: SetHotbarSelection
+          m_MethodName: SetHotbarSelectionLeft
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -177,13 +185,14 @@ MonoBehaviour:
   - Type: 1
     Key: 53
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000}
-          m_MethodName: SetHotbarSelection
+          m_MethodName: SetHotbarSelectionLeft
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -196,13 +205,14 @@ MonoBehaviour:
   - Type: 2
     Key: 119
     IsWheelUp: 1
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000}
-          m_MethodName: MoveHotbarSelectionUp
+          m_MethodName: MoveHotbarSelectionUpLeft
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -215,13 +225,154 @@ MonoBehaviour:
   - Type: 2
     Key: 119
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 0
     InterruptAnim: 0
     OnButtonPressed:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 11400000}
-          m_MethodName: MoveHotbarSelectionDown
+          m_MethodName: MoveHotbarSelectionDownLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 1
+    Key: 49
+    IsWheelUp: 0
+    NeedShift: 1
+    IgnorePause: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_MethodName: SetHotbarSelectionRight
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 1
+    Key: 50
+    IsWheelUp: 0
+    NeedShift: 1
+    IgnorePause: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_MethodName: SetHotbarSelectionRight
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 1
+    Key: 51
+    IsWheelUp: 0
+    NeedShift: 1
+    IgnorePause: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_MethodName: SetHotbarSelectionRight
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 1
+    Key: 52
+    IsWheelUp: 0
+    NeedShift: 1
+    IgnorePause: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_MethodName: SetHotbarSelectionRight
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 1
+    Key: 53
+    IsWheelUp: 0
+    NeedShift: 1
+    IgnorePause: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_MethodName: SetHotbarSelectionRight
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 2
+    Key: 119
+    IsWheelUp: 1
+    NeedShift: 1
+    IgnorePause: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_MethodName: MoveHotbarSelectionUpRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Type: 2
+    Key: 119
+    IsWheelUp: 0
+    NeedShift: 1
+    IgnorePause: 0
+    InterruptAnim: 0
+    OnButtonPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000}
+          m_MethodName: MoveHotbarSelectionDownRight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -234,6 +385,7 @@ MonoBehaviour:
   - Type: 1
     Key: 27
     IsWheelUp: 0
+    NeedShift: 0
     IgnorePause: 1
     InterruptAnim: 0
     OnButtonPressed:

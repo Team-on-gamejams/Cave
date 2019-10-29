@@ -16,7 +16,11 @@ public class PlayerInputStateBase : ScriptableObject {
 	protected void ProcessInputs() {
 		for (byte i = 0; i < Inputs.Length; ++i) {
 			InputEvent input = Inputs[i];
-			if (GameManager.Instance.IsPaused && !input.IgnorePause)
+			if (
+				(GameManager.Instance.IsPaused && !input.IgnorePause) ||
+				(input.NeedShift  && !(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) ||
+				(!input.NeedShift &&  (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
+			)
 				continue;
 
 			switch (input.Type) {
@@ -58,7 +62,11 @@ public class PlayerInputStateBase : ScriptableObject {
 	public void ShowHideEquipment() => flyweight.equipmentUI.ChangeShowHide();
 	public void ShowHideInGameMenu() => flyweight.inGameMenu.ChangeShowHide();
 
-	public void SetHotbarSelection(int slot) => flyweight.hotbar.SetSelection((byte)slot);
-	public void MoveHotbarSelectionUp() => flyweight.hotbar.MoveSelectionUp();
-	public void MoveHotbarSelectionDown() => flyweight.hotbar.MoveSelectionDown();
+	public void SetHotbarSelectionLeft(int slot) => flyweight.hotbar.SetSelection((byte)slot, true);
+	public void MoveHotbarSelectionUpLeft() => flyweight.hotbar.MoveSelectionUp(true);
+	public void MoveHotbarSelectionDownLeft() => flyweight.hotbar.MoveSelectionDown(true);
+
+	public void SetHotbarSelectionRight(int slot) => flyweight.hotbar.SetSelection((byte)slot, false);
+	public void MoveHotbarSelectionUpRight() => flyweight.hotbar.MoveSelectionUp(false);
+	public void MoveHotbarSelectionDownRight() => flyweight.hotbar.MoveSelectionDown(false);
 }
