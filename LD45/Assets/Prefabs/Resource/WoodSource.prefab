@@ -184,6 +184,7 @@ MonoBehaviour:
   interactPosOnCenter: 0
   outlineScale: 1.1
   outlineSize: 1
+  SpriteRenderer: {fileID: 3878022209268221468}
   NeededHands: 1
   ResourcePrefab: {fileID: 4949850401918132681, guid: 9316ebcd1b460a94ab57a39743bc10fd,
     type: 3}
@@ -192,6 +193,11 @@ MonoBehaviour:
   DropDistance: 0.1
   "ResourceDropPoint\u0421orrection": {x: 0, y: -0.6, z: 0}
   NeededHits: 3
+  DamagedSprites:
+  - {fileID: -2988358134886851885, guid: 776c1040365945d4d85976f5709400d8, type: 3}
+  - {fileID: -7640926394282422473, guid: 776c1040365945d4d85976f5709400d8, type: 3}
+  - {fileID: -1609646975742396680, guid: 776c1040365945d4d85976f5709400d8, type: 3}
+  - {fileID: 5174781867538631192, guid: 776c1040365945d4d85976f5709400d8, type: 3}
 --- !u!61 &371649881
 BoxCollider2D:
   m_ObjectHideFlags: 0

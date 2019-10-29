@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourcesSource : Interactable {
+	public SpriteRenderer SpriteRenderer;
+
 	public ItemSO.ItemType NeededHands;
+
 	public GameObject ResourcePrefab;
 	public byte ResourceCount;
 	public float DropTime;
 	public float DropDistance;
 	public Vector3 ResourceDropPointСorrection;
+
 	public byte NeededHits;
+	public List<Sprite> DamagedSprites;
 
 	int CurrentHit;
 
@@ -41,6 +46,9 @@ public class ResourcesSource : Interactable {
 					.setOnComplete(res.GetComponent<Interactable>().RecalcInteractPos);
 			}
 			Destroy(gameObject);
+		}
+		else {
+			SpriteRenderer.sprite = DamagedSprites[CurrentHit];
 		}
 	}
 }
