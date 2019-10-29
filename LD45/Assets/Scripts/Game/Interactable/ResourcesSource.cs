@@ -14,7 +14,7 @@ public class ResourcesSource : Interactable {
 	public Vector3 ResourceDropPointСorrection;
 
 	public byte NeededHits;
-	public List<Sprite> DamagedSprites;
+	public Sprite[] DamagedSprites;
 
 	int CurrentHit;
 
@@ -48,7 +48,8 @@ public class ResourcesSource : Interactable {
 			Destroy(gameObject);
 		}
 		else {
-			SpriteRenderer.sprite = DamagedSprites[CurrentHit];
+			if(CurrentHit < DamagedSprites.Length && DamagedSprites[CurrentHit] != null)
+				SpriteRenderer.sprite = DamagedSprites[CurrentHit];
 		}
 	}
 }

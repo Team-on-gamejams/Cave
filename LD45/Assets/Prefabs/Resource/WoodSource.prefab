@@ -191,8 +191,8 @@ MonoBehaviour:
   ResourceCount: 3
   DropTime: 0.2
   DropDistance: 0.1
-  "ResourceDropPoint\u0421orrection": {x: 0, y: -0.6, z: 0}
-  NeededHits: 3
+  "ResourceDropPoint\u0421orrection": {x: 0, y: -0.4, z: 0}
+  NeededHits: 4
   DamagedSprites:
   - {fileID: -2988358134886851885, guid: 776c1040365945d4d85976f5709400d8, type: 3}
   - {fileID: -7640926394282422473, guid: 776c1040365945d4d85976f5709400d8, type: 3}
