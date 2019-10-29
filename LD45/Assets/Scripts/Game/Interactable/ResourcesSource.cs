@@ -17,7 +17,6 @@ public class ResourcesSource : Interactable {
 	public Sprite[] DamagedSprites;
 
 	int CurrentHit;
-	bool isInteractLMB;
 
 	protected override void Awake() {
 		base.Awake();

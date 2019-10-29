@@ -13,8 +13,9 @@ public class Interactable : MonoBehaviour {
 	public Action OnMouseClick;
 
 	[SerializeField] protected string tip;
+	protected bool isInteractLMB;
 
-    [SerializeField] bool interactPosOnCenter;
+	[SerializeField] bool interactPosOnCenter;
 	[SerializeField] float outlineScale = 1;
 	[SerializeField] float outlineSize = 1;
 
@@ -46,12 +47,46 @@ public class Interactable : MonoBehaviour {
 		if (GameManager.Instance.IsPaused || GameManager.Instance.SelectedOutlineGO != this)
 			return;
 
+		if (Input.GetMouseButtonDown(0)) {
+			isInteractLMB = true;
+			ProcessMouseDown();
+		}
+		else if (Input.GetMouseButtonDown(1)){
+			isInteractLMB = false;
+			ProcessMouseDown();
+		}
+
 		EventData eventData = new EventData("OnPopUpShow");
         eventData["tipText"] = tip;
         GameManager.Instance.EventManager.CallOnMouseOverTip(eventData);
     }
 
-	void OnMouseDown() {
+	void OnMouseExit() {
+		if (GameManager.Instance.IsPaused)
+			return;
+
+		HideOutline();
+		GameManager.Instance.SelectedOutlineGO = null;
+	}
+
+	public void RecalcInteractPos() {
+		interactPos = spriteRenderer.bounds.center;
+		if (!interactPosOnCenter)
+			interactPos += Vector3.down * spriteRenderer.bounds.size.y / 2;
+	}
+
+	public void SimulateMouseClick() {
+		isInteractLMB = true;
+		ProcessMouseDown();
+	}
+
+	public virtual bool CanInteract() => true;
+
+	public bool IsInRange() {
+		return GameManager.Instance.Player.CanInteract(transform.position, InteractDistSqr);
+	}
+
+	void ProcessMouseDown() {
 		if (GameManager.Instance.IsPaused || GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
 			return;
 
@@ -64,30 +99,6 @@ public class Interactable : MonoBehaviour {
 			GameManager.Instance.Player.MoveTo(interactPos);
 			GameManager.Instance.Player.OnMoveEndEvent += OnMouseClick;
 		}
-	}
-
-	void OnMouseExit() {
-		if (GameManager.Instance.IsPaused)
-			return;
-
-		HideOutline();
-		GameManager.Instance.SelectedOutlineGO = null;
-	}
-
-    public void RecalcInteractPos() {
-		interactPos = spriteRenderer.bounds.center;
-		if (!interactPosOnCenter)
-			interactPos += Vector3.down * spriteRenderer.bounds.size.y / 2;
-	}
-
-	public void SimulateMouseClick() {
-		OnMouseDown();
-	}
-
-	public virtual bool CanInteract() => true;
-
-	public bool IsInRange() {
-		return GameManager.Instance.Player.CanInteract(transform.position, InteractDistSqr);
 	}
 
 	void ShowOutline() {
