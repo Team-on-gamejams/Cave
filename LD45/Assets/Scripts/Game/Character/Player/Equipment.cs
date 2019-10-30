@@ -50,6 +50,7 @@ public class Equipment : MonoBehaviour {
 			OnUseHandAnimEndEvent = null;
 			ItemInHandLeft.enabled = true;
 			ItemInHandRight.enabled = true;
+			ItemInHandDual.enabled = true;
 		}
 	}
 
@@ -82,11 +83,25 @@ public class Equipment : MonoBehaviour {
 	public void UnequipItem(ItemSO.ItemSlot slot) {
 		switch (slot) {
 			case ItemSO.ItemSlot.HandLeft:
+				if (IsDualWield()) {
+					ItemInHandDual.sprite = null;
+					ItemInHandDual.enabled = false;
+					SetRightHandSprite();
+				}
+
 				handLeft = null;
+				ItemInHandLeft.sprite = null;
 				ItemInHandLeft.enabled = false;
 				break;
 			case ItemSO.ItemSlot.HandRight:
+				if (IsDualWield()) {
+					ItemInHandDual.sprite = null;
+					ItemInHandDual.enabled = false;
+					SetLeftHandSprite();
+				}
+
 				handRight = null;
+				ItemInHandRight.sprite = null;
 				ItemInHandRight.enabled = false;
 				break;
 			case ItemSO.ItemSlot.Head:
@@ -104,18 +119,30 @@ public class Equipment : MonoBehaviour {
 
 	void EquipInHand(ItemSO item, bool isLeftHand) {
 		if (isLeftHand) {
+			if (IsDualWield()) {
+				ItemInHandDual.sprite = null;
+				ItemInHandDual.enabled = false;
+				SetRightHandSprite();
+			}
+
 			handLeft = item;
-			ItemInHandLeft.transform.localScale = new Vector3(item.ScaleInHand, item.ScaleInHand, 1.0f);
-			ItemInHandLeft.sprite = item.Sprite;
-			ItemInHandLeft.enabled = true;
+			SetLeftHandSprite();
 		}
 		else {
+			if (IsDualWield()) {
+				ItemInHandDual.sprite = null;
+				ItemInHandDual.enabled = false;
+				SetLeftHandSprite();
+			}
+
 			handRight = item;
-			ItemInHandRight.transform.localScale = new Vector3(item.ScaleInHand, item.ScaleInHand, 1.0f);
-			ItemInHandRight.sprite = item.Sprite;
-			ItemInHandRight.enabled = true;
+			SetRightHandSprite();
 		}
-		
+
+		if (IsDualWield()) {
+			SetDualHandSprite();
+		}
+
 		EventData eventData = new EventData("OnItemSlotChange");
 		eventData["ItemSlotType"] = item;
 		GameManager.Instance.EventManager.CallOnEquipmentChange(eventData);
@@ -125,11 +152,38 @@ public class Equipment : MonoBehaviour {
 		OnUseHandAnimEndEvent = null;
 		ItemInHandLeft.enabled = true;
 		ItemInHandRight.enabled = true;
+		ItemInHandDual.enabled = true;
 		GOLinkedAnim = null;
+	}
+
+	public bool IsDualWield() {
+		return handLeft == handRight && handLeft != null;
 	}
 
 	void OnStartAnim() {
 		ItemInHandLeft.enabled = false;
 		ItemInHandRight.enabled = false;
+		ItemInHandDual.enabled = false;
+	}
+
+	void SetLeftHandSprite() {
+		ItemInHandLeft.transform.localScale = new Vector3(handLeft.ScaleInHand, handLeft.ScaleInHand, 1.0f);
+		ItemInHandLeft.sprite = handLeft.Sprite;
+		ItemInHandLeft.enabled = true;
+	}
+
+	void SetRightHandSprite() {
+		ItemInHandRight.transform.localScale = new Vector3(handRight.ScaleInHand, handRight.ScaleInHand, 1.0f);
+		ItemInHandRight.sprite = handRight.Sprite;
+		ItemInHandRight.enabled = true;
+	}
+
+	void SetDualHandSprite() {
+		ItemInHandLeft.sprite = ItemInHandRight.sprite = null;
+		ItemInHandLeft.enabled = ItemInHandRight.enabled = false;
+
+		ItemInHandDual.transform.localScale = new Vector3(handLeft.ScaleInHand, handLeft.ScaleInHand, 1.0f);
+		ItemInHandDual.sprite = handLeft.Sprite;
+		ItemInHandDual.enabled = true;
 	}
 }
