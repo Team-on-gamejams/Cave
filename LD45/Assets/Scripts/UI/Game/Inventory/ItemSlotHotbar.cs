@@ -27,8 +27,12 @@ public class ItemSlotHotbar: ItemSlot, IPointerClickHandler {
 		if (hotbar.IsSelectedSlot(invId)) {
 			if (item != null)
 				GameManager.Instance.Player.Equipment.EquipItem(item, true, hotbar.SelectedSlotIdLeft == invId);
-			else
-				GameManager.Instance.Player.Equipment.UnequipItem(hotbar.SelectedSlotIdLeft == invId ? ItemSO.ItemSlot.HandLeft : ItemSO.ItemSlot.HandRight);
+			else {
+				if(hotbar.SelectedSlotIdLeft == invId)
+					GameManager.Instance.Player.Equipment.UnequipItem(ItemSO.ItemSlot.HandLeft);
+				if (hotbar.SelectedSlotIdLeft == invId)
+					GameManager.Instance.Player.Equipment.UnequipItem(ItemSO.ItemSlot.HandRight);
+			}
 		}
 	}
 

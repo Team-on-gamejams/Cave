@@ -6,6 +6,7 @@ using UnityEngine;
 public class Equipment : MonoBehaviour {
 	public SpriteRenderer ItemInHandLeft;
 	public SpriteRenderer ItemInHandRight;
+	public SpriteRenderer ItemInHandDual;
 
 	[NonSerialized] public GameObject GOLinkedAnim;
 	public Action OnUseHandAnimEndEvent;
