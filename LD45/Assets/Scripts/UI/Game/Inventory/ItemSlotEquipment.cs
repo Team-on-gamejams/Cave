@@ -8,6 +8,12 @@ using TMPro;
 public class ItemSlotEquipment : ItemSlot {
 	[SerializeField] ItemSO.ItemSlot slot;
 
+	protected override void Awake() {
+		base.Awake();
+
+		InventoryUI = transform.parent.parent.GetComponent<InventoryUI>();
+	}
+
 	public override void SetItem(ItemSO _item) {
 		base.SetItem(_item);
 
