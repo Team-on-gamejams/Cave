@@ -9,6 +9,9 @@ public class Hotbar : Inventory {
 
 	void Awake() {
 		SelectedSlotId = 0;
+	}
+
+	void Start() {
 		OnSelectionChange?.Invoke();
 	}
 

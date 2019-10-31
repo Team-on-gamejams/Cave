@@ -1,24 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
+
+// Всі класи, що наслідуються мають всередині виконувати   
+// GameManager.Instance.Player.Equipment.GOLinkedAnim = null;
+// Це треба для анимашок, щоб не викликати одне і те ж саме, якщо спамиш кликами
 public class Interactable : MonoBehaviour {
 	public GameObject AdditionalOutlineGO;
 	public float OutlineScale = 1;
 	public float InteractDist;
-	public System.Action OnMouseClick;
+	public Action OnMouseClick;
 
+	[SerializeField] bool interactPosOnCenter;
 	[SerializeField] float outlineSize;
+
+	SpriteRenderer spriteRenderer;
+
+	Vector3 interactPos;
 
 	SpriteOutline outlineAdditional;
 	SpriteOutline outline;
 	float InteractDistSqr;
 
 	protected virtual void Awake() {
+		spriteRenderer = GetComponent<SpriteRenderer>();
+
 		InteractDistSqr = InteractDist * InteractDist;
+
+		RecalcInteractPos();
 	}
 
 	void OnMouseEnter() {
+		if (GameManager.Instance.SelectedOutlineGO != null || EventSystem.current.IsPointerOverGameObject())
+			return;
+
+		GameManager.Instance.SelectedOutlineGO = this;
 		if (outline == null) {
 			outline = CreateOutline(gameObject, true);
 			if (AdditionalOutlineGO) {
@@ -31,33 +50,43 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		if (CanInteract()) {
+		if (GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
+			return;
+
+		GameManager.Instance.Player.InterruptAction();
+		GameManager.Instance.Player.Equipment.GOLinkedAnim = gameObject;
+		if (IsInRange()) {
 			OnMouseClick?.Invoke();
 		}
 		else {
-			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd = null;
-			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += () => {
-				if (this != null && CanInteract()) {
-					OnMouseClick?.Invoke();
-				}
-				//else {
-				//	GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd = null;
-				//}
-			};
+			GameManager.Instance.Player.PlayerKeyboardMover.MoveTo(interactPos);
+			GameManager.Instance.Player.PlayerKeyboardMover.OnMouseMoveEnd += OnMouseClick;
 		}
 	}
 
 	void OnMouseExit() {
+		if (GameManager.Instance.SelectedOutlineGO != this)
+			return;
+
+		GameManager.Instance.SelectedOutlineGO = null;
 		outline.gameObject.SetActive(false);
 		if (outlineAdditional)
 			outlineAdditional.gameObject.SetActive(false);
+	}
+
+	public void RecalcInteractPos() {
+		interactPos = spriteRenderer.bounds.center;
+		if (!interactPosOnCenter)
+			interactPos += Vector3.down * spriteRenderer.bounds.size.y / 2;
 	}
 
 	public void SimulateMouseClick() {
 		OnMouseDown();
 	}
 
-	public bool CanInteract() {
+	public virtual bool CanInteract() => true;
+
+	public bool IsInRange() {
 		return GameManager.Instance.Player.CanInteract(transform.position, InteractDistSqr);
 	}
 

@@ -18,9 +18,6 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 	ItemSO item;
 
-	Vector3 mouseOffsetImage;
-	Vector3 mouseOffsetCount;
-
 	virtual protected void Awake() {
 		CountText.gameObject.SetActive(false);
 		ItemImage.gameObject.SetActive(false);
@@ -49,6 +46,11 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		else {
 			CountText.gameObject.SetActive(false);
 		}
+
+		if (InventoryUI.Inventory is Hotbar) {
+			if ((InventoryUI.Inventory as Hotbar).SelectedSlotId == invId)
+				GameManager.Instance.Player.Equipment.EquipItem(InventoryUI.Inventory.Items[invId]);
+		}
 	}
 
 	public void OnBeginDrag(PointerEventData eventData) {
@@ -61,19 +63,18 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 		ItemImage.transform.SetParent(canvas.transform, true);
 		CountText.transform.SetParent(canvas.transform, true);
+		ItemImage.raycastTarget = false;
 
-		mouseOffsetImage = ItemImage.transform.position - Input.mousePosition;
-		mouseOffsetCount = CountText.transform.position - Input.mousePosition;
+		ItemImage.transform.position += (Vector3)eventData.delta;
+		CountText.transform.position += (Vector3)eventData.delta;
 	}
 
 	public void OnDrag(PointerEventData eventData) {
 		if (item == null)
 			return;
 
-		ItemImage.transform.position = Input.mousePosition + mouseOffsetImage;
-		CountText.transform.position = Input.mousePosition + mouseOffsetCount;
-
-		ItemImage.raycastTarget = false;
+		ItemImage.transform.position += (Vector3)eventData.delta;
+		CountText.transform.position += (Vector3)eventData.delta;
 	}
 
 	public void OnEndDrag(PointerEventData eventData) {
@@ -91,12 +92,23 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		if (draggingSlot == this || draggingSlot.item == null)
 			return;
 
-		//TODO: додавати до стака якщо 1 типу
-		//TODO: міняти місцями при отпуску на ітемі
-		if (item == null || (item.Type != draggingSlot.item.Type)) {
+		if (item == null || (item.Type != draggingSlot.item.Type) || item.IsMaxStack() || draggingSlot.item.IsMaxStack()) {
 			ItemSO prevItem = InventoryUI.Inventory.Items[invId];
 			InventoryUI.Inventory.Items[invId] = draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId];
 			draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId] = prevItem;
+		}
+		else if(item.Type == draggingSlot.item.Type) {
+			ItemSO slotItem = InventoryUI.Inventory.Items[invId];
+			ItemSO dragItem = draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId];
+
+			slotItem.Count += dragItem.Count;
+			if (slotItem.Count > slotItem.MaxCount) {
+				dragItem.Count = (ushort)(slotItem.Count - slotItem.MaxCount);
+				slotItem.Count = slotItem.MaxCount;
+			}
+			else {
+				draggingSlot.InventoryUI.Inventory.Items[draggingSlot.invId] = null;
+			}
 		}
 
 		ReInit();
