@@ -45,6 +45,7 @@
 [Team] [BUG] Fix game stuck after pause->main menu->play
 [Team] [BUG] Dont close ingamemenu(ESC) if other window open
 [Team] [BUG] Fixed bug when pause interrupt animation
+[Team] [BUG] Minimap sprites no more affected by lights
 
 [FELT] [DEV] Спавнить GO, які випадають з ResourceSource в окремому GO.
 

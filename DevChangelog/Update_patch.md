@@ -1,0 +1,1 @@
+[Team] [BUG] Minimap sprites no more affected by light
