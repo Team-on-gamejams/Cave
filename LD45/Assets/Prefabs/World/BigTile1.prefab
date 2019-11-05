@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8926852314912267128}
+  - component: {fileID: 6618896963374954191}
   m_Layer: 0
   m_Name: BigTile1
   m_TagString: Untagged
@@ -45,6 +46,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6618896963374954191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8926852314912267129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64eec5bee8e760409805ae2ba67e391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &214800187681679732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -277,6 +290,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8926852314912267128}
     m_Modifications:
+    - target: {fileID: 3370521435146421910, guid: 552106429313dd7479679ed03590d7d3,
+        type: 3}
+      propertyPath: m_Name
+      value: Woods
+      objectReference: {fileID: 0}
     - target: {fileID: 3370521435146422121, guid: 552106429313dd7479679ed03590d7d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -331,11 +349,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3370521435146421910, guid: 552106429313dd7479679ed03590d7d3,
-        type: 3}
-      propertyPath: m_Name
-      value: Woods
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 552106429313dd7479679ed03590d7d3, type: 3}
@@ -427,6 +440,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8926852314912267128}
     m_Modifications:
+    - target: {fileID: 8301309024093751156, guid: 111eeccba4f7495468073dbcec6062d3,
+        type: 3}
+      propertyPath: m_Name
+      value: Bonfire (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8301309024093751158, guid: 111eeccba4f7495468073dbcec6062d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -482,11 +500,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8301309024093751156, guid: 111eeccba4f7495468073dbcec6062d3,
-        type: 3}
-      propertyPath: m_Name
-      value: Bonfire (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8301309024093751165, guid: 111eeccba4f7495468073dbcec6062d3,
         type: 3}
       propertyPath: m_PointLightOuterRadius
@@ -507,6 +520,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8926852314912267128}
     m_Modifications:
+    - target: {fileID: 4847483186995451876, guid: 8e3dfe8f9c2739742964815eef2ca303,
+        type: 3}
+      propertyPath: m_Name
+      value: Axe
+      objectReference: {fileID: 0}
     - target: {fileID: 53883704575879714, guid: 8e3dfe8f9c2739742964815eef2ca303,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,11 +580,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4847483186995451876, guid: 8e3dfe8f9c2739742964815eef2ca303,
-        type: 3}
-      propertyPath: m_Name
-      value: Axe
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e3dfe8f9c2739742964815eef2ca303, type: 3}
 --- !u!4 &3675957574528373750 stripped
@@ -582,6 +595,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8926852314912267128}
     m_Modifications:
+    - target: {fileID: 8301309024093751156, guid: 111eeccba4f7495468073dbcec6062d3,
+        type: 3}
+      propertyPath: m_Name
+      value: Bonfire (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8301309024093751158, guid: 111eeccba4f7495468073dbcec6062d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -636,11 +654,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8301309024093751156, guid: 111eeccba4f7495468073dbcec6062d3,
-        type: 3}
-      propertyPath: m_Name
-      value: Bonfire (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8301309024093751165, guid: 111eeccba4f7495468073dbcec6062d3,
         type: 3}
@@ -962,6 +975,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8926852314912267128}
     m_Modifications:
+    - target: {fileID: 858235909614358954, guid: 089f91a0baa3bcf4395555b5cfbae11b,
+        type: 3}
+      propertyPath: m_Name
+      value: OnGroundRes
+      objectReference: {fileID: 0}
     - target: {fileID: 858235909614358949, guid: 089f91a0baa3bcf4395555b5cfbae11b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1017,11 +1035,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 858235909614358954, guid: 089f91a0baa3bcf4395555b5cfbae11b,
-        type: 3}
-      propertyPath: m_Name
-      value: OnGroundRes
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 089f91a0baa3bcf4395555b5cfbae11b, type: 3}
 --- !u!4 &7038989331865957706 stripped
@@ -1037,6 +1050,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8926852314912267128}
     m_Modifications:
+    - target: {fileID: 8499932633975898903, guid: 28bbba8a8378f3f4882a65864c192b00,
+        type: 3}
+      propertyPath: m_Name
+      value: Tent
+      objectReference: {fileID: 0}
     - target: {fileID: 8499932633975898897, guid: 28bbba8a8378f3f4882a65864c192b00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1092,11 +1110,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8499932633975898903, guid: 28bbba8a8378f3f4882a65864c192b00,
-        type: 3}
-      propertyPath: m_Name
-      value: Tent
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28bbba8a8378f3f4882a65864c192b00, type: 3}
 --- !u!4 &1992054842784874571 stripped
@@ -1112,6 +1125,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8926852314912267128}
     m_Modifications:
+    - target: {fileID: 8301309024093751156, guid: 111eeccba4f7495468073dbcec6062d3,
+        type: 3}
+      propertyPath: m_Name
+      value: Bonfire
+      objectReference: {fileID: 0}
     - target: {fileID: 8301309024093751158, guid: 111eeccba4f7495468073dbcec6062d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1166,11 +1184,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8301309024093751156, guid: 111eeccba4f7495468073dbcec6062d3,
-        type: 3}
-      propertyPath: m_Name
-      value: Bonfire
       objectReference: {fileID: 0}
     - target: {fileID: 8301309024093751165, guid: 111eeccba4f7495468073dbcec6062d3,
         type: 3}
