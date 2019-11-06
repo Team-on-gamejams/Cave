@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5733462542745507431}
   - component: {fileID: 4587550769923184231}
   - component: {fileID: 1584624017743884638}
-  - component: {fileID: 1172074004276336650}
+  - component: {fileID: 2529823256125497610}
   - component: {fileID: 8084641036131972768}
   m_Layer: 0
   m_Name: Helmet
@@ -102,8 +102,8 @@ MonoBehaviour:
   outlineScale: 1.2
   outlineSize: 1
   Item: {fileID: 11400000, guid: 91c9abfdff2426c4eb2b0b22002c9dfc, type: 2}
---- !u!60 &1172074004276336650
-PolygonCollider2D:
+--- !u!61 &2529823256125497610
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,17 +125,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.07, y: 0.099999994}
-      - {x: -0.14, y: 0.04}
-      - {x: -0.14, y: -0.01}
-      - {x: -0.12, y: -0.06}
-      - {x: -0.06, y: -0.099999994}
-      - {x: 0.07, y: -0.099999994}
-      - {x: 0.12, y: -0.08}
-      - {x: 0.12, y: 0.049999997}
-      - {x: 0.06, y: 0.099999994}
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!114 &8084641036131972768
 MonoBehaviour:
   m_ObjectHideFlags: 0
