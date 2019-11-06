@@ -129,7 +129,7 @@ public class ItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	}
 
 	void DropItemOnGround(Vector3 newItemPos) {
-		OnGroundItem.CreateOnGround(item, newItemPos, GameManager.Instance.CollectorItems.transform);
+		OnGroundItem.CreateOnGround(item, newItemPos);
 		InventoryUI.Inventory.Items[invId] = null;
 		InventoryUI.UpdateUI();
 	}

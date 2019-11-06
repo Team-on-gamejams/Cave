@@ -8,7 +8,9 @@ public class BaseBuilding : Interactable {
 
 	protected override void Start() {
 		base.Start();
-		WorldGenerator.instance.GetChunkFromWorldPos(transform.position).buildings.Add(this);
+		Chunk chunk = WorldGenerator.instance.GetChunkFromWorldPos(transform.position);
+		transform.parent = chunk.transform;
+		chunk.buildings.Add(this);
 	}
 
 	private void OnDestroy() {

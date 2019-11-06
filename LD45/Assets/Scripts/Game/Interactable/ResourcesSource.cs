@@ -27,7 +27,9 @@ public class ResourcesSource : Interactable {
 
 	protected override void Start() {
 		base.Start();
-		WorldGenerator.instance.GetChunkFromWorldPos(transform.position).ResourcesSources.Add(this);
+		Chunk chunk = WorldGenerator.instance.GetChunkFromWorldPos(transform.position);
+		transform.parent = chunk.transform;
+		chunk.ResourcesSources.Add(this);
 	}
 
 	private void OnDestroy() {
@@ -50,7 +52,7 @@ public class ResourcesSource : Interactable {
 
 		if (++CurrentHit == NeededHits) {
 			while (ResourceCount-- != 0) {
-				GameObject res = Instantiate(ResourcePrefab, transform.position + ResourceDropPointСorrection, Quaternion.identity, GameManager.Instance.CollectorItems.transform);
+				GameObject res = Instantiate(ResourcePrefab, transform.position + ResourceDropPointСorrection, Quaternion.identity);
                 LeanTween.moveLocal(res, res.transform.position + new Vector3(Random.Range(-DropDistance, DropDistance), Random.Range(-DropDistance, DropDistance), 0), DropTime)
 					.setOnComplete(res.GetComponent<Interactable>().RecalcInteractPos);
 			}

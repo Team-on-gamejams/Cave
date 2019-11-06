@@ -30,8 +30,6 @@ public class GameManager : Singleton<GameManager> {
 	private float _GameSpeed = 1.0f;
 
 	public Camera MainCamera;
-	public GameObject CollectorItems;
-	public GameObject CollectorBuilding;
 	public Interactable SelectedOutlineGO;
 
 	public Player Player;

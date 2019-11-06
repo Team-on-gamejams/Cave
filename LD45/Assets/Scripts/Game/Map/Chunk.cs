@@ -8,6 +8,10 @@ public class Chunk : MonoBehaviour {
 	public int x, y;
 	public bool canMoveUp = true, canMoveRight = true, canMoveDown = true, canMoveLeft = true;
 	public Chunk up, right, down, left;
+	public Chunk upRight => up.right;
+	public Chunk upLeft => up.left;
+	public Chunk downRight => down.right;
+	public Chunk downLeft => down.left;
 
 	public List<BaseBuilding> buildings;
 	public List<OnGroundItem> onGroundItems;
@@ -17,10 +21,69 @@ public class Chunk : MonoBehaviour {
 		WorldGenerator.instance.chunks.Add(this);
 	}
 
+	void Start() {
+		gameObject.name = $"Chunk [{x}, {y}]";	
+	}
+
 	void OnTriggerEnter2D(Collider2D collision) {
 		if(collision.tag == "Player") {
 			GameManager.Instance.Player.CurrChunk = this;
 			GenerateNearbyChunks();
+
+			up?.gameObject?.SetActive(true);
+			right?.gameObject?.SetActive(true);
+			down?.gameObject?.SetActive(true);
+			left?.gameObject?.SetActive(true);
+
+			upLeft?.gameObject?.SetActive(true);
+			upRight?.gameObject?.SetActive(true);
+			downLeft?.gameObject?.SetActive(true);
+			downRight?.gameObject?.SetActive(true);
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D collision) {
+		if (collision.tag == "Player") {
+			bool isMoveUp = GameManager.Instance.Player.CurrChunk.y > y;
+			bool isMoveRight = GameManager.Instance.Player.CurrChunk.x > x;
+
+			if (up != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.x == x)
+				up?.gameObject?.SetActive(false);
+			if(right != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.y == y)
+				right?.gameObject?.SetActive(false);
+			if(down != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.x == x)
+				down?.gameObject?.SetActive(false);
+			if(left != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.y == y)
+				left?.gameObject?.SetActive(false);
+
+
+			bool upLeftActive = false,
+				upRightActive = false,
+				downLeftActive = false,
+				downRightActive = false;
+
+			if (isMoveUp) {
+				upLeftActive = true;
+				upRightActive = true;
+			}
+			else if(GameManager.Instance.Player.CurrChunk.y != y) {
+				downLeftActive = true;
+				downRightActive = true;
+			}
+
+			if (isMoveRight) {
+				upRightActive = true;
+				downRightActive = true;
+			}
+			else if (GameManager.Instance.Player.CurrChunk.x != x) {
+				upLeftActive = true;
+				downLeftActive = true;
+			}
+
+			upLeft?.gameObject?.SetActive(upLeftActive);
+			upRight?.gameObject?.SetActive(upRightActive);
+			downLeft?.gameObject?.SetActive(downLeftActive);
+			downRight?.gameObject?.SetActive(downRightActive);
 		}
 	}
 
@@ -34,14 +97,30 @@ public class Chunk : MonoBehaviour {
 		if (canMoveLeft && left == null && WorldGenerator.instance.GetChunk(x - 1, y) == null)
 			CreateNeighbour(Neighbour.Left);
 
-		//if (WorldGenerator.instance.GetChunk(x + 1, y + 1) == null)
-		//	CreateNeighbour(Neighbour.Right | Neighbour.Up);
-		//if (WorldGenerator.instance.GetChunk(x - 1, y + 1) == null)
-		//	CreateNeighbour(Neighbour.Left | Neighbour.Up);
-		//if (WorldGenerator.instance.GetChunk(x + 1, y - 1) == null)
-		//	CreateNeighbour(Neighbour.Right | Neighbour.Down);
-		//if (WorldGenerator.instance.GetChunk(x - 1, y - 1) == null)
-		//	CreateNeighbour(Neighbour.Left | Neighbour.Down);
+		if (WorldGenerator.instance.GetChunk(x + 1, y + 1) == null) {
+			if (up)
+				up.CreateNeighbour(Neighbour.Right);
+			else if (right) 
+				right.CreateNeighbour(Neighbour.Up);
+		}
+		if (WorldGenerator.instance.GetChunk(x - 1, y + 1) == null) {
+			if (left)
+				left.CreateNeighbour(Neighbour.Up);
+			else if (up)
+				up.CreateNeighbour(Neighbour.Left);
+		}
+		if (WorldGenerator.instance.GetChunk(x + 1, y - 1) == null) {
+			if (right)
+				right.CreateNeighbour(Neighbour.Down);
+			else if (down)
+				down.CreateNeighbour(Neighbour.Right);
+		}
+		if (WorldGenerator.instance.GetChunk(x - 1, y - 1) == null) {
+			if (left)
+				left.CreateNeighbour(Neighbour.Down);
+			else if (down)
+				down.CreateNeighbour(Neighbour.Left);
+		}
 	}
 
 	public void CreateNeighbour(Neighbour neighbour) {
@@ -55,34 +134,63 @@ public class Chunk : MonoBehaviour {
 		if ((neighbour & Neighbour.Up) == Neighbour.Up) {
 			++chunk.y;
 
-			chunk.down = this;
-			up = chunk;
+			SetNeighbour(this, chunk, Neighbour.Up);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x, chunk.y + 1), Neighbour.Up);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x + 1, chunk.y), Neighbour.Right);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x - 1, chunk.y), Neighbour.Left);
 
 			chunk.transform.position += new Vector3(0, WorldGenerator.instance.chunkSize);
 		}
 		if ((neighbour & Neighbour.Right) == Neighbour.Right) {
 			++chunk.x;
 
-			chunk.left = this;
-			right = chunk;
-
+			SetNeighbour(this, chunk, Neighbour.Right);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x, chunk.y + 1), Neighbour.Up);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x, chunk.y - 1), Neighbour.Down);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x + 1, chunk.y), Neighbour.Right);
 			chunk.transform.position += new Vector3(WorldGenerator.instance.chunkSize, 0);
 		}
 		if ((neighbour & Neighbour.Down) == Neighbour.Down) {
 			--chunk.y;
 
-			chunk.up = this;
-			down = chunk;
-
+			SetNeighbour(this, chunk, Neighbour.Down);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x, chunk.y - 1), Neighbour.Down);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x + 1, chunk.y), Neighbour.Right);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x - 1, chunk.y), Neighbour.Left);
 			chunk.transform.position -= new Vector3(0, WorldGenerator.instance.chunkSize);
 		}
 		if ((neighbour & Neighbour.Left) == Neighbour.Left) {
 			--chunk.x;
 
-			chunk.right = this;
-			left = chunk;
-
+			SetNeighbour(this, chunk, Neighbour.Left);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x, chunk.y + 1), Neighbour.Up);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x, chunk.y - 1), Neighbour.Down);
+			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x - 1, chunk.y), Neighbour.Left);
 			chunk.transform.position -= new Vector3(WorldGenerator.instance.chunkSize, 0);
+		}
+	}
+
+	public void SetNeighbour(Chunk a, Chunk b, Neighbour neighbour) {
+		if (a == null || b == null)
+			return;
+
+		switch (neighbour) {
+			case Neighbour.Up:
+				a.up = b;
+				b.down = a;
+				break;
+			case Neighbour.Right:
+				a.right = b;
+				b.left = a;
+				break;
+			case Neighbour.Down:
+				a.down = b;
+				b.up = a;
+				break;
+			case Neighbour.Left:
+				a.left = b;
+				b.right = a;
+				break;
 		}
 	}
 }

@@ -17,7 +17,9 @@ public class OnGroundItem : Interactable {
 
 	protected override void Start() {
 		base.Start();
-		WorldGenerator.instance.GetChunkFromWorldPos(transform.position).onGroundItems.Add(this);
+		Chunk chunk = WorldGenerator.instance.GetChunkFromWorldPos(transform.position);
+		transform.parent = chunk.transform;
+		chunk.onGroundItems.Add(this);
 	}
 
 	private void OnDestroy() {
@@ -34,9 +36,9 @@ public class OnGroundItem : Interactable {
 			Destroy(gameObject);
 	}
 
-	static public OnGroundItem CreateOnGround(ItemSO item, Vector3 pos, Transform parent) {
+	static public OnGroundItem CreateOnGround(ItemSO item, Vector3 pos) {
 		pos.z = 0;
-		GameObject go = Instantiate(OnGroundItemsList.instance.GetItemPrefab(item), pos, Quaternion.identity, parent);
+		GameObject go = Instantiate(OnGroundItemsList.instance.GetItemPrefab(item), pos, Quaternion.identity);
 		OnGroundItem newItem = go.GetComponent<OnGroundItem>();
 		newItem.Item.Count = item.Count;
 		return newItem;
