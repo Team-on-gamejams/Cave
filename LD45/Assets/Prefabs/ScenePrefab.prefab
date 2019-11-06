@@ -1685,11 +1685,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629038809d4ebf840ad7ca569596e786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingChunk: {fileID: 6897052443669223803}
   chunkSize: 16
+  chunks: []
+  startingChunk: {fileID: 6897052443669223803}
+  marchingSquares: []
   chunkTest: {fileID: 3785902147290895636, guid: 93417cebafdb1be4290f473002f6b160,
     type: 3}
-  chunks: []
 --- !u!1 &738878352169156414
 GameObject:
   m_ObjectHideFlags: 0

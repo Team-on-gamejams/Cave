@@ -12,10 +12,14 @@ public class WorldGenerator : MonoBehaviour {
 	}
 	public static WorldGenerator _instance;
 
-	[SerializeField] Chunk startingChunk;
 	public float chunkSize;
-	public GameObject chunkTest;
 	public List<Chunk> chunks;
+	[SerializeField] Chunk startingChunk;
+
+	public GameObject[] marchingSquares;
+
+	public GameObject chunkTest;
+
 
 	public Chunk GetChunk(int x, int y) {
 		foreach (var chunk in chunks)

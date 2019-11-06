@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3785902147290895639}
   - component: {fileID: 398316414}
+  - component: {fileID: 5242474}
   - component: {fileID: 7045563185057222043}
   m_Layer: 2
   m_Name: TestTile
@@ -112,6 +113,31 @@ MonoBehaviour:
   buildings: []
   onGroundItems: []
   ResourcesSources: []
+--- !u!114 &5242474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785902147290895636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3e0b776da26e54bab14e2aee4c92c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 32
+  height: 32
+  wallThresholdSize: 25
+  roomThresholdSize: 25
+  coridorThreshold: 25
+  coridorRadius: 2
+  borderSize: 0
+  squareSize: 0.25
+  smoothBase: 4
+  smoothLevel: 5
+  seed: 
+  useRandomSeed: 1
+  randomFillPercent: 47
 --- !u!61 &7045563185057222043
 BoxCollider2D:
   m_ObjectHideFlags: 0

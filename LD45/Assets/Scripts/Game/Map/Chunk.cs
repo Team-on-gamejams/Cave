@@ -17,11 +17,17 @@ public class Chunk : MonoBehaviour {
 	public List<OnGroundItem> onGroundItems;
 	public List<ResourcesSource> ResourcesSources;
 
+	Tile[,] map;
+
 	private void Awake() {
 		WorldGenerator.instance.chunks.Add(this);
 	}
 
 	void Start() {
+		ChunkGenerator generator = GetComponent<ChunkGenerator>();
+		if (generator != null)
+			map = generator.GenerateMap();
+
 		gameObject.name = $"Chunk [{x}, {y}]";	
 	}
 
