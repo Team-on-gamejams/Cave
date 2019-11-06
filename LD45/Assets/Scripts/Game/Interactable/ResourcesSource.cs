@@ -25,6 +25,15 @@ public class ResourcesSource : Interactable {
 		OnMouseClick += Interract;
 	}
 
+	protected override void Start() {
+		base.Start();
+		WorldGenerator.instance.GetChunkFromWorldPos(transform.position).ResourcesSources.Add(this);
+	}
+
+	private void OnDestroy() {
+		WorldGenerator.instance.GetChunkFromWorldPos(transform.position).ResourcesSources.Remove(this);
+	}
+
 	public override bool CanInteract() {
 		return ((isInteractLMB ? GameManager.Instance.Player.Equipment.handLeft : GameManager.Instance.Player.Equipment.handRight)?.Type ?? ItemSO.ItemType.None) == NeededHands;
 	}

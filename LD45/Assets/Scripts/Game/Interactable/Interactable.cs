@@ -31,7 +31,7 @@ public class Interactable : MonoBehaviour {
 		InteractDistSqr = InteractDist * InteractDist;
     }
 
-	void Start() {
+	virtual protected void Start() {
 		RecalcInteractPos();
 	}
 

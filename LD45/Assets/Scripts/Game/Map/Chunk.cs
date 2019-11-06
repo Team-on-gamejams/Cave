@@ -13,13 +13,15 @@ public class Chunk : MonoBehaviour {
 	public List<OnGroundItem> onGroundItems;
 	public List<ResourcesSource> ResourcesSources;
 
-	private void Start() {
+	private void Awake() {
 		WorldGenerator.instance.chunks.Add(this);
 	}
 
 	void OnTriggerEnter2D(Collider2D collision) {
-		if(collision.tag == "Player")
+		if(collision.tag == "Player") {
+			GameManager.Instance.Player.CurrChunk = this;
 			GenerateNearbyChunks();
+		}
 	}
 
 	public void GenerateNearbyChunks() {

@@ -7,6 +7,8 @@ public class Player : Character {
 	public Equipment Equipment;
 	public PlayerInput PlayerInput;
 
+	public Chunk CurrChunk;
+
 	void Awake() {
 		GameManager.Instance.Player = this;
 		InteractDistSqr = InteractDist * InteractDist;

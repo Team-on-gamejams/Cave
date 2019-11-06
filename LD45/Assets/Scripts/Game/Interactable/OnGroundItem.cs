@@ -15,6 +15,15 @@ public class OnGroundItem : Interactable {
 		OnMouseClick += CollectItem;
 	}
 
+	protected override void Start() {
+		base.Start();
+		WorldGenerator.instance.GetChunkFromWorldPos(transform.position).onGroundItems.Add(this);
+	}
+
+	private void OnDestroy() {
+		WorldGenerator.instance.GetChunkFromWorldPos(transform.position).onGroundItems.Remove(this);
+	}
+
 	void CollectItem() {
 		//TODO: add fly animation
 		//TODO: or show special frame around new items
