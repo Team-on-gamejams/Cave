@@ -29,14 +29,16 @@ public class Interactable : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer>();
 
 		InteractDistSqr = InteractDist * InteractDist;
-
-		RecalcInteractPos();
     }
+
+	void Start() {
+		RecalcInteractPos();
+	}
 
 	// OnMouseEnter та OnMouseExit викликаються завжди послідовно. Якщо курсор буде над 2 обєктами, то буде: OnMouseEnter -> OnMouseExit -> OnMouseEnter
 	// Якщо буде дуже важно мати правильну обводку, то треба буде в OnMouseOver або в OnMouseEnter робити рейкасти, і чекати найвищий спрайт
 	void OnMouseEnter() {
-		if (GameManager.Instance.IsPaused || EventSystem.current.IsPointerOverGameObject())
+		if (GameManager.Instance.IsPaused/* || EventSystem.current.IsPointerOverGameObject()*/)
 			return;
 
 		GameManager.Instance.SelectedOutlineGO = this;
