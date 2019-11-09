@@ -17,17 +17,13 @@ public class Chunk : MonoBehaviour {
 	public List<OnGroundItem> onGroundItems;
 	public List<ResourcesSource> ResourcesSources;
 
-	Tile[,] map;
+	public Tile[,] map;
 
 	private void Awake() {
 		WorldGenerator.instance.chunks.Add(this);
 	}
 
 	void Start() {
-		ChunkGenerator generator = GetComponent<ChunkGenerator>();
-		if (generator != null)
-			map = generator.GenerateMap(left);
-
 		gameObject.name = $"Chunk [{x}, {y}]";	
 	}
 
@@ -93,40 +89,52 @@ public class Chunk : MonoBehaviour {
 		}
 	}
 
+	public void GenerateChunk() {
+		ChunkGenerator generator = GetComponent<ChunkGenerator>();
+		if (generator != null)
+			map = generator.GenerateMap(this);
+	}
+
 	public void GenerateNearbyChunks() {
-		if (canMoveUp && up == null && WorldGenerator.instance.GetChunk(x, y + 1) == null)
-			CreateNeighbour(Neighbour.Up);
 		if (canMoveRight && right == null && WorldGenerator.instance.GetChunk(x + 1, y) == null)
 			CreateNeighbour(Neighbour.Right);
-		if (canMoveDown && down == null && WorldGenerator.instance.GetChunk(x, y - 1) == null)
-			CreateNeighbour(Neighbour.Down);
-		if (canMoveLeft && left == null && WorldGenerator.instance.GetChunk(x - 1, y) == null)
-			CreateNeighbour(Neighbour.Left);
 
 		if (WorldGenerator.instance.GetChunk(x + 1, y + 1) == null) {
 			if (up)
 				up.CreateNeighbour(Neighbour.Right);
-			else if (right) 
+			else if (right)
 				right.CreateNeighbour(Neighbour.Up);
 		}
-		if (WorldGenerator.instance.GetChunk(x - 1, y + 1) == null) {
-			if (left)
-				left.CreateNeighbour(Neighbour.Up);
-			else if (up)
-				up.CreateNeighbour(Neighbour.Left);
-		}
+
 		if (WorldGenerator.instance.GetChunk(x + 1, y - 1) == null) {
 			if (right)
 				right.CreateNeighbour(Neighbour.Down);
 			else if (down)
 				down.CreateNeighbour(Neighbour.Right);
 		}
+
+		if (canMoveLeft && left == null && WorldGenerator.instance.GetChunk(x - 1, y) == null)
+			CreateNeighbour(Neighbour.Left);
+
 		if (WorldGenerator.instance.GetChunk(x - 1, y - 1) == null) {
 			if (left)
 				left.CreateNeighbour(Neighbour.Down);
 			else if (down)
 				down.CreateNeighbour(Neighbour.Left);
 		}
+
+		if (WorldGenerator.instance.GetChunk(x - 1, y + 1) == null) {
+			if (left)
+				left.CreateNeighbour(Neighbour.Up);
+			else if (up)
+				up.CreateNeighbour(Neighbour.Left);
+		}
+
+		if (canMoveUp && up == null && WorldGenerator.instance.GetChunk(x, y + 1) == null)
+			CreateNeighbour(Neighbour.Up);
+
+		if (canMoveDown && down == null && WorldGenerator.instance.GetChunk(x, y - 1) == null)
+			CreateNeighbour(Neighbour.Down);
 	}
 
 	public void CreateNeighbour(Neighbour neighbour) {
@@ -174,6 +182,8 @@ public class Chunk : MonoBehaviour {
 			SetNeighbour(chunk, WorldGenerator.instance.GetChunk(chunk.x - 1, chunk.y), Neighbour.Left);
 			chunk.transform.position -= new Vector3(WorldGenerator.instance.chunkSize, 0);
 		}
+
+		chunk.GenerateChunk();
 	}
 
 	public void SetNeighbour(Chunk a, Chunk b, Neighbour neighbour) {

@@ -19,8 +19,6 @@ public class WorldGenerator : MonoBehaviour {
 	public List<Chunk> chunks;
 	[SerializeField] Chunk startingChunk;
 
-	public GameObject[] marchingSquares;
-
 	public GameObject chunkTest;
 
 	void Awake() {
@@ -28,6 +26,10 @@ public class WorldGenerator : MonoBehaviour {
 			Random.InitState((int)Time.time);
 		else
 			Random.InitState(seed.GetHashCode());
+	}
+
+	void Start() {
+		startingChunk.GenerateChunk();
 	}
 
 	public Chunk GetChunk(int x, int y) {

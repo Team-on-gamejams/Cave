@@ -13,7 +13,7 @@ public class ChunkGenerator : MonoBehaviour {
 	public int roomThresholdSize = 25;
 	public int coridorThreshold = 25;
 	public int coridorRadius = 2;
-	public int borderSize = 5;
+	int borderSize = 2;
 
 	public float squareSize = 1;
 	public int smoothBase = 4;
@@ -38,37 +38,52 @@ public class ChunkGenerator : MonoBehaviour {
 				map[x, y] = new Tile();
 
 		RandomFillMap();
+		DublicateCellsFromNearbyMaps();
 
 		for (int i = 0; i < smoothLevel; i++)
 			SmoothMap();
-		RemoveSmallWalls();
+		//RemoveSmallWalls();
 		RemoveSmallRooms();
 
 		ConnectRooms();
 
 		for (int i = 0; i < smoothLevelAfterPassage; i++)
 			SmoothMap();
-		RemoveSmallWalls();
-
+		//RemoveSmallWalls();
 
 		Tile[,] borderedMap = GetBorderedMap();
-
 		MeshGenerator meshGen = GetComponent<MeshGenerator>();
 		meshGen.GenerateMesh(borderedMap, squareSize);
 
-		return borderedMap;
+		return map;
 	}
 
 	void RandomFillMap() {
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				if (x == 0 || x == width - 1 || y == 0 || y == height - 1) {
-					map[x, y].isSolid = true;
-				}
-				else {
+				//if (x == 0 || x == width - 1 || y == 0 || y == height - 1) {
+				//	map[x, y].isSolid = true;
+				//}
+				//else {
 					map[x, y].isSolid = (Random.Range(0, 100) < randomFillPercent) ? true : false;
-				}
+				//}
 			}
+		}
+	}
+
+	void DublicateCellsFromNearbyMaps() {
+		for (int x = 0; x < width; x++) {
+			if (chunk?.down?.map != null)
+				map[x, 0].isSolid = chunk.down.map[x, chunk.down.map.GetLength(1) - 1].isSolid;
+			if (chunk?.up?.map != null)
+				map[x, height - 1].isSolid = chunk.up.map[x, 0].isSolid;
+		}
+
+		for (int y = 0; y < height; y++) {
+			if (chunk?.left?.map != null)
+				map[0, y].isSolid = chunk.left.map[chunk.left.map.GetLength(0) - 1, y].isSolid;
+			if (chunk?.right?.map != null)
+				map[width - 1, y].isSolid = chunk.right.map[0, y].isSolid;
 		}
 	}
 
@@ -85,12 +100,6 @@ public class ChunkGenerator : MonoBehaviour {
 				else {
 					map[x, y].isSolid = false;
 				}
-
-				//if (neighbourWallTiles > smoothBase)
-				//	map[x, y].isSolid = true;
-				//else if (neighbourWallTiles < smoothBase)
-				//	map[x, y].isSolid = false;
-
 			}
 		}
 	}
@@ -99,16 +108,42 @@ public class ChunkGenerator : MonoBehaviour {
 		int wallCount = 0;
 		for (int neighbourX = gridX - 1; neighbourX <= gridX + 1; neighbourX++) {
 			for (int neighbourY = gridY - 1; neighbourY <= gridY + 1; neighbourY++) {
-				if (
-					0  <= neighbourX && neighbourX < width && 0 <= neighbourY && neighbourY < height
-					) {
-					if (neighbourX != gridX || neighbourY != gridY) {
-						wallCount += map[neighbourX, neighbourY].isSolid? 1 : 0;
-					}
+
+				if (IsInMapRange(neighbourX, neighbourY)) {
+					if (neighbourX != gridX || neighbourY != gridY)
+						wallCount += map[neighbourX, neighbourY].isSolid ? 1 : 0;
 				}
 				else {
-					//wallCount++;
+					Chunk usedChunk = chunk;
+					bool find = false;
+					int _neighbourX = neighbourX, _neighbourY = neighbourY;
+
+					if (_neighbourX < 0 && usedChunk?.left?.map != null) {
+						usedChunk = usedChunk.left;
+						_neighbourX += usedChunk.map.GetLength(0);
+						find = true;
+					}
+					if (_neighbourX >= width && usedChunk?.right?.map != null) {
+						usedChunk = usedChunk.right;
+						_neighbourX -= usedChunk.map.GetLength(0);
+						find = true;
+					}
+					if (_neighbourY < 0 && usedChunk?.down?.map != null) {
+						usedChunk = usedChunk.down;
+						_neighbourY += usedChunk.map.GetLength(1);
+						find = true;
+					}
+					if (_neighbourY >= height && usedChunk?.up?.map != null) {
+						usedChunk = usedChunk.up;
+						_neighbourY -= usedChunk.map.GetLength(1);
+						find = true;
+					}
+
+					if (find && usedChunk != null && IsInMapRange(_neighbourX, _neighbourY))
+						wallCount += usedChunk.map[_neighbourX, _neighbourY].isSolid ? 1 : 0;
 				}
+
+				
 			}
 		}
 
@@ -187,13 +222,27 @@ public class ChunkGenerator : MonoBehaviour {
 					borderedMap[x, y] = map[x - borderSize, y - borderSize];
 				}
 				else {
-
 					borderedMap[x, y] = new Tile() {
 						isSolid = false,
 					};
 				}
 			}
 		}
+
+		//TODO: fix for empty space on chunk edges
+		//for (int x = 0; x < width; x++) {
+		//	if (chunk?.down?.map != null)
+		//		borderedMap[x, borderSize - 1].isSolid = chunk.down.map[x, chunk.down.map.GetLength(1) - 1].isSolid;
+		//	if (chunk?.up?.map != null)
+		//		borderedMap[x, height + borderSize - 1].isSolid = chunk.up.map[x, 0].isSolid;
+		//}
+
+		//for (int y = 0; y < height; y++) {
+		//	if (chunk?.left?.map != null)
+		//		borderedMap[borderSize - 1, y].isSolid = chunk.left.map[chunk.left.map.GetLength(0) - 1, y].isSolid;
+		//	if (chunk?.right?.map != null)
+		//		borderedMap[width + borderSize - 1, y].isSolid = chunk.right.map[0, y].isSolid;
+		//}
 
 		return borderedMap;
 	}
