@@ -29,7 +29,7 @@ public class MeshGenerator : MonoBehaviour {
 
 		vertices.Clear();
 		CreateRoofMesh();
-		Generate2DColliders();
+		//Generate2DColliders();
 	}
 
 	#region floor

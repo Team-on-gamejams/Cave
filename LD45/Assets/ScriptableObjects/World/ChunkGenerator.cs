@@ -18,9 +18,9 @@ public class ChunkGenerator : MonoBehaviour {
 	public float squareSize = 1;
 	public int smoothBase = 4;
 	public float smoothLevel = 5;
+	public float smoothLevelAfterPassage = 1;
 
-	public string seed;
-	public bool useRandomSeed = true;
+
 
 	[Range(0, 100)]
 	public int randomFillPercent;
@@ -41,26 +41,25 @@ public class ChunkGenerator : MonoBehaviour {
 
 		for (int i = 0; i < smoothLevel; i++)
 			SmoothMap();
-
 		RemoveSmallWalls();
 		RemoveSmallRooms();
+
 		ConnectRooms();
+
+		for (int i = 0; i < smoothLevelAfterPassage; i++)
+			SmoothMap();
 		RemoveSmallWalls();
+
 
 		Tile[,] borderedMap = GetBorderedMap();
 
-		//MeshGenerator meshGen = GetComponent<MeshGenerator>();
-		//meshGen.GenerateMesh(borderedMap, squareSize);
+		MeshGenerator meshGen = GetComponent<MeshGenerator>();
+		meshGen.GenerateMesh(borderedMap, squareSize);
 
 		return borderedMap;
 	}
 
 	void RandomFillMap() {
-		if (useRandomSeed)
-			Random.InitState((int)Time.time);
-		else
-			Random.InitState(seed.GetHashCode());
-
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				if (x == 0 || x == width - 1 || y == 0 || y == height - 1) {
@@ -78,10 +77,19 @@ public class ChunkGenerator : MonoBehaviour {
 			for (int y = 0; y < height; y++) {
 				int neighbourWallTiles = GetSurroundingWallCount(x, y);
 
-				if (neighbourWallTiles > smoothBase)
+				if( (map[x, y].isSolid && neighbourWallTiles >= smoothBase) ||
+					(!map[x, y].isSolid && neighbourWallTiles >= smoothBase + 1)
+					) {
 					map[x, y].isSolid = true;
-				else if (neighbourWallTiles < smoothBase)
+				}
+				else {
 					map[x, y].isSolid = false;
+				}
+
+				//if (neighbourWallTiles > smoothBase)
+				//	map[x, y].isSolid = true;
+				//else if (neighbourWallTiles < smoothBase)
+				//	map[x, y].isSolid = false;
 
 			}
 		}
@@ -193,11 +201,11 @@ public class ChunkGenerator : MonoBehaviour {
 
 		List<Room> rooms = new List<Room>();
 
-		if (rooms.Count <= 1)
-			return;
-
 		foreach (List<Coord> roomRegion in roomRegions)
 			rooms.Add(new Room(roomRegion, map));
+
+		if (rooms.Count <= 1)
+			return;
 
 		RoomConnection[,] prices = new RoomConnection[rooms.Count, rooms.Count];
 
@@ -242,7 +250,6 @@ public class ChunkGenerator : MonoBehaviour {
 			dist = int.MaxValue,
 		};
 
-
 		for (int i = 0; i < rooms.Count - 1; ++i) {
 			int minId = i + 1;
 			for (int j = i + 2; j < rooms.Count; ++j)
@@ -261,6 +268,10 @@ public class ChunkGenerator : MonoBehaviour {
 		List<Coord> line = GetLine(tileA, tileB);
 		foreach (Coord c in line)
 			DrawCircle(c, coridorRadius);
+
+		Vector3 CoordToWorldPoint(Coord tile) {
+			return new Vector3(-width / 2 + .5f + tile.x, 2, -height / 2 + .5f + tile.y);
+		}
 	}
 
 	void DrawCircle(Coord c, int r) {
@@ -355,8 +366,10 @@ public class ChunkGenerator : MonoBehaviour {
 			foreach (Coord tile in tiles)
 				for (int x = tile.x - 1; x <= tile.x + 1; x++)
 					for (int y = tile.y - 1; y <= tile.y + 1; y++)
-						if (x >= 0 && x < map.GetLength(0) && y >= 0 && y < map.GetLength(1) && 
-							x == tile.x || y == tile.x && map[x, y].isSolid)
+						if (
+							0 <= x && x < map.GetLength(0) && 0 <= y && y < map.GetLength(1) && 
+							(x == tile.x || y == tile.y) && map[x, y].isSolid
+						)
 							edgeTiles.Add(tile);
 		}
 

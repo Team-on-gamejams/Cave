@@ -17,16 +17,21 @@ public class Chunk : MonoBehaviour {
 	public List<OnGroundItem> onGroundItems;
 	public List<ResourcesSource> ResourcesSources;
 
+	public int DEBUG_SEED;
+	public bool DEBUG_SEED_INC;
+
 	Tile[,] map;
 
 	private void Awake() {
-		WorldGenerator.instance.chunks.Add(this);
+		//WorldGenerator.instance.chunks.Add(this);
 	}
 
 	void Start() {
-		ChunkGenerator generator = GetComponent<ChunkGenerator>();
-		if (generator != null)
-			map = generator.GenerateMap();
+		DEBUG_GEN();
+
+		//ChunkGenerator generator = GetComponent<ChunkGenerator>();
+		//if (generator != null)
+		//	map = generator.GenerateMap();
 
 		gameObject.name = $"Chunk [{x}, {y}]";	
 	}
@@ -91,6 +96,15 @@ public class Chunk : MonoBehaviour {
 			downLeft?.gameObject?.SetActive(downLeftActive);
 			downRight?.gameObject?.SetActive(downRightActive);
 		}
+	}
+
+	public void DEBUG_GEN() {
+		Random.InitState(DEBUG_SEED);
+		if (DEBUG_SEED_INC)
+			++DEBUG_SEED;
+		ChunkGenerator generator = GetComponent<ChunkGenerator>();
+		if (generator != null)
+			map = generator.GenerateMap();
 	}
 
 	public void GenerateNearbyChunks() {

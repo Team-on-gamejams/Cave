@@ -12,6 +12,9 @@ public class WorldGenerator : MonoBehaviour {
 	}
 	public static WorldGenerator _instance;
 
+	public string seed;
+	public bool useRandomSeed = true;
+
 	public float chunkSize;
 	public List<Chunk> chunks;
 	[SerializeField] Chunk startingChunk;
@@ -20,6 +23,12 @@ public class WorldGenerator : MonoBehaviour {
 
 	public GameObject chunkTest;
 
+	void Awake() {
+		if (useRandomSeed)
+			Random.InitState((int)Time.time);
+		else
+			Random.InitState(seed.GetHashCode());
+	}
 
 	public Chunk GetChunk(int x, int y) {
 		foreach (var chunk in chunks)
