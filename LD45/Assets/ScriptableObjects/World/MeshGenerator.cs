@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MeshGenerator : MonoBehaviour {
 	public MeshFilter roof;
+	public MeshFilter roofMinimap;
 	public MeshFilter walls;
 	public MeshFilter floor;
 
@@ -29,7 +30,7 @@ public class MeshGenerator : MonoBehaviour {
 
 		vertices.Clear();
 		CreateRoofMesh();
-		//Generate2DColliders();
+		Generate2DColliders();
 	}
 
 	#region floor
@@ -133,6 +134,7 @@ public class MeshGenerator : MonoBehaviour {
 		mesh.RecalculateNormals();
 
 		roof.mesh = mesh;
+		roofMinimap.mesh = mesh;
 		//roof.GetComponent<MeshCollider>().sharedMesh = mesh;
 	}
 
@@ -333,9 +335,8 @@ public class MeshGenerator : MonoBehaviour {
 
 	void Generate2DColliders() {
 		EdgeCollider2D[] currentColliders = gameObject.GetComponents<EdgeCollider2D>();
-		for (int i = 0; i < currentColliders.Length; i++) {
+		for (int i = 0; i < currentColliders.Length; i++)
 			Destroy(currentColliders[i]);
-		}
 
 		CalculateMeshOutlines();
 
@@ -343,9 +344,8 @@ public class MeshGenerator : MonoBehaviour {
 			EdgeCollider2D edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
 			Vector2[] edgePoints = new Vector2[outline.Count];
 
-			for (int i = 0; i < outline.Count; i++) {
+			for (int i = 0; i < outline.Count; i++)
 				edgePoints[i] = new Vector2(vertices[outline[i]].x, vertices[outline[i]].z);
-			}
 			edgeCollider.points = edgePoints;
 		}
 	}

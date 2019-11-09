@@ -1685,6 +1685,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629038809d4ebf840ad7ca569596e786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seed: 
+  useRandomSeed: 1
   chunkSize: 16
   chunks: []
   startingChunk: {fileID: 6897052443669223803}

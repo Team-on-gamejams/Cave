@@ -20,18 +20,18 @@ public class ChunkGenerator : MonoBehaviour {
 	public float smoothLevel = 5;
 	public float smoothLevelAfterPassage = 1;
 
-
-
 	[Range(0, 100)]
 	public int randomFillPercent;
 
 	Tile[,] map;
+	Chunk chunk;
 
 	void Awake() {
 		coridorThreshold = coridorThreshold * coridorThreshold;
 	}
 
-	public Tile[,] GenerateMap() {
+	public Tile[,] GenerateMap(Chunk _chunk) {
+		chunk = _chunk;
 		map = new Tile[width, height];
 		for (int x = 0; x < width; x++)
 			for (int y = 0; y < height; y++)
@@ -99,7 +99,9 @@ public class ChunkGenerator : MonoBehaviour {
 		int wallCount = 0;
 		for (int neighbourX = gridX - 1; neighbourX <= gridX + 1; neighbourX++) {
 			for (int neighbourY = gridY - 1; neighbourY <= gridY + 1; neighbourY++) {
-				if (IsInMapRange(neighbourX, neighbourY)) {
+				if (
+					0  <= neighbourX && neighbourX < width && 0 <= neighbourY && neighbourY < height
+					) {
 					if (neighbourX != gridX || neighbourY != gridY) {
 						wallCount += map[neighbourX, neighbourY].isSolid? 1 : 0;
 					}
@@ -187,7 +189,7 @@ public class ChunkGenerator : MonoBehaviour {
 				else {
 
 					borderedMap[x, y] = new Tile() {
-						isSolid = true,
+						isSolid = false,
 					};
 				}
 			}
