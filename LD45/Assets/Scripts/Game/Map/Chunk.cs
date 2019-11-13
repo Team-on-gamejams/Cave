@@ -99,6 +99,15 @@ public class Chunk : MonoBehaviour {
 		if (canMoveRight && right == null && WorldGenerator.instance.GetChunk(x + 1, y) == null)
 			CreateNeighbour(Neighbour.Right);
 
+		if (canMoveLeft && left == null && WorldGenerator.instance.GetChunk(x - 1, y) == null)
+			CreateNeighbour(Neighbour.Left);
+
+		if (canMoveUp && up == null && WorldGenerator.instance.GetChunk(x, y + 1) == null)
+			CreateNeighbour(Neighbour.Up);
+
+		if (canMoveDown && down == null && WorldGenerator.instance.GetChunk(x, y - 1) == null)
+			CreateNeighbour(Neighbour.Down);
+
 		if (WorldGenerator.instance.GetChunk(x + 1, y + 1) == null) {
 			if (up)
 				up.CreateNeighbour(Neighbour.Right);
@@ -112,9 +121,7 @@ public class Chunk : MonoBehaviour {
 			else if (down)
 				down.CreateNeighbour(Neighbour.Right);
 		}
-
-		if (canMoveLeft && left == null && WorldGenerator.instance.GetChunk(x - 1, y) == null)
-			CreateNeighbour(Neighbour.Left);
+		
 
 		if (WorldGenerator.instance.GetChunk(x - 1, y - 1) == null) {
 			if (left)
@@ -129,12 +136,6 @@ public class Chunk : MonoBehaviour {
 			else if (up)
 				up.CreateNeighbour(Neighbour.Left);
 		}
-
-		if (canMoveUp && up == null && WorldGenerator.instance.GetChunk(x, y + 1) == null)
-			CreateNeighbour(Neighbour.Up);
-
-		if (canMoveDown && down == null && WorldGenerator.instance.GetChunk(x, y - 1) == null)
-			CreateNeighbour(Neighbour.Down);
 	}
 
 	public void CreateNeighbour(Neighbour neighbour) {
