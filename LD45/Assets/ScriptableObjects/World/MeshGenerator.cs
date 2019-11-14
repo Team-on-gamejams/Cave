@@ -17,6 +17,9 @@ public class MeshGenerator : MonoBehaviour {
 	List<List<int>> outlines;
 	HashSet<int> checkedOutlines;
 
+	Tile[,] map;
+	float squareSize;
+
 	void Awake() {
 		vertices = new List<Vector3>();
 		triangles = new List<int>();
@@ -27,6 +30,9 @@ public class MeshGenerator : MonoBehaviour {
 	}
 
 	public void GenerateMesh(Tile[,] map, float squareSize) {
+		this.map = map;
+		this.squareSize = squareSize;
+
 		squareGrid = new SquareGrid(map, squareSize);
 
 		vertices.Clear();
@@ -50,6 +56,7 @@ public class MeshGenerator : MonoBehaviour {
 		
 		mesh.vertices = vertices.ToArray();
 		mesh.triangles = triangles.ToArray();
+		mesh.uv = CreateUvs(1);
 		mesh.RecalculateNormals();
 
 		floor.mesh = mesh;
@@ -133,6 +140,7 @@ public class MeshGenerator : MonoBehaviour {
 
 		mesh.vertices = vertices.ToArray();
 		mesh.triangles = triangles.ToArray();
+		mesh.uv = CreateUvs(1);
 		mesh.RecalculateNormals();
 
 		roof.mesh = mesh;
@@ -350,6 +358,16 @@ public class MeshGenerator : MonoBehaviour {
 				edgePoints[i] = new Vector2(vertices[outline[i]].x, vertices[outline[i]].z);
 			edgeCollider.points = edgePoints;
 		}
+	}
+
+	Vector2[] CreateUvs(int tileAmount) {
+		Vector2[] uvs = new Vector2[vertices.Count];
+		for (int i = 0; i < vertices.Count; i++) {
+			float percentX = Mathf.InverseLerp(-map.GetLength(0) / 2 * squareSize, map.GetLength(0) / 2 * squareSize, vertices[i].x) * tileAmount;
+			float percentY = Mathf.InverseLerp(-map.GetLength(0) / 2 * squareSize, map.GetLength(0) / 2 * squareSize, vertices[i].z) * tileAmount;
+			uvs[i] = new Vector2(percentX, percentY);
+		}
+		return uvs;
 	}
 
 	struct Triangle {

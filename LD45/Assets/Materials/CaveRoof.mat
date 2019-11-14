@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CaveRoof
-  m_Shader: {fileID: 4800000, guid: cf81c85f95fe47e1a27f6ae460cf182c, type: 3}
+  m_Shader: {fileID: 4800000, guid: e260cfa7296ee7642b167f1eb5be5023, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -21,7 +21,7 @@ Material:
     m_TexEnvs:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: cf6452d1d43c0cf4eae3a0ce3f6a8198, type: 3}
-        m_Scale: {x: 64, y: 64}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 6}
     - _MaskTex:
         m_Texture: {fileID: 0}
