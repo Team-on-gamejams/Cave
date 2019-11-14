@@ -7,6 +7,7 @@ public class MeshGenerator : MonoBehaviour {
 	public MeshFilter roofMinimap;
 	public MeshFilter walls;
 	public MeshFilter floor;
+	public MeshFilter floorMinimap;
 
 	public SquareGrid squareGrid;
 	List<Vector3> vertices;
@@ -31,6 +32,7 @@ public class MeshGenerator : MonoBehaviour {
 		vertices.Clear();
 		CreateRoofMesh();
 		Generate2DColliders();
+		CreateFloorMesh();
 	}
 
 	#region floor
@@ -51,7 +53,7 @@ public class MeshGenerator : MonoBehaviour {
 		mesh.RecalculateNormals();
 
 		floor.mesh = mesh;
-		floor.GetComponent<MeshCollider>().sharedMesh = mesh;
+		floorMinimap.mesh = mesh;
 	}
 
 	void TriangulateSquareFloor(Square square) {
