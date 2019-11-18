@@ -29,7 +29,7 @@ public class Chunk : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collision) {
 		if(collision.tag == "Player") {
-			GameManager.Instance.Player.CurrChunk = this;
+			GameManager.Instance.Player.CurrChunk.Add(this);
 			GenerateNearbyChunks();
 
 			up?.gameObject?.SetActive(true);
@@ -46,46 +46,47 @@ public class Chunk : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D collision) {
 		if (collision.tag == "Player") {
-			bool isMoveUp = GameManager.Instance.Player.CurrChunk.y > y;
-			bool isMoveRight = GameManager.Instance.Player.CurrChunk.x > x;
+			GameManager.Instance.Player.CurrChunk.Remove(this);
+			//bool isMoveUp = GameManager.Instance.Player.CurrChunk.y > y;
+			//bool isMoveRight = GameManager.Instance.Player.CurrChunk.x > x;
 
-			if (up != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.x == x)
-				up?.gameObject?.SetActive(false);
-			if(right != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.y == y)
-				right?.gameObject?.SetActive(false);
-			if(down != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.x == x)
-				down?.gameObject?.SetActive(false);
-			if(left != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.y == y)
-				left?.gameObject?.SetActive(false);
+			//if (up != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.x == x)
+			//	up?.gameObject?.SetActive(false);
+			//if(right != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.y == y)
+			//	right?.gameObject?.SetActive(false);
+			//if(down != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.x == x)
+			//	down?.gameObject?.SetActive(false);
+			//if(left != GameManager.Instance.Player.CurrChunk && GameManager.Instance.Player.CurrChunk.y == y)
+			//	left?.gameObject?.SetActive(false);
 
 
-			bool upLeftActive = false,
-				upRightActive = false,
-				downLeftActive = false,
-				downRightActive = false;
+			//bool upLeftActive = false,
+			//	upRightActive = false,
+			//	downLeftActive = false,
+			//	downRightActive = false;
 
-			if (isMoveUp) {
-				upLeftActive = true;
-				upRightActive = true;
-			}
-			else if(GameManager.Instance.Player.CurrChunk.y != y) {
-				downLeftActive = true;
-				downRightActive = true;
-			}
+			//if (isMoveUp) {
+			//	upLeftActive = true;
+			//	upRightActive = true;
+			//}
+			//else if(GameManager.Instance.Player.CurrChunk.y != y) {
+			//	downLeftActive = true;
+			//	downRightActive = true;
+			//}
 
-			if (isMoveRight) {
-				upRightActive = true;
-				downRightActive = true;
-			}
-			else if (GameManager.Instance.Player.CurrChunk.x != x) {
-				upLeftActive = true;
-				downLeftActive = true;
-			}
+			//if (isMoveRight) {
+			//	upRightActive = true;
+			//	downRightActive = true;
+			//}
+			//else if (GameManager.Instance.Player.CurrChunk.x != x) {
+			//	upLeftActive = true;
+			//	downLeftActive = true;
+			//}
 
-			upLeft?.gameObject?.SetActive(upLeftActive);
-			upRight?.gameObject?.SetActive(upRightActive);
-			downLeft?.gameObject?.SetActive(downLeftActive);
-			downRight?.gameObject?.SetActive(downRightActive);
+			//upLeft?.gameObject?.SetActive(upLeftActive);
+			//upRight?.gameObject?.SetActive(upRightActive);
+			//downLeft?.gameObject?.SetActive(downLeftActive);
+			//downRight?.gameObject?.SetActive(downRightActive);
 		}
 	}
 

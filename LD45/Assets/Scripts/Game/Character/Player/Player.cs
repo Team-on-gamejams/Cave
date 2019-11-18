@@ -7,7 +7,7 @@ public class Player : Character {
 	public Equipment Equipment;
 	public PlayerInput PlayerInput;
 
-	public Chunk CurrChunk;
+	public List<Chunk> CurrChunk;
 
 	void Awake() {
 		GameManager.Instance.Player = this;
