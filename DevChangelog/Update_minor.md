@@ -3,6 +3,7 @@
 [Team] [DEV] Рефакторинг enemy-character-player
 [Team] [DEV] Рефакторинг PlayerInput на машину состояний
 [Team] [DEV] Scene hierarchy
+[Team] [DEV] Quit button now works in editor
 
 [Team] [PRT] UI mockups
 
@@ -24,6 +25,7 @@
 [Team] [FTR] Відкривати/закривати карту на M
 [Team] [FTR] хотбар на 2 руки
 [Team] [FTR] New equipment layout
+[Team] [FTR] Забаундить камеру
 
 [Team] [BUG] SpiteOrder переписав повністю
 [Team] [BUG] Показувати Outline лише для 1 обєкта
@@ -50,3 +52,4 @@
 [FELT] [DEV] Спавнить GO, які випадають з ResourceSource в окремому GO.
 
 [FELT] [FTR] Показувати можливу дію, коли миша над Interactable
+[Felt] [FTR] Зробити окремий шрифт для обводки MouseOverTip
