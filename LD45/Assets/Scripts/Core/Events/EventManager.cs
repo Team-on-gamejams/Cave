@@ -31,4 +31,7 @@ public class EventManager {
 
 	public static event EventController.MethodContainer OnEquipmentChange;
 	public void CallOnEquipmentChange(EventData ob = null) => OnEquipmentChange?.Invoke(ob);
+
+	public static event EventController.MethodContainer OnBuildingCreation;
+	public void CallOnBuildingCreation(EventData ob = null) => OnBuildingCreation?.Invoke(ob);
 }
