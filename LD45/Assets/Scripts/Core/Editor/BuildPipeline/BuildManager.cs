@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.IO;
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +10,21 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 using Ionic.Zip;
 
+using Debug = UnityEngine.Debug;
+
 //TODO: publish to itch.io via butler
 public static class BuildManager {
+	//TODO: move to settings that can be changed in editor;
+	const string butlerRelativePath = @"Thirdparty/Editor/butler/butler.exe";
+	static string[] channelNames = new string[] {
+		"windows-32",
+		"windows-64",
+		"linux-universal",
+		"osx-universal",
+		"webgl",
+	};
+
+
 	public static string LastBundleVersion {
 		get {
 			if (_LastBundleVersion == null)
@@ -37,81 +52,118 @@ public static class BuildManager {
 	static string _LastBundleVersion = null;
 	static int _LastBuildPatch = -1;
 
-	public static void BuildAll(bool needZip) {
+	static List<string> buildsPath;
+
+	// Для пабліша на itch.io не треба zip. Він все одно розархівується, а потім заархівується по новому, так як треба itch
+	// Але я це оставив, щоб не робити архіви ручками, якщо щось треба отправить
+	public static void BuildAllSequence(bool needZip, bool needPush) {
+		BuildAll();
+
+		if (needZip)
+			CompressAll(buildsPath);
+
+		if (needPush)
+			PushAll(buildsPath);
+
+		++LastBuildPatch;
+	}
+
+
+	static void BuildAll() {
 		Debug.Log("Start building all");
 		DateTime startTime = DateTime.Now;
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
 
-		BuildWindows(true, needZip);
-		BuildWindowsX64(true, needZip);
-		BuildLinux(true, needZip);
-		BuildOSX(true, needZip);
-		BuildWeb(true, needZip);
-
-		++LastBuildPatch;
+		buildsPath = new List<string>(5);
+		buildsPath.Add(BuildWindows(true));
+		buildsPath.Add(BuildWindowsX64(true));
+		buildsPath.Add(BuildLinux(true));
+		buildsPath.Add(BuildOSX(true));
+		buildsPath.Add(BuildWeb(true));
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
-
 		Debug.Log($"End building all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
 	}
 
-	public static void BuildWindows(bool isInBuildSequence, bool needZip) {
-		BaseBuild(
+	static void CompressAll(List<string> buildsPath) {
+		DateTime startTime = DateTime.Now;
+		Debug.Log($"Start compressing all");
+
+		for (byte i = 0; i < buildsPath.Count; ++i)
+			if(buildsPath[i] != "")
+				Compress(buildsPath[i]);
+
+		Debug.Log($"End compressing all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
+	}
+
+	static void PushAll(List<string> buildsPath) {
+		DateTime startTime = DateTime.Now;
+		Debug.Log($"Start pushing all");
+
+		for (byte i = 0; i < buildsPath.Count; ++i) 
+			if(buildsPath[i] != "")
+				Push(buildsPath[i], channelNames[i]);
+
+		Debug.Log($"End pushing all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
+	}
+
+	public static string BuildWindows(bool isInBuildSequence) {
+		return BaseBuild(
 			BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows,
 			isInBuildSequence ? BuildOptions.None : BuildOptions.ShowBuiltPlayer,
 			!isInBuildSequence,
 			!isInBuildSequence,
-			needZip ? "_Windows" : null,
-			$"_Windows/{PlayerSettings.productName}.exe"
+			$"_Windows",
+			$"_Windows/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}/{PlayerSettings.productName}.exe"
 		);
 	}
 
-	public static void BuildWindowsX64(bool isInBuildSequence, bool needZip) {
-		BaseBuild(
+	public static string BuildWindowsX64(bool isInBuildSequence) {
+		return BaseBuild(
 			BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64,
 			isInBuildSequence ? BuildOptions.None : BuildOptions.ShowBuiltPlayer,
 			!isInBuildSequence,
 			!isInBuildSequence,
-			needZip ? "_Windows64" : null,
-			$"_Windows64/{PlayerSettings.productName}.exe"
+			"_Windows64",
+			$"_Windows64/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}/{PlayerSettings.productName}.exe"
 		);
 	}
 
-	public static void BuildLinux(bool isInBuildSequence, bool needZip) {
-		BaseBuild(
+	public static string BuildLinux(bool isInBuildSequence) {
+		return BaseBuild(
 			BuildTargetGroup.Standalone, BuildTarget.StandaloneLinux64,
 			isInBuildSequence ? BuildOptions.None : BuildOptions.ShowBuiltPlayer,
 			!isInBuildSequence,
 			!isInBuildSequence,
-			needZip ? "_Linux" : null,
-			$"_Linux/{PlayerSettings.productName}.x86_64"
+			"_Linux",
+			$"_Linux/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}/{PlayerSettings.productName}.x86_64"
 		);
 	}
 
-	public static void BuildOSX(bool isInBuildSequence, bool needZip) {
-		BaseBuild(
+	public static string BuildOSX(bool isInBuildSequence) {
+		return BaseBuild(
 			BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX,
 			isInBuildSequence ? BuildOptions.None : BuildOptions.ShowBuiltPlayer,
 			!isInBuildSequence,
 			!isInBuildSequence,
-			needZip ? "_OSX" : null,
-			$"_OSX/{PlayerSettings.productName}"
+			"_OSX",
+			$"_OSX/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}/{PlayerSettings.productName}"
 		);
 	}
 
-	public static void BuildWeb(bool isInBuildSequence, bool needZip) {
-		BaseBuild(
-			BuildTargetGroup.WebGL, BuildTarget.WebGL, 
-			isInBuildSequence ? BuildOptions.None : BuildOptions.ShowBuiltPlayer, 
+	public static string BuildWeb(bool isInBuildSequence) {
+		return BaseBuild(
+			BuildTargetGroup.WebGL, BuildTarget.WebGL,
+			isInBuildSequence ? BuildOptions.None : BuildOptions.ShowBuiltPlayer,
 			!isInBuildSequence,
 			!isInBuildSequence,
-			needZip ? "_Web" : null,
+			"_Web",
 			$"_Web"
 		);
 	}
 
-	static void BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, bool needReturnBuildTarget, bool incrementPatch, string zipPath, string buildName) {
+	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, bool needReturnBuildTarget, bool incrementPatch, string folderPath, string buildPath) {
 		string basePath = $"Builds/{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}";
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
@@ -123,7 +175,7 @@ public static class BuildManager {
 
 		BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions {
 			scenes = EditorBuildSettings.scenes.Where(s => s.enabled).Select(s => s.path).ToArray(),
-			locationPathName = basePath + buildName,
+			locationPathName = basePath + buildPath,
 			targetGroup = buildTargetGroup,
 			target = buildTarget,
 			options = buildOptions,
@@ -136,14 +188,11 @@ public static class BuildManager {
 		//TODO: Зробити вивід гарнішим. Щоб виглядало по типу таблиці.
 		//Зараз \t не вирівнює його, коли summary.platform дуже різних довжин, наприклад StandaloneWindows та StandaloneOSX
 		if (summary.result == BuildResult.Succeeded) {
-			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576f}");
-
-			if (zipPath != null && zipPath != "")
-				Compress(basePath + zipPath);
+			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576}");
 		}
 		else if (summary.result == BuildResult.Failed) {
 			Debug.Log(
-				$"{summary.platform} failed.   \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576f}" + "\n" +
+				$"{summary.platform} failed.   \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576}" + "\n" +
 				$"Warnings: {summary.totalWarnings}" + "\n" +
 				$"Errors:   {summary.totalErrors}"
 			);
@@ -154,12 +203,43 @@ public static class BuildManager {
 
 		if (needReturnBuildTarget)
 			EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
+
+		return summary.result == BuildResult.Succeeded ? basePath + folderPath : "";
 	}
 
 	public static void Compress(string dirPath) {
 		using (ZipFile zip = new ZipFile()) {
-			zip.AddDirectory(dirPath, $"{PlayerSettings.productName}_{PlayerSettings.bundleVersion}.{LastBuildPatch}");
+			DateTime startTime = DateTime.Now;
+			zip.AddDirectory(dirPath);
 			zip.Save(dirPath + ".zip");
+
+			long uncompresedSize = 0;
+			long compresedSize = 0;
+			foreach (var e in zip.Entries) {
+				uncompresedSize += e.UncompressedSize;
+				compresedSize += e.CompressedSize;
+			}
+			Debug.Log($"Make .ZIP.  \t\t\t Time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}  \t Size: {uncompresedSize / 1048576} - {compresedSize / 1048576}");
 		}
+	}
+
+	public static void Push(string dirPath, string channelName) {
+		StringBuilder fileName = new StringBuilder(128);
+		StringBuilder args = new StringBuilder(128);
+		fileName.Append(Application.dataPath);
+		fileName.Append("/");
+		fileName.Append(butlerRelativePath);
+
+		args.Append("push \"");
+		args.Append(Application.dataPath);
+		args.Append("/../");
+		args.Append(dirPath);
+		args.Append("\" ");
+
+		args.Append($"teamon/{PlayerSettings.productName}:{channelName} ");
+		args.Append($"--userversion {PlayerSettings.bundleVersion}.{LastBuildPatch} ");
+
+		Debug.Log(fileName.ToString() + args.ToString());
+		Process.Start(fileName.ToString(), args.ToString());
 	}
 }

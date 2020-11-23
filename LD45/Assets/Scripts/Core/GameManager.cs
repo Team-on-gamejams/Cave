@@ -7,8 +7,29 @@ public class GameManager : Singleton<GameManager> {
 	// guarantee this will be always a singleton only - can't use the constructor!
 	protected GameManager() { }
 
+	public bool IsPaused {
+		set {
+			_IsPaused = value;
+			EventManager.CallOnPauseChanged();
+		}
+		get {
+			return _IsPaused;
+		}
+	}
+	private bool _IsPaused;
+
+	public float GameSpeed {
+		set {
+			_GameSpeed = value;
+			EventManager.CallOnGameSpeedChanged();
+		}
+		get {
+			return _GameSpeed;
+		}
+	}
+	private float _GameSpeed = 1.0f;
+
 	public Camera MainCamera;
-	public GameObject CollectorItems;
 	public Interactable SelectedOutlineGO;
 
 	public Player Player;
@@ -19,6 +40,8 @@ public class GameManager : Singleton<GameManager> {
 		EventManager = new EventManager();
 		Input.multiTouchEnabled = false;
 		LeanTween.init(800);
+
+		_IsPaused = false;
 
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
 	}
@@ -31,5 +54,6 @@ public class GameManager : Singleton<GameManager> {
 
 	void OnSceneLoadEnd(EventData data) {
 		MainCamera = Camera.main;
+		IsPaused = false;
 	}
 }

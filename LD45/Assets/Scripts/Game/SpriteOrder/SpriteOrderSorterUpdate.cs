@@ -7,6 +7,9 @@ public class SpriteOrderSorterUpdate : SpriteOrderSorter {
 	float tileLeft;
 
 	void Update() {
+		if (GameManager.Instance.IsPaused)
+			return;
+
 		tileLeft -= Time.deltaTime;
 
 		if (tileLeft <= 0) {

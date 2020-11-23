@@ -69,8 +69,8 @@ Material:
     - _PerspectiveFilter: 0
     - _Reflectivity: 12.76
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 0.6525
-    - _ScaleRatioC: 0.6525
+    - _ScaleRatioB: 0.59624994
+    - _ScaleRatioC: 0.59624994
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -97,7 +97,7 @@ Material:
     - _FaceColor: {r: 0, g: 0.75735635, b: 0, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 100000, a: 100000}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 0.7689687, g: 1, b: 0.75000346, a: 1}

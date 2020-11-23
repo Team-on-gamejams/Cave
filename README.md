@@ -1,12 +1,12 @@
 # Cave
 Ludum Dare Jam #45 entry. Theme: "Start with nothing"
 
-2D survival RPG with Dark Souls battle system
+2D survival RPG
 
 ![Cover](Screenshots/cover1.png)
 
 # Downloads and Links
-Available in [Windows, OSX, and Linux](https://teamon.itch.io/cave). If you encounter any problem, please leave a issue! 
+Available in [Windows, OSX, Linux and Web](https://teamon.itch.io/cave). If you encounter any problem, please leave a issue! 
 
 # Controls
  * WASD or LMB(Left Mouse Button) for moving​
@@ -26,6 +26,7 @@ Ludum Dare is one of the world's largest and longest running Game Jam events. Is
  * [Ambyss](https://github.com/Ambyss) - programmer
  * [Long-as-Python](https://github.com/Long-as-Python) - artist
  * [sleeplessmaliance](https://github.com/sleeplessmaliance) - artist
+ * [MalumDominum](https://github.com/MalumDominum) - artist
  
 # Thanks for assets
  * [moogy73](https://freesound.org/people/moogy73/sounds/425728) - click sound

@@ -4,15 +4,15 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "New ItemSO", menuName = "ItemSO", order = 51)]
 public class ItemSO : ScriptableObject {
-	public enum ItemSlot : byte { None, Hands, Head, Armor }
+	public enum ItemSlot : byte { None, HandLeft, Head, Armor, HandRight }
 
 	public enum ItemMetaType : byte {
 		None,
 		Hands,		//1 <= ItemType < 1000		Can be hold in hand. Used for battle & harvester
-		//Head,
-		//Armor,
 		Resource,   //1000 <= ItemType < 2000	Used only for crafting.
 		Building,   //2000 <= ItemType < 3000	Can be build on map
+		Head,		//3000 <= ItemType < 4000	Equipment
+		Armor,      //4000 <= ItemType < 5000	Equipment
 	}
 	public enum ItemType : uint {
 		None = 0,
@@ -25,6 +25,8 @@ public class ItemSO : ScriptableObject {
 		Tent, 
 		Bonfire, 
 		Torch,		//TODO: need smth special, cuz can be hold both in hand & building
+		Helmet = 3000,
+		Armor = 4000,
 	}
 
 	public ItemSlot Slot;
@@ -36,6 +38,10 @@ public class ItemSO : ScriptableObject {
 				return ItemMetaType.Resource;
 			if (2000 <= (int)Type && (int)Type < 3000)
 				return ItemMetaType.Building;
+			if (3000 <= (int)Type && (int)Type < 4000)
+				return ItemMetaType.Head;
+			if (4000 <= (int)Type && (int)Type < 5000)
+				return ItemMetaType.Armor;
 
 			return ItemMetaType.None;
 		}

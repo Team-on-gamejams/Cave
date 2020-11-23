@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4949850401918132681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,10 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8aa26a458d4bd4b9bd24a9ea7ff46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalOutlineGO: {fileID: 0}
-  OutlineScale: 1.2
-  InteractDist: 0.5
+  InteractDist: 0.15
+  tip: 
   interactPosOnCenter: 1
+  outlineScale: 1.2
   outlineSize: 1
   Item: {fileID: 11400000, guid: 22bf5e17deb24c349b70cbdaab9d6f52, type: 2}
 --- !u!60 &4189943066744600621
@@ -118,7 +118,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.1, y: 1.9}
+    oldSize: {x: 3.12, y: 1.92}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
