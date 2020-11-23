@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad390131be4a495498d09b9db99fefee, type: 3}
+  m_Name: PlayerInputBattle
+  m_EditorClassIdentifier: 
+  flyweight:
+    player: {fileID: 0}
+    inventoryUI: {fileID: 0}
+    craftUI: {fileID: 0}
+    statUI: {fileID: 0}
+    bigMapUI: {fileID: 0}
+    equipmentUI: {fileID: 0}
+    inGameMenu: {fileID: 0}
+    hotbar: {fileID: 0}
+  Inputs: []
+  mouseHoldTimeMax: 0.15
