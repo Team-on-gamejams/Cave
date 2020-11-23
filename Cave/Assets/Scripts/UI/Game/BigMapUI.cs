@@ -33,11 +33,11 @@ public class BigMapUI : BaseUI, IDragHandler {
 
 	protected override void BeforeShow() {
 		MapCamera.gameObject.SetActive(true);
-		GameManager.Instance.EventManager.CallOnBigMapShow();
+		EventManager.CallOnBigMapShow();
 	}
 
 	protected override void BeforeHide() {
-		GameManager.Instance.EventManager.CallOnBigMapHide();
+		EventManager.CallOnBigMapHide();
 	}
 
 	protected override void AfterHide() {
