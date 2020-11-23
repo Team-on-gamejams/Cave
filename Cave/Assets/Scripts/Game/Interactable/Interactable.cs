@@ -21,6 +21,7 @@ public class Interactable : MonoBehaviour {
 
 	SpriteRenderer spriteRenderer;
 
+	SpriteOutline outline;
 	Vector3 interactPos;
 	float InteractDistSqr;
 
@@ -39,11 +40,13 @@ public class Interactable : MonoBehaviour {
 	void OnMouseEnter() {
 		if (GameManager.Instance.IsPaused/* || EventSystem.current.IsPointerOverGameObject()*/)
 			return;
+
+		GameManager.Instance.SelectedOutlineGO = this;
 		ShowOutline();
 	}
 
     private void OnMouseOver() {
-		if (GameManager.Instance.IsPaused)
+		if (GameManager.Instance.IsPaused || GameManager.Instance.SelectedOutlineGO != this)
 			return;
 
 		if (Input.GetMouseButtonDown(0)) {
@@ -57,7 +60,7 @@ public class Interactable : MonoBehaviour {
 
 		EventData eventData = new EventData("OnPopUpShow");
         eventData["tipText"] = tip;
-        EventManager.CallOnMouseOverTip(eventData);
+        GameManager.Instance.EventManager.CallOnMouseOverTip(eventData);
     }
 
 	void OnMouseExit() {
@@ -65,6 +68,7 @@ public class Interactable : MonoBehaviour {
 			return;
 
 		HideOutline();
+		GameManager.Instance.SelectedOutlineGO = null;
 	}
 
 	public void RecalcInteractPos() {
@@ -85,7 +89,7 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void ProcessMouseDown() {
-		if (GameManager.Instance.IsPaused ||GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
+		if (GameManager.Instance.IsPaused || GameManager.Instance.SelectedOutlineGO != this || GameManager.Instance.Player.Equipment.GOLinkedAnim == gameObject || !CanInteract())
 			return;
 
 		GameManager.Instance.Player.InterruptAction();
@@ -100,14 +104,37 @@ public class Interactable : MonoBehaviour {
 	}
 
 	void ShowOutline() {
-
+		if (outline == null)
+			outline = CreateOutline(gameObject, true);
+		outline.gameObject.SetActive(true);
 	}
 
 	void HideOutline() {
+		outline?.gameObject?.SetActive(false);
+	}
 
+	SpriteOutline CreateOutline(GameObject parentGO, bool needScale) {
+		var gameObject = new GameObject() {
+			name = $"{parentGO.name}-outline",
+		};
+		gameObject.transform.parent = parentGO.transform;
+		gameObject.transform.localPosition = Vector3.zero;
+		gameObject.transform.localScale = Vector3.one * outlineScale;
+
+		SpriteRenderer parentsr = parentGO.GetComponent<SpriteRenderer>();
+		SpriteRenderer sr = gameObject.AddComponent<SpriteRenderer>();
+		sr.sprite = parentsr.sprite;
+		sr.sortingOrder = parentsr.sortingOrder - 1;
+
+		SpriteOutline outline = gameObject.AddComponent<SpriteOutline>();
+		outline._outlineSize = outlineSize;
+		outline.color = Color.yellow;
+		outline.UpdateOutline(outline._outlineSize);
+		return outline;
 	}
 
 	public static void OnPause() {
-
+		GameManager.Instance?.SelectedOutlineGO?.HideOutline();
+		GameManager.Instance.SelectedOutlineGO = null;
 	}
 }

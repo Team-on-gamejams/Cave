@@ -17,7 +17,7 @@ public class HotbarChangeEvents : MonoBehaviour //Todo rename behaviour
 		if (item is null == false && item.MataType is ItemSO.ItemMetaType.Building) {
 			EventData eventData = new EventData("OnBuildingCreation");
 			eventData["Building"] = item;
-			EventManager.CallOnBuildingCreation(eventData);
+			GameManager.Instance.EventManager.CallOnBuildingCreation(eventData);
 
 			//GameObject building = Instantiate(BuildingsList.instance.GetItemPrefab(item),
 			//GameManager.Instance.MainCamera.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity, gameObject.transform);

@@ -145,7 +145,7 @@ public class Equipment : MonoBehaviour {
 
 		EventData eventData = new EventData("OnItemSlotChange");
 		eventData["ItemSlotType"] = item;
-		EventManager.CallOnEquipmentChange(eventData);
+		GameManager.Instance.EventManager.CallOnEquipmentChange(eventData);
 	}
 	
 	public void InterruptAction() {

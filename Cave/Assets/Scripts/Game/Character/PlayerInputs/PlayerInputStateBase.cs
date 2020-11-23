@@ -60,6 +60,7 @@ public class PlayerInputStateBase : ScriptableObject {
 	public void ShowHideStat() => flyweight.statUI.ChangeShowHide();
 	public void ShowHideBigMap() => flyweight.bigMapUI.ChangeShowHide();
 	public void ShowHideEquipment() => flyweight.equipmentUI.ChangeShowHide();
+	public void ShowHideInGameMenu() => flyweight.inGameMenu.ChangeShowHide();
 
 	public void SetHotbarSelectionLeft(int slot) => flyweight.hotbar.SetSelection((byte)slot, true);
 	public void MoveHotbarSelectionUpLeft() => flyweight.hotbar.MoveSelectionUp(true);

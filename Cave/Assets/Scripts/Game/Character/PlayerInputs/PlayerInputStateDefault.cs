@@ -38,6 +38,7 @@ public class PlayerInputStateDefault : PlayerInputStateBase {
 			PlayerInputFlyweight.CanMouseMove &&
 			(Input.GetMouseButtonDown(0) || mouseHoldTime >= mouseHoldTimeMax)
 			&& !EventSystem.current.IsPointerOverGameObject()
+			&& GameManager.Instance.SelectedOutlineGO == null
 		) {
 			flyweight.player.InterruptAction();
 			flyweight.player.MoveTo(GameManager.Instance.MainCamera.ScreenToWorldPoint(Input.mousePosition));
