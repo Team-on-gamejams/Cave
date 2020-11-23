@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19297eb15034c464993a85251aad48be, type: 3}
+  m_Name: TemplateGameManager
+  m_EditorClassIdentifier: 
+  buildNameString: 0.1 - Set changelog header in build window(ALT+B)
+  productName: GameTemplate
+  uiinput: {fileID: 0}
+  eventSystem: {fileID: 0}
+  inputSystem: {fileID: 0}
+  debugPopups: {fileID: 0}
+  audioManager: {fileID: 11400000, guid: 1e50efc8570298c4997dbe1167707e66, type: 2}
+  sceneLoader: {fileID: 11400000, guid: b4da153d93a196a43993d743823e9a34, type: 2}
