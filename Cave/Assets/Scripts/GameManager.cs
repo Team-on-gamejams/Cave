@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "GameManager", menuName = "Singletons/GameManager")]
 public class GameManager : Singleton<GameManager> {
-
+	[ReadOnly] public PlayerGeneral player; 
 
 	protected override void Initialize() {
 		base.Initialize();
